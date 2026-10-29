@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b49">
+    <title>SkyTrip | Explore Beyond Boundaries</title>
+
+    <link rel="stylesheet" href="./css/service.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader-orbit">
+            <div class="loader-globe">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <i class="fa-solid fa-plane loader-plane"></i>
+        </div>
+
+        <a class="loader-brand">
+            SKY<span>TRIP</span>
+        </a>
+        <p class="loader-tagline">FLY BEYOND BOUNDARIES</p>
+
+        <div class="loader-track">
+            <span id="loaderProgress"></span>
+        </div>
+
+        <div class="loader-bottom">
+            <span id="loaderText">Preparing your journey...</span>
+            <span id="loaderPercent">0%</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+
+            <a href="index.html" class="brand" aria-label="SkyTrip home">
+                <img src="images/stackly_logo.webp" alt="SkyTrip Logo"
+                     onerror="this.style.display='none'">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About Us</a></li>
+<li><a class="nav-link" href="service.html">Services</a></li>
+<li><a class="nav-link" href="blogs.html">Blogs</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+
+                <li class="mobile-login">
+                    <a class="login-btn" href="login.html">
+                        <i class="fa-solid fa-user"></i> Login
+                    </a>
+                </li>
+            </ul>
+
+            <a href="login.html" class="login-btn desktop-login">
+                <i class="fa-solid fa-user"></i>
+                <span>Login</span>
+            </a>
+
+        </nav>
+    </header>
+
+
+<!-- SKYTRIP SERVICES HERO -->
+<section class="sky-services-hero" id="services-hero">
+
+    <div class="services-hero-bg"></div>
+    <div class="services-hero-overlay"></div>
+    <div class="services-hero-glow"></div>
+
+    <!-- Animated flight path -->
+    <svg class="services-flight-path" viewBox="0 0 800 300"
+         fill="none" aria-hidden="true">
+        <path d="M20 260 C180 20, 360 330, 500 130 S700 30, 780 65"
+              stroke="#f5c45e"
+              stroke-width="1.5"
+              stroke-dasharray="7 9"/>
+    </svg>
+
+    <div class="services-hero-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="services-hero-content">
+
+            <!-- <div class="services-breadcrumb">
+                <a href="index.html">
+                    <i class="ri-home-5-line"></i> Home
+                </a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span>Services</span>
+            </div> -->
+
+            <div class="services-eyebrow">
+                <span class="services-eyebrow-line"></span>
+                OUR SERVICES
+            </div>
+
+            <h1>
+                Travel Solutions
+                <span>For Every Journey.</span>
+            </h1>
+
+            <p class="services-hero-description">
+                From flight bookings to travel support, SkyTrip offers
+                a complete range of services to make your journey smooth,
+                comfortable, and memorable.
+            </p>
+
+            <div class="services-hero-actions">
+                <a href="#services-list" class="services-primary-btn">
+                    Explore Our Services
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+
+                <a href="404.html" class="services-secondary-btn">
+                    <span class="services-play-icon">
+                        <i class="ri-play-fill"></i>
+                    </span>
+                    <span>
+                        <strong>Discover SkyTrip</strong>
+                        <small>Find the right service for you</small>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Trust indicators -->
+            <div class="services-hero-highlights">
+
+                <div class="services-highlight">
+                    <i class="ri-shield-check-line"></i>
+                    <div>
+                        <strong>Trusted Services</strong>
+                        <span>Travel with confidence</span>
+                    </div>
+                </div>
+
+                <div class="services-highlight">
+                    <i class="ri-earth-line"></i>
+                    <div>
+                        <strong>Global Coverage</strong>
+                        <span>Worldwide destinations</span>
+                    </div>
+                </div>
+
+                <div class="services-highlight">
+                    <i class="ri-customer-service-2-line"></i>
+                    <div>
+                        <strong>Travel Support</strong>
+                        <span>Here when you need us</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT VISUAL -->
+        <div class="services-hero-visual">
+
+            <div class="services-image-frame">
+                <img
+                    src="images/service.webp"
+                    alt="Passenger aircraft flying above the clouds"
+                >
+            </div>
+
+            <div class="services-visual-label">
+                <span class="services-live-dot"></span>
+                <span>YOUR JOURNEY STARTS HERE</span>
+            </div>
+
+            <!-- Floating service cards -->
+            <div class="services-floating-card services-card-flight">
+                <span class="services-floating-icon">
+                    <i class="ri-flight-takeoff-line"></i>
+                </span>
+                <span>
+                    <strong>Flight Bookings</strong>
+                    <small>Find your next flight</small>
+                </span>
+            </div>
+
+            <div class="services-floating-card services-card-support">
+                <span class="services-floating-icon">
+                    <i class="ri-customer-service-2-line"></i>
+                </span>
+                <span>
+                    <strong>Travel Assistance</strong>
+                    <small>Support along the way</small>
+                </span>
+            </div>
+
+            <div class="services-orbit-label">
+                <i class="ri-global-line"></i>
+                <span>EXPLORE MORE</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="#services-list" class="services-scroll-indicator">
+        <span>SCROLL TO EXPLORE</span>
+        <i class="ri-arrow-down-line"></i>
+    </a>
+
+    <div class="services-hero-bottom-line"></div>
+
+</section>
+
+
+<!-- SKYTRIP PREMIUM SERVICES -->
+<section class="sky-services-list" id="services-list">
+
+    <div class="services-list-container">
+
+        <div class="services-list-heading">
+            <span class="services-list-eyebrow">
+                <i class="ri-compass-3-line"></i>
+                DISCOVER SKYTRIP
+            </span>
+
+            <h2>
+                Everything You Need,
+                <span>All In One Journey.</span>
+            </h2>
+
+            <p>
+                Discover thoughtfully designed travel services that make
+                planning, booking, and enjoying your next adventure easier.
+            </p>
+        </div>
+
+        <div class="services-list-grid">
+
+            <!-- SERVICE 1 -->
+            <article class="service-feature-card">
+                <div class="service-card-top">
+                    <span class="service-card-number">01 / FLIGHTS</span>
+                    <span class="service-card-icon">
+                        <i class="ri-flight-takeoff-line"></i>
+                    </span>
+                </div>
+
+                <h3>Flight Bookings</h3>
+
+                <p>
+                    Explore flight options and plan your next trip
+                    with a smoother booking experience.
+                </p>
+
+                <a href="404.html" class="service-card-link">
+                    Explore Flights
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <span class="service-card-watermark">
+                    <i class="ri-flight-takeoff-line"></i>
+                </span>
+            </article>
+
+            <!-- SERVICE 2 -->
+            <article class="service-feature-card">
+                <div class="service-card-top">
+                    <span class="service-card-number">02 / STAYS</span>
+                    <span class="service-card-icon">
+                        <i class="ri-hotel-bed-line"></i>
+                    </span>
+                </div>
+
+                <h3>Hotel Reservations</h3>
+
+                <p>
+                    Find a comfortable place to stay and make
+                    your destination feel like home.
+                </p>
+
+                <a href="404.html" class="service-card-link">
+                    Explore Stays
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <span class="service-card-watermark">
+                    <i class="ri-hotel-bed-line"></i>
+                </span>
+            </article>
+
+            <!-- SERVICE 3 -->
+            <article class="service-feature-card">
+                <div class="service-card-top">
+                    <span class="service-card-number">03 / HOLIDAYS</span>
+                    <span class="service-card-icon">
+                        <i class="ri-earth-line"></i>
+                    </span>
+                </div>
+
+                <h3>Holiday Packages</h3>
+
+                <p>
+                    Discover inspiring destinations and plan
+                    a memorable escape with ease.
+                </p>
+
+                <a href="404.html" class="service-card-link">
+                    Discover Trips
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <span class="service-card-watermark">
+                    <i class="ri-earth-line"></i>
+                </span>
+            </article>
+
+            <!-- SERVICE 4 -->
+            <article class="service-feature-card">
+                <div class="service-card-top">
+                    <span class="service-card-number">04 / TRANSFERS</span>
+                    <span class="service-card-icon">
+                        <i class="ri-taxi-line"></i>
+                    </span>
+                </div>
+
+                <h3>Airport Transfers</h3>
+
+                <p>
+                    Make airport arrivals and departures easier
+                    with convenient transfer planning.
+                </p>
+
+                <a href="404.html" class="service-card-link">
+                    View Transfers
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <span class="service-card-watermark">
+                    <i class="ri-taxi-line"></i>
+                </span>
+            </article>
+
+            <!-- SERVICE 5 -->
+            <article class="service-feature-card">
+                <div class="service-card-top">
+                    <span class="service-card-number">05 / ASSISTANCE</span>
+                    <span class="service-card-icon">
+                        <i class="ri-customer-service-2-line"></i>
+                    </span>
+                </div>
+
+                <h3>Travel Assistance</h3>
+
+                <p>
+                    Get guidance with travel enquiries, booking
+                    questions, and trip-related support.
+                </p>
+
+                <a href="404.html" class="service-card-link">
+                    Get Assistance
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <span class="service-card-watermark">
+                    <i class="ri-customer-service-2-line"></i>
+                </span>
+            </article>
+
+            <!-- SERVICE 6 -->
+            <article class="service-feature-card">
+                <div class="service-card-top">
+                    <span class="service-card-number">06 / FLEXIBILITY</span>
+                    <span class="service-card-icon">
+                        <i class="ri-calendar-check-line"></i>
+                    </span>
+                </div>
+
+                <h3>Booking Management</h3>
+
+                <p>
+                    Keep your travel details organised and find
+                    help with booking-related changes.
+                </p>
+
+                <a href="404.html" class="service-card-link">
+                    Manage Travel
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <span class="service-card-watermark">
+                    <i class="ri-calendar-check-line"></i>
+                </span>
+            </article>
+
+        </div>
+
+        <div class="services-list-footer">
+            <span></span>
+            <p>YOUR WORLD. YOUR WAY. YOUR SKYTRIP.</p>
+            <span></span>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- WHY CHOOSE SKYTRIP -->
+<section class="sky-why-section" id="why-skytrip">
+
+    <div class="why-container">
+
+        <div class="why-heading">
+            <span class="why-eyebrow">
+                <i class="ri-award-line"></i>
+                THE SKYTRIP DIFFERENCE
+            </span>
+
+            <h2>
+                More Than Travel.
+                <span>A Better Experience.</span>
+            </h2>
+
+            <p>
+                Every journey deserves thoughtful planning, dependable
+                assistance, and an experience that feels effortless
+                from the very beginning.
+            </p>
+        </div>
+
+        <div class="why-main-grid">
+
+            <!-- LEFT FEATURE -->
+            <div class="why-feature-panel">
+
+                <div class="why-feature-top">
+                    <span>TRAVEL WITH CONFIDENCE</span>
+                    <i class="ri-flight-takeoff-line"></i>
+                </div>
+
+                <h3>Your Journey.<br>Our Commitment.</h3>
+
+                <p>
+                    From your first search to your return home, we aim
+                    to make every step of your travel experience simple,
+                    comfortable, and memorable.
+                </p>
+
+                <a href="contact.html" class="why-feature-link">
+                    Talk to Our Team
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <div class="why-feature-watermark">
+                    <i class="ri-earth-line"></i>
+                </div>
+
+            </div>
+
+            <!-- RIGHT BENEFITS -->
+            <div class="why-benefits-grid">
+
+                <article class="why-benefit-card">
+                    <span class="why-benefit-icon">
+                        <i class="ri-shield-check-line"></i>
+                    </span>
+
+                    <span class="why-benefit-number">01</span>
+
+                    <h3>Reliable Experience</h3>
+
+                    <p>
+                        Clear booking information and helpful guidance
+                        throughout your travel planning.
+                    </p>
+                </article>
+
+                <article class="why-benefit-card">
+                    <span class="why-benefit-icon">
+                        <i class="ri-global-line"></i>
+                    </span>
+
+                    <span class="why-benefit-number">02</span>
+
+                    <h3>Global Possibilities</h3>
+
+                    <p>
+                        Explore new destinations and discover more
+                        possibilities for your next adventure.
+                    </p>
+                </article>
+
+                <article class="why-benefit-card">
+                    <span class="why-benefit-icon">
+                        <i class="ri-customer-service-2-line"></i>
+                    </span>
+
+                    <span class="why-benefit-number">03</span>
+
+                    <h3>Human Support</h3>
+
+                    <p>
+                        Get assistance with your travel questions
+                        and booking-related enquiries.
+                    </p>
+                </article>
+
+                <article class="why-benefit-card">
+                    <span class="why-benefit-icon">
+                        <i class="ri-wallet-3-line"></i>
+                    </span>
+
+                    <span class="why-benefit-number">04</span>
+
+                    <h3>Smarter Planning</h3>
+
+                    <p>
+                        Organise your travel plans with useful options
+                        that suit your journey and preferences.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM STATEMENT -->
+        <div class="why-bottom-strip">
+            <div class="why-bottom-icon">
+                <i class="ri-compass-3-line"></i>
+            </div>
+
+            <div class="why-bottom-text">
+                <strong>Ready for your next adventure?</strong>
+                <span>Let's make planning your next journey easier.</span>
+            </div>
+
+            <a href="contact.html" class="why-bottom-btn">
+                Plan Your Journey
+                <i class="ri-arrow-right-line"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SKYTRIP HOW IT WORKS -->
+<section class="sky-how-section" id="how-it-works">
+
+    <div class="how-container">
+
+        <div class="how-heading">
+            <span class="how-eyebrow">
+                <i class="ri-route-line"></i>
+                YOUR JOURNEY, SIMPLIFIED
+            </span>
+
+            <h2>
+                Four Steps To Your
+                <span>Next Adventure.</span>
+            </h2>
+
+            <p>
+                Planning your next trip doesn't have to be complicated.
+                Follow these simple steps and get ready to explore.
+            </p>
+        </div>
+
+        <div class="how-steps">
+
+            <!-- STEP 1 -->
+            <article class="how-step">
+                <div class="how-step-top">
+                    <span class="how-step-number">01</span>
+                    <span class="how-step-icon">
+                        <i class="ri-search-eye-line"></i>
+                    </span>
+                </div>
+
+                <span class="how-step-label">STEP ONE</span>
+
+                <h3>Explore Options</h3>
+
+                <p>
+                    Discover flights, destinations, and travel services
+                    that match your plans.
+                </p>
+
+                <span class="how-step-arrow" onclick="window.location.href = '404.html' "
+                >
+                    <i class="ri-arrow-right-line"></i>
+                </span>
+            </article>
+
+            <!-- STEP 2 -->
+            <article class="how-step">
+                <div class="how-step-top">
+                    <span class="how-step-number">02</span>
+                    <span class="how-step-icon">
+                        <i class="ri-map-pin-line"></i>
+                    </span>
+                </div>
+
+                <span class="how-step-label">STEP TWO</span>
+
+                <h3>Choose Your Trip</h3>
+
+                <p>
+                    Compare your options and select the journey
+                    that suits your preferences.
+                </p>
+
+                <span class="how-step-arrow" onclick="window.location.href = '404.html' ">
+                    <i class="ri-arrow-right-line"></i>
+                </span>
+            </article>
+
+            <!-- STEP 3 -->
+            <article class="how-step">
+                <div class="how-step-top">
+                    <span class="how-step-number">03</span>
+                    <span class="how-step-icon">
+                        <i class="ri-calendar-check-line"></i>
+                    </span>
+                </div>
+
+                <span class="how-step-label">STEP THREE</span>
+
+                <h3>Plan & Book</h3>
+
+                <p>
+                    Review your travel details and complete your
+                    booking through the available options.
+                </p>
+
+                <span class="how-step-arrow" onclick="window.location.href = '404.html' ">
+                    <i class="ri-arrow-right-line"></i>
+                </span>
+            </article>
+
+            <!-- STEP 4 -->
+            <article class="how-step">
+                <div class="how-step-top">
+                    <span class="how-step-number">04</span>
+                    <span class="how-step-icon">
+                        <i class="ri-plane-line"></i>
+                    </span>
+                </div>
+
+                <span class="how-step-label">STEP FOUR</span>
+
+                <h3>Enjoy The Journey</h3>
+
+                <p>
+                    Get ready for your next adventure with your
+                    travel plans organised.
+                </p>
+
+                <span class="how-step-arrow" onclick="window.location.href = '404.html' ">
+                    <i class="ri-check-line"></i>
+                </span>
+            </article>
+
+        </div>
+
+        <div class="how-bottom">
+            <div class="how-bottom-content">
+                <span class="how-bottom-icon">
+                    <i class="ri-compass-3-line"></i>
+                </span>
+
+                <div>
+                    <h3>Your next destination is waiting.</h3>
+                    <p>Start planning a journey worth remembering.</p>
+                </div>
+            </div>
+
+            <a href="contact.html" class="how-cta">
+                Start Your Journey
+                <i class="ri-arrow-right-line"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<footer class="footer" id="footer">
+    <div class="footer-container">
+
+        <!-- 1. Brand Column -->
+        <div class="footer-column footer-about">
+
+<a href="index.html" class="footer-brand">
+    <img src="images/stackly_logo.webp"
+         alt="SkyTrip Logo"
+         class="footer-logo">
+</a>
+
+            <p class="footer-description">
+                Discover the world with SkyTrip. From spontaneous
+                getaways to carefully planned adventures, we help
+                make every journey smoother, easier, and more memorable.
+                Your next destination is just one flight away.
+            </p>
+
+            <div class="footer-socials">
+                <a href="404.html"
+                   aria-label="Facebook" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="Instagram" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="LinkedIn" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="YouTube" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 2. Quick Links -->
+        <div class="footer-column">
+            <h3 class="footer-title">Quick Links</h3>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="blogs.html">Travel Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- 3. Explore -->
+        <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+
+            <ul class="footer-links">
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Popular Destinations
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-plane"></i>
+                        Find Flights
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Travel Journal
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Help Center
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Privacy &amp; Policies
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 4. Contact Information -->
+        <div class="footer-column footer-contact">
+            <h3 class="footer-title">Get in Touch</h3>
+
+            <p class="footer-contact-intro">
+                Have a question about your next trip?
+                We'd love to hear from you.
+            </p>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <span>hello@example.com</span>
+            </a>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 12345 67890</span>
+            </a>
+
+            <a href="404.html" class="footer-contact-item">
+                <i class="fa-solid fa-headset"></i>
+                <span>Travel Support</span>
+            </a>
+        </div>
+
+        <!-- 5. Stay Inspired -->
+        <div class="footer-column footer-newsletter">
+            <h3 class="footer-title">Stay Inspired</h3>
+
+            <p>
+                Get travel inspiration for your next adventure.
+                Discover new destinations and plan your next getaway.
+            </p>
+
+            <a href="404.html"
+               class="footer-newsletter-btn">
+                Stay Connected
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="year"></span> SkyTrip.
+            All rights reserved.
+        </p>
+
+        <p class="footer-bottom-tagline">
+            Made for journeys beyond boundaries
+            <i class="fa-solid fa-plane"></i>
+        </p>
+
+        <a href="#home" class="footer-back-top">
+            Back to Top
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+
+    </div>
+</footer>
+
+    <script src="./js/service.js"></script>
+</body>
+</html>

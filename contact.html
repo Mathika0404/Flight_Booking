@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b49">
+    <title>SkyTrip | Explore Beyond Boundaries</title>
+
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+>
+
+
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader-orbit">
+            <div class="loader-globe">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <i class="fa-solid fa-plane loader-plane"></i>
+        </div>
+
+        <a class="loader-brand">
+            SKY<span>TRIP</span>
+        </a>
+        <p class="loader-tagline">FLY BEYOND BOUNDARIES</p>
+
+        <div class="loader-track">
+            <span id="loaderProgress"></span>
+        </div>
+
+        <div class="loader-bottom">
+            <span id="loaderText">Preparing your journey...</span>
+            <span id="loaderPercent">0%</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+
+            <a href="index.html" class="brand" aria-label="SkyTrip home">
+                <img src="images/stackly_logo.webp" alt="SkyTrip Logo"
+                     onerror="this.style.display='none'">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About Us</a></li>
+<li><a class="nav-link" href="service.html">Services</a></li>
+<li><a class="nav-link" href="blogs.html">Blogs</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+
+                <li class="mobile-login">
+                    <a class="login-btn" href="login.html">
+                        <i class="fa-solid fa-user"></i> Login
+                    </a>
+                </li>
+            </ul>
+
+            <a href="login.html" class="login-btn desktop-login">
+                <i class="fa-solid fa-user"></i>
+                <span>Login</span>
+            </a>
+
+        </nav>
+    </header>
+
+<!-- SKYTRIP — CONTACT HERO -->
+<section class="sky-contact-hero" id="contact-hero">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="contact-hero-bg"></div>
+    <div class="contact-hero-overlay"></div>
+
+    <!-- ANIMATED LIGHT EFFECT -->
+    <div class="contact-light-beam"></div>
+
+    <!-- FLIGHT PATH -->
+    <svg class="contact-flight-path"
+         viewBox="0 0 700 220"
+         fill="none"
+         aria-hidden="true">
+        <path
+            d="M10 185 C150 20, 280 230, 410 100 S590 20, 690 45"
+            stroke="rgba(255,255,255,0.5)"
+            stroke-width="1.5"
+            stroke-dasharray="7 10"
+        />
+    </svg>
+
+    <!-- ANIMATED PLANE -->
+    <div class="contact-plane-animation" aria-hidden="true">
+        <i class="ri-flight-takeoff-line"></i>
+    </div>
+
+    <!-- FLOATING ICONS -->
+    <div class="contact-floating-icon contact-icon-one"
+         aria-hidden="true">
+        <i class="ri-earth-line"></i>
+    </div>
+
+    <div class="contact-floating-icon contact-icon-two"
+         aria-hidden="true">
+        <i class="ri-compass-3-line"></i>
+    </div>
+
+    <div class="contact-floating-icon contact-icon-three"
+         aria-hidden="true">
+        <i class="ri-map-pin-line"></i>
+    </div>
+
+    <!-- HERO CONTENT -->
+    <div class="contact-hero-container">
+
+        <div class="contact-hero-content">
+
+            <div class="contact-hero-eyebrow contact-animate">
+                <span class="contact-eyebrow-line"></span>
+                WE'RE HERE FOR YOUR JOURNEY
+            </div>
+
+            <h1 class="contact-hero-title contact-animate">
+                Every Great Journey
+                <span>Starts With <em>Hello.</em></span>
+            </h1>
+
+            <p class="contact-hero-description contact-animate">
+                Questions about your next flight? Need a little travel
+                inspiration? Our team is here to help make your journey
+                smoother, simpler and more memorable.
+            </p>
+
+            <div class="contact-hero-actions contact-animate">
+
+                <a href="#contact-form" class="contact-primary-btn">
+                    LET'S TALK
+                    <i class="ri-arrow-right-up-line"></i>
+                </a>
+
+                <a href="404.html" class="contact-secondary-btn">
+                    GET TO KNOW US
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+
+            </div>
+
+            <!-- QUICK DETAILS -->
+            <div class="contact-hero-highlights contact-animate">
+
+                <div class="contact-highlight">
+                    <i class="ri-customer-service-2-line"></i>
+                    <div>
+                        <strong>Here to help</strong>
+                        <span>Your travel questions matter</span>
+                    </div>
+                </div>
+
+                <div class="contact-highlight-divider"></div>
+
+                <div class="contact-highlight">
+                    <i class="ri-flight-land-line"></i>
+                    <div>
+                        <strong>Travel with confidence</strong>
+                        <span>We're with you along the way</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE EDITORIAL TEXT -->
+        <div class="contact-hero-side contact-animate">
+
+            <span class="contact-side-line"></span>
+
+            <p>YOUR NEXT ADVENTURE</p>
+
+            <h2>
+                Begins<br>
+                With A<br>
+                <span>Conversation.</span>
+            </h2>
+
+            <div class="contact-side-footer">
+                <span>SKYTRIP</span>
+                <i class="ri-arrow-down-line"></i>
+                <span>LET'S CONNECT</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM ACCENT -->
+    <div class="contact-hero-bottom-line"></div>
+
+</section>
+
+
+<!-- CONTACT SUPPORT SECTION -->
+<section class="sky-contact-support" id="contact-support">
+
+    <div class="contact-support-container">
+
+        <div class="contact-support-heading reveal-support">
+            <span class="support-eyebrow">
+                <i class="ri-customer-service-2-line"></i>
+                YOUR JOURNEY, OUR PRIORITY
+            </span>
+
+            <h2>
+                How Can We <span>Help You?</span>
+            </h2>
+
+            <p>
+                From booking your next adventure to managing your trip,
+                our team is here to make every journey effortless.
+            </p>
+        </div>
+
+        <div class="contact-support-grid">
+
+            <a href="404.html" class="support-card">
+                <div class="support-card-top">
+                    <span class="support-number">01</span>
+                    <i class="ri-flight-takeoff-line support-icon"></i>
+                </div>
+                <h3>Flight Bookings</h3>
+                <p>
+                    Need help choosing flights, checking fares,
+                    or planning your next destination?
+                </p>
+                <span class="support-link">
+                    Explore Support <i class="ri-arrow-right-line"></i>
+                </span>
+            </a>
+
+            <a href="404.html" class="support-card">
+                <div class="support-card-top">
+                    <span class="support-number">02</span>
+                    <i class="ri-ticket-2-line support-icon"></i>
+                </div>
+                <h3>Booking & Changes</h3>
+                <p>
+                    Get assistance with booking details,
+                    itinerary updates, and cancellations.
+                </p>
+                <span class="support-link">
+                    Explore Support <i class="ri-arrow-right-line"></i>
+                </span>
+            </a>
+
+            <a href="404.html" class="support-card">
+                <div class="support-card-top">
+                    <span class="support-number">03</span>
+                    <i class="ri-luggage-cart-line support-icon"></i>
+                </div>
+                <h3>Baggage Assistance</h3>
+                <p>
+                    Find guidance on baggage allowances,
+                    luggage policies, and travel essentials.
+                </p>
+                <span class="support-link">
+                    Explore Support <i class="ri-arrow-right-line"></i>
+                </span>
+            </a>
+
+            <a href="404.html" class="support-card">
+                <div class="support-card-top">
+                    <span class="support-number">04</span>
+                    <i class="ri-customer-service-2-line support-icon"></i>
+                </div>
+                <h3>Personal Assistance</h3>
+                <p>
+                    Have a question? Connect with our team
+                    for friendly and reliable travel support.
+                </p>
+                <span class="support-link">
+                    Contact Our Team <i class="ri-arrow-right-line"></i>
+                </span>
+            </a>
+
+        </div>
+
+        <div class="support-bottom reveal-support">
+            <span class="support-bottom-line"></span>
+            <p>Every question matters. Every journey counts.</p>
+            <span class="support-bottom-line"></span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SKYTRIP CONTACT FORM -->
+<section class="sky-contact-form-section" id="contact-form">
+
+    <div class="contact-form-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="contact-form-info">
+
+            <span class="contact-form-eyebrow">
+                <i class="ri-send-plane-fill"></i>
+                LET'S CONNECT
+            </span>
+
+            <h2>
+                Let's Make Your
+                <span>Next Journey</span>
+                Unforgettable.
+            </h2>
+
+            <p class="contact-form-description">
+                Have a question, need booking assistance, or want help
+                planning your next trip? Send us a message and our team
+                will be happy to assist you.
+            </p>
+
+            <div class="contact-info-list">
+
+                <a href="mailto:support@skytrip.com" class="contact-info-item">
+                    <span class="contact-info-icon">
+                        <i class="ri-mail-send-line"></i>
+                    </span>
+                    <span>
+                        <small>EMAIL US</small>
+                        <strong>support@skytrip.com</strong>
+                    </span>
+                    <i class="ri-arrow-up-right-line contact-info-arrow"></i>
+                </a>
+
+                <a href="tel:+919876543210" class="contact-info-item">
+                    <span class="contact-info-icon">
+                        <i class="ri-phone-line"></i>
+                    </span>
+                    <span>
+                        <small>CALL OUR TEAM</small>
+                        <strong>+91 98765 43210</strong>
+                    </span>
+                    <i class="ri-arrow-up-right-line contact-info-arrow"></i>
+                </a>
+
+                <div class="contact-info-item">
+                    <span class="contact-info-icon">
+                        <i class="ri-time-line"></i>
+                    </span>
+                    <span>
+                        <small>SUPPORT HOURS</small>
+                        <strong>Monday – Saturday, 9 AM – 6 PM</strong>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="contact-form-note">
+                <i class="ri-shield-check-line"></i>
+                <span>Your information is handled with care.</span>
+            </div>
+
+            <div class="contact-form-decoration" aria-hidden="true">
+                <i class="ri-flight-takeoff-line"></i>
+            </div>
+
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="contact-form-panel">
+
+            <div class="contact-form-panel-heading">
+                <span class="form-step-label">WE'RE ALL EARS</span>
+                <h3>Send Us a Message</h3>
+                <p>Fill in the details below and we'll be in touch.</p>
+            </div>
+
+            <form id="skyTripContactForm" class="skytrip-contact-form">
+
+                <div class="contact-input-row">
+
+                    <div class="contact-input-group">
+                        <label for="contactName">Full Name *</label>
+                        <div class="contact-input-wrap">
+                            <i class="ri-user-3-line"></i>
+                            <input
+                                type="text"
+                                id="contactName"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="contact-input-group">
+                        <label for="contactEmail">Email Address *</label>
+                        <div class="contact-input-wrap">
+                            <i class="ri-mail-line"></i>
+                            <input
+                                type="email"
+                                id="contactEmail"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-input-row">
+
+                    <div class="contact-input-group">
+                        <label for="contactPhone">Phone Number</label>
+                        <div class="contact-input-wrap">
+                            <i class="ri-phone-line"></i>
+                            <input
+                                type="tel"
+                                id="contactPhone"
+                                name="phone"
+                                placeholder="+91 98765 43210"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="contact-input-group">
+                        <label for="contactSubject">Subject *</label>
+                        <div class="contact-input-wrap contact-select-wrap">
+                            <i class="ri-chat-3-line"></i>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="" disabled selected>
+                                    Select a subject
+                                </option>
+                                <option value="Flight Booking">Flight Booking</option>
+                                <option value="Booking Changes">Booking Changes</option>
+                                <option value="Cancellation">Cancellation</option>
+                                <option value="Baggage Assistance">Baggage Assistance</option>
+                                <option value="Payment Support">Payment Support</option>
+                                <option value="Other Enquiry">Other Enquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-input-group contact-message-group">
+                    <label for="contactMessage">Your Message *</label>
+                    <div class="contact-input-wrap contact-textarea-wrap">
+                        <i class="ri-message-2-line"></i>
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            rows="5"
+                            maxlength="1500"
+                            placeholder="Tell us how we can help you..."
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="contact-message-meta">
+                        <span>Share a few details so we can help.</span>
+                        <span id="contactCharCount">0 / 1500</span>
+                    </div>
+                </div>
+
+                <label class="contact-consent">
+                    <input type="checkbox" id="contactConsent" required>
+                    <span>
+                        I agree to be contacted regarding my enquiry.
+                    </span>
+                </label>
+
+                <button type="submit" class="contact-submit-btn">
+                    <span>Send Message</span>
+                    <i class="ri-arrow-right-up-line"></i>
+                </button>
+
+                <p class="contact-form-status"
+                   id="contactFormStatus"
+                   role="status"
+                   aria-live="polite"></p>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+<footer class="footer" id="footer">
+    <div class="footer-container">
+
+        <!-- 1. Brand Column -->
+        <div class="footer-column footer-about">
+
+<a href="index.html" class="footer-brand">
+    <img src="images/stackly_logo.webp"
+         alt="SkyTrip Logo"
+         class="footer-logo">
+</a>
+
+            <p class="footer-description">
+                Discover the world with SkyTrip. From spontaneous
+                getaways to carefully planned adventures, we help
+                make every journey smoother, easier, and more memorable.
+                Your next destination is just one flight away.
+            </p>
+
+            <div class="footer-socials">
+                <a href="404.html"
+                   aria-label="Facebook" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="Instagram" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="LinkedIn" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="YouTube" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 2. Quick Links -->
+        <div class="footer-column">
+            <h3 class="footer-title">Quick Links</h3>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="blogs.html">Travel Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- 3. Explore -->
+        <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+
+            <ul class="footer-links">
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Popular Destinations
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-plane"></i>
+                        Find Flights
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Travel Journal
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Help Center
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Privacy &amp; Policies
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 4. Contact Information -->
+        <div class="footer-column footer-contact">
+            <h3 class="footer-title">Get in Touch</h3>
+
+            <p class="footer-contact-intro">
+                Have a question about your next trip?
+                We'd love to hear from you.
+            </p>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <span>hello@example.com</span>
+            </a>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 12345 67890</span>
+            </a>
+
+            <a href="404.html" class="footer-contact-item">
+                <i class="fa-solid fa-headset"></i>
+                <span>Travel Support</span>
+            </a>
+        </div>
+
+        <!-- 5. Stay Inspired -->
+        <div class="footer-column footer-newsletter">
+            <h3 class="footer-title">Stay Inspired</h3>
+
+            <p>
+                Get travel inspiration for your next adventure.
+                Discover new destinations and plan your next getaway.
+            </p>
+
+            <a href="404.html"
+               class="footer-newsletter-btn">
+                Stay Connected
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="year"></span> SkyTrip.
+            All rights reserved.
+        </p>
+
+        <p class="footer-bottom-tagline">
+            Made for journeys beyond boundaries
+            <i class="fa-solid fa-plane"></i>
+        </p>
+
+        <a href="#home" class="footer-back-top">
+            Back to Top
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+
+    </div>
+</footer>
+
+    <script src="./js/contact.js"></script>
+</body>
+</html>

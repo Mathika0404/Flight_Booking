@@ -1,0 +1,1069 @@
+/* =========================================
+   SKYTRIP USER DASHBOARD
+   Royal navy + white + gold
+========================================= */
+
+.user-dashboard {
+  --user-navy: #061638;
+  --user-navy-light: #102b57;
+  --user-gold: #d7a84f;
+  --user-gold-light: #f1d48d;
+  --user-bg: #f5f7fb;
+  --user-text: #15233e;
+  --user-muted: #8490a4;
+  overflow-x: clip;
+}
+
+.user-dashboard *,
+.user-dashboard *::before,
+.user-dashboard *::after {
+  box-sizing: border-box;
+}
+
+.user-dashboard [hidden] {
+  display: none !important;
+}
+
+.user-dashboard .sidebar-logo {
+  display: block;
+  width: 155px;
+  max-width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.user-dashboard .mobile-brand-logo {
+  display: block;
+  width: 112px;
+  max-width: 100%;
+  max-height: 36px;
+  object-fit: contain;
+}
+
+.user-dashboard .mobile-brand {
+  min-width: 0;
+  max-width: 38%;
+}
+
+.user-dashboard .user-hero {
+  margin-bottom: 29px;
+}
+
+.user-dashboard .user-hero .hero-art {
+  pointer-events: none;
+}
+
+/* Page headings */
+
+.user-dashboard .page-title-heading {
+  margin-bottom: 23px;
+}
+
+.user-dashboard .page-title-heading h2 {
+  margin: 9px 0 7px;
+  color: var(--user-text);
+  font: 800 clamp(25px, 3vw, 34px) Manrope, sans-serif;
+  letter-spacing: -1px;
+}
+
+.user-dashboard .page-title-heading p {
+  margin: 0;
+  color: var(--user-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Next trip card */
+
+.user-dashboard .next-trip-panel {
+  padding: 23px;
+  margin-bottom: 29px;
+  overflow: hidden;
+}
+
+.user-dashboard .next-trip-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 21px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.user-dashboard .next-trip-icon {
+  width: 47px;
+  height: 47px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff4dc;
+  color: #b88932;
+  font-size: 19px;
+}
+
+.user-dashboard .next-trip-top > div:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.user-dashboard .trip-status {
+  display: block;
+  margin-bottom: 6px;
+  color: #238567;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.user-dashboard .next-trip-top h3 {
+  margin: 0 0 6px;
+  color: var(--user-text);
+  font: 800 19px Manrope, sans-serif;
+}
+
+.user-dashboard .next-trip-top h3 i {
+  margin: 0 7px;
+  color: var(--user-gold);
+  font-size: 13px;
+}
+
+.user-dashboard .next-trip-top p {
+  margin: 0;
+  color: var(--user-muted);
+  font-size: 11px;
+}
+
+.user-dashboard .trip-route {
+  display: grid;
+  grid-template-columns: 1fr minmax(120px, 1.2fr) 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: 25px 8px;
+}
+
+.user-dashboard .trip-route > div:not(.trip-route-middle) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-dashboard .trip-route > div:last-child {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.user-dashboard .trip-route > div > strong {
+  color: var(--user-navy);
+  font: 800 29px Manrope, sans-serif;
+  letter-spacing: -.8px;
+}
+
+.user-dashboard .trip-route > div > span {
+  color: #69768c;
+  font-size: 11px;
+}
+
+.user-dashboard .trip-route > div > small {
+  color: #9aa4b5;
+  font-size: 10px;
+}
+
+.user-dashboard .trip-route-middle {
+  text-align: center;
+  color: #8c98ab;
+  font-size: 10px;
+}
+
+.user-dashboard .trip-route-line {
+  position: relative;
+  height: 1px;
+  margin: 12px 0;
+  background: #d7a84f;
+}
+
+.user-dashboard .trip-route-line i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 9px;
+  background: #fff;
+  color: #bc8d38;
+  transform: translate(-50%, -50%);
+}
+
+.user-dashboard .next-trip-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 17px;
+  padding-top: 18px;
+  border-top: 1px solid #edf0f5;
+}
+
+.user-dashboard .next-trip-footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-dashboard .next-trip-footer small {
+  color: #9aa4b5;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+
+.user-dashboard .next-trip-footer strong {
+  color: #283750;
+  font-size: 11px;
+}
+
+.user-dashboard .next-trip-footer .primary-button {
+  margin-left: auto;
+}
+
+/* Quick action cards */
+
+.user-dashboard .quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.user-dashboard .quick-action-card {
+  position: relative;
+  min-width: 0;
+  min-height: 172px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 19px;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--user-text);
+  text-align: left;
+  box-shadow: 0 5px 20px #06163804;
+  transition: transform .28s, box-shadow .28s, border-color .28s;
+}
+
+.user-dashboard .quick-action-card:hover {
+  transform: translateY(-5px);
+  border-color: #e3d4b4;
+  box-shadow: 0 15px 28px #0616380d;
+}
+
+.user-dashboard .quick-action-icon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.user-dashboard .quick-action-card > strong {
+  font: 800 12px Manrope, sans-serif;
+}
+
+.user-dashboard .quick-action-card > small {
+  max-width: 180px;
+  color: var(--user-muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.user-dashboard .action-arrow {
+  position: absolute;
+  top: 20px;
+  right: 17px;
+  color: #b6a071;
+  font-size: 11px;
+  transition: transform .25s;
+}
+
+.user-dashboard .quick-action-card:hover .action-arrow {
+  transform: translateX(4px);
+}
+
+/* Flight search */
+
+.user-dashboard .booking-search-panel {
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.user-dashboard .booking-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.user-dashboard .booking-panel-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff4dc;
+  color: #b88932;
+  font-size: 19px;
+}
+
+.user-dashboard .booking-panel-heading h3 {
+  margin: 0 0 6px;
+  font: 800 16px Manrope, sans-serif;
+}
+
+.user-dashboard .booking-panel-heading p {
+  margin: 0;
+  color: var(--user-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.user-dashboard .trip-type-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 21px 0;
+}
+
+.user-dashboard .trip-type-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #53627a;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.user-dashboard .trip-type-options input {
+  accent-color: var(--user-navy);
+}
+
+.user-dashboard .flight-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px 15px;
+}
+
+.user-dashboard .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.user-dashboard .form-field > span:first-child {
+  color: #4d5c74;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.user-dashboard .form-field input,
+.user-dashboard .form-field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 11px 12px;
+  border: 1px solid #e3e8f0;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #283750;
+  font-size: 11px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.user-dashboard .form-field input:focus,
+.user-dashboard .form-field select:focus {
+  border-color: #c7a052;
+  box-shadow: 0 0 0 3px #d7a84f1b;
+}
+
+.user-dashboard .form-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-dashboard .form-input-wrap > i {
+  position: absolute;
+  left: 12px;
+  z-index: 1;
+  color: #b88b39;
+  font-size: 12px;
+}
+
+.user-dashboard .form-input-wrap input {
+  padding-left: 35px;
+}
+
+.user-dashboard .flight-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  padding-top: 19px;
+  border-top: 1px solid #edf0f5;
+}
+
+.user-dashboard .flight-form-footer p {
+  margin: 0;
+  color: #8793a7;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.user-dashboard .flight-form-footer p i {
+  margin-right: 5px;
+  color: #26936f;
+}
+
+.user-dashboard .travel-tip-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+}
+
+.user-dashboard .travel-tip-panel h3 {
+  margin: 1px 0 7px;
+  font: 800 13px Manrope, sans-serif;
+}
+
+.user-dashboard .travel-tip-panel p {
+  margin: 0;
+  color: var(--user-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Results and demo notices */
+
+.user-dashboard .inline-result {
+  margin-top: 18px;
+  padding: 15px;
+  border: 1px solid #e9dfc8;
+  border-radius: 10px;
+  background: #fffaf0;
+  color: #66532c;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.user-dashboard .inline-result[hidden] {
+  display: none !important;
+}
+
+.user-dashboard .demo-note {
+  margin: 18px 0 0;
+  color: #8a95a8;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.user-dashboard .demo-note i {
+  margin-right: 5px;
+  color: #b88b39;
+}
+
+/* Trips */
+
+.user-dashboard .trip-filter-bar {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.user-dashboard .trip-filter {
+  padding: 10px 15px;
+  border: 1px solid #e5eaf1;
+  border-radius: 8px;
+  background: #fff;
+  color: #758198;
+  font-size: 10px;
+  font-weight: 700;
+  transition: all .2s;
+}
+
+.user-dashboard .trip-filter:hover,
+.user-dashboard .trip-filter.active {
+  border-color: var(--user-navy);
+  background: var(--user-navy);
+  color: #fff;
+}
+
+.user-dashboard .my-trips-list {
+  display: grid;
+  gap: 16px;
+}
+
+.user-dashboard .trip-card {
+  padding: 22px;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.user-dashboard .trip-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #0616380d;
+}
+
+.user-dashboard .trip-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-dashboard .trip-card-label {
+  color: #8b96a8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+
+.user-dashboard .trip-card-label i {
+  margin-right: 5px;
+  color: #b88b39;
+}
+
+.user-dashboard .trip-card-route {
+  display: grid;
+  grid-template-columns: minmax(60px, 1fr) minmax(100px, 1.4fr) minmax(60px, 1fr);
+  align-items: center;
+  gap: 15px;
+  padding: 25px 4px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.user-dashboard .trip-card-route > div:not(.trip-card-flight-line) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.user-dashboard .trip-card-route > div:last-child {
+  align-items: flex-end;
+}
+
+.user-dashboard .trip-card-route > div > strong {
+  color: var(--user-navy);
+  font: 800 25px Manrope, sans-serif;
+}
+
+.user-dashboard .trip-card-route > div > span {
+  color: #8793a7;
+  font-size: 10px;
+}
+
+.user-dashboard .trip-card-flight-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  color: #b88b39;
+}
+
+.user-dashboard .trip-card-flight-line > i {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.user-dashboard .trip-card-flight-line > i::before {
+  position: relative;
+  z-index: 1;
+  padding: 0 8px;
+  background: #fff;
+}
+
+.user-dashboard .trip-card-flight-line > i::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #dfc98e;
+}
+
+.user-dashboard .trip-card-flight-line > span {
+  color: #8793a7;
+  font-size: 9px;
+  text-align: center;
+}
+
+.user-dashboard .trip-card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding: 16px 0;
+}
+
+.user-dashboard .trip-card-details span {
+  color: #758198;
+  font-size: 10px;
+}
+
+.user-dashboard .trip-card-details i {
+  margin-right: 5px;
+  color: #b88b39;
+}
+
+.user-dashboard .trip-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #edf0f5;
+}
+
+/* Check-in */
+
+.user-dashboard .checkin-panel {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px;
+  text-align: center;
+}
+
+.user-dashboard .checkin-illustration {
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fff4dc, #fffaf0);
+  color: #b88932;
+  font-size: 28px;
+}
+
+.user-dashboard .checkin-panel > h3 {
+  margin-bottom: 9px;
+  font: 800 21px Manrope, sans-serif;
+}
+
+.user-dashboard .checkin-panel > p:not(.demo-note) {
+  max-width: 420px;
+  margin: 0 auto;
+  color: var(--user-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.user-dashboard .checkin-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 26px;
+  text-align: left;
+}
+
+.user-dashboard .checkin-form .primary-button {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  min-height: 44px;
+}
+
+/* Profile */
+
+.user-dashboard .profile-panel {
+  max-width: 850px;
+  padding: 25px;
+}
+
+.user-dashboard .profile-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.user-dashboard .profile-large-avatar {
+  width: 67px;
+  height: 67px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 21px;
+  background: linear-gradient(145deg, #f4dfa7, #c99a42);
+  color: var(--user-navy);
+  font: 800 24px Manrope, sans-serif;
+}
+
+.user-dashboard .profile-panel-header h3 {
+  margin: 0 0 5px;
+  font: 800 17px Manrope, sans-serif;
+}
+
+.user-dashboard .profile-panel-header p {
+  margin: 0 0 8px;
+  color: var(--user-muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.user-dashboard .profile-member-tag {
+  color: #238567;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.user-dashboard .profile-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+  padding-top: 23px;
+}
+
+.user-dashboard .profile-form-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 17px;
+  border-top: 1px solid #edf0f5;
+}
+
+/* Support */
+
+.user-dashboard .support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.user-dashboard .support-option {
+  padding: 22px;
+}
+
+.user-dashboard .support-option h3 {
+  margin: 16px 0 8px;
+  font: 800 14px Manrope, sans-serif;
+}
+
+.user-dashboard .support-option p {
+  min-height: 52px;
+  margin-bottom: 12px;
+  color: var(--user-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.user-dashboard .support-contact-panel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  margin-top: 18px;
+}
+
+.user-dashboard .support-contact-panel > i {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #e9f2ff;
+  color: #3f77d1;
+  font-size: 18px;
+}
+
+.user-dashboard .support-contact-panel > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-dashboard .support-contact-panel h3 {
+  margin: 0 0 6px;
+  font: 800 13px Manrope, sans-serif;
+}
+
+.user-dashboard .support-contact-panel p {
+  margin: 0;
+  color: var(--user-muted);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* Reveal animations */
+
+.user-dashboard .reveal {
+  animation: userFadeUp .6s ease both;
+}
+
+.user-dashboard .page-content[hidden] {
+  display: none !important;
+}
+
+@keyframes userFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(13px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .user-dashboard .quick-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .user-dashboard .flight-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .user-dashboard .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .user-dashboard .user-hero {
+    min-height: 210px;
+  }
+
+  .user-dashboard .next-trip-panel {
+    padding: 17px;
+  }
+
+  .user-dashboard .next-trip-top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .user-dashboard .next-trip-top h3 {
+    font-size: 16px;
+  }
+
+  .user-dashboard .next-trip-top > .status-badge {
+    margin-left: auto;
+  }
+
+  .user-dashboard .trip-route {
+    gap: 10px;
+    padding: 23px 0;
+  }
+
+  .user-dashboard .trip-route > div > strong {
+    font-size: 25px;
+  }
+
+  .user-dashboard .next-trip-footer {
+    align-items: flex-start;
+  }
+
+  .user-dashboard .next-trip-footer .primary-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .user-dashboard .booking-search-panel,
+  .user-dashboard .profile-panel {
+    padding: 18px;
+  }
+
+  .user-dashboard .checkin-panel {
+    padding: 25px 18px;
+  }
+
+  .user-dashboard .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .user-dashboard .support-option p {
+    min-height: 0;
+  }
+
+  .user-dashboard .support-contact-panel {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .user-dashboard .support-contact-panel .subtle-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+  .user-dashboard .sidebar-logo {
+    width: 140px;
+  }
+
+  .user-dashboard .mobile-brand {
+    max-width: 34%;
+  }
+
+  .user-dashboard .mobile-brand-logo {
+    width: 90px;
+    max-height: 30px;
+  }
+
+  .user-dashboard .page-title-heading h2 {
+    font-size: 24px;
+  }
+
+  .user-dashboard .quick-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .user-dashboard .quick-action-card {
+    min-height: 158px;
+    padding: 14px;
+  }
+
+  .user-dashboard .quick-action-card > strong {
+    font-size: 11px;
+  }
+
+  .user-dashboard .quick-action-card > small {
+    font-size: 9px;
+  }
+
+  .user-dashboard .trip-route {
+    grid-template-columns: minmax(48px, 1fr) minmax(78px, 1.2fr) minmax(48px, 1fr);
+    gap: 7px;
+  }
+
+  .user-dashboard .trip-route > div > strong {
+    font-size: 22px;
+  }
+
+  .user-dashboard .trip-route > div > span,
+  .user-dashboard .trip-route > div > small {
+    font-size: 9px;
+  }
+
+  .user-dashboard .next-trip-top {
+    gap: 10px;
+  }
+
+  .user-dashboard .next-trip-icon {
+    width: 39px;
+    height: 39px;
+    font-size: 15px;
+  }
+
+  .user-dashboard .next-trip-top h3 {
+    font-size: 14px;
+  }
+
+  .user-dashboard .next-trip-top p {
+    font-size: 10px;
+  }
+
+  .user-dashboard .next-trip-top > .status-badge {
+    font-size: 7px;
+    padding: 5px 6px;
+  }
+
+  .user-dashboard .flight-form-grid,
+  .user-dashboard .checkin-form,
+  .user-dashboard .profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .user-dashboard .profile-form-footer {
+    grid-column: auto;
+  }
+
+  .user-dashboard .flight-form-footer {
+    align-items: stretch;
+  }
+
+  .user-dashboard .flight-form-footer .primary-button {
+    width: 100%;
+  }
+
+  .user-dashboard .trip-card {
+    padding: 15px;
+  }
+
+  .user-dashboard .trip-card-route {
+    grid-template-columns: minmax(45px, 1fr) minmax(65px, 1.2fr) minmax(45px, 1fr);
+    gap: 8px;
+    padding: 21px 0;
+  }
+
+  .user-dashboard .trip-card-route > div > strong {
+    font-size: 21px;
+  }
+
+  .user-dashboard .trip-card-route > div > span {
+    font-size: 9px;
+  }
+
+  .user-dashboard .trip-card-flight-line > span {
+    font-size: 8px;
+  }
+
+  .user-dashboard .trip-card-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-dashboard .trip-card-actions {
+    align-items: flex-start;
+  }
+
+  .user-dashboard .trip-card-actions .subtle-button {
+    width: auto;
+    height: auto;
+    padding: 9px 10px;
+    font-size: 9px;
+  }
+
+  .user-dashboard .profile-panel-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .user-dashboard .profile-large-avatar {
+    width: 53px;
+    height: 53px;
+    border-radius: 16px;
+    font-size: 20px;
+  }
+
+  .user-dashboard .support-contact-panel > div {
+    flex-basis: calc(100% - 65px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-dashboard *,
+  .user-dashboard *::before,
+  .user-dashboard *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

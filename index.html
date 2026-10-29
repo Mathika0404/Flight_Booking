@@ -1,0 +1,1725 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b49">
+    <title>SkyTrip | Explore Beyond Boundaries</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader-orbit">
+            <div class="loader-globe">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <i class="fa-solid fa-plane loader-plane"></i>
+        </div>
+
+        <a class="loader-brand">
+            SKY<span>TRIP</span>
+        </a>
+        <p class="loader-tagline">FLY BEYOND BOUNDARIES</p>
+
+        <div class="loader-track">
+            <span id="loaderProgress"></span>
+        </div>
+
+        <div class="loader-bottom">
+            <span id="loaderText">Preparing your journey...</span>
+            <span id="loaderPercent">0%</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+
+            <a href="index.html" class="brand" aria-label="SkyTrip home">
+                <img src="images/stackly_logo.webp" alt="SkyTrip Logo"
+                     onerror="this.style.display='none'">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About Us</a></li>
+<li><a class="nav-link" href="service.html">Services</a></li>
+<li><a class="nav-link" href="blogs.html">Blogs</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+
+                <li class="mobile-login">
+                    <a class="login-btn" href="login.html">
+                        <i class="fa-solid fa-user"></i> Login
+                    </a>
+                </li>
+            </ul>
+
+            <a href="login.html" class="login-btn desktop-login">
+                <i class="fa-solid fa-user"></i>
+                <span>Login</span>
+            </a>
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME LANDING -->
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-particles"></div>
+
+            <div class="hero-content container">
+
+                <div class="hero-copy">
+                    <div class="eyebrow reveal">
+                        <span class="eyebrow-line"></span>
+                        <i class="fa-solid fa-plane"></i>
+                        EXPLORE · DISCOVER · FLY HIGHER
+                    </div>
+
+                    <h1 class="hero-title reveal">
+                        Your Next<br>
+                        <span class="gold-text">Journey</span>
+                        Awaits<span class="title-dot">.</span>
+                    </h1>
+
+                    <p class="hero-description reveal">
+                        Discover extraordinary destinations and book
+                        your next flight with ease. Your world is waiting.
+                    </p>
+
+                    <div class="hero-actions reveal">
+                        <a href="#booking" class="btn btn-gold">
+                            Book Your Flight
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                        <a href="404.html" class="btn btn-outline">
+                            Explore Destinations
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust reveal">
+                        <div class="avatar-stack">
+                            <span><i class="fa-solid fa-user"></i></span>
+                            <span><i class="fa-solid fa-user"></i></span>
+                            <span><i class="fa-solid fa-user"></i></span>
+                        </div>
+                        <div>
+                            <strong>Travel Beyond Limits</strong>
+                            <p>Your journey, our priority.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flight-badge badge-one">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <div>
+                        <strong>Global Destinations</strong>
+                        <span>Explore the world</span>
+                    </div>
+                </div>
+
+                <div class="flight-badge badge-two">
+                    <i class="fa-solid fa-ticket"></i>
+                    <div>
+                        <strong>Easy Booking</strong>
+                        <span>Your next trip starts here</span>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span></span>
+                    SCROLL TO EXPLORE
+                </div>
+            </div>
+        </section>
+
+        <!-- FLIGHT SEARCH -->
+        <section class="booking-section container" id="booking">
+            <div class="booking-card reveal">
+
+                <div class="booking-heading">
+                    <div>
+                        <span class="section-kicker">PLAN YOUR TRIP</span>
+                        <h2>Find Your Perfect Flight</h2>
+                    </div>
+                    <i class="fa-solid fa-plane-departure booking-icon"></i>
+                </div>
+
+                <form id="flightForm">
+                    <div class="booking-grid">
+
+                        <label class="field">
+                            <span>From</span>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" name="from"
+                                       placeholder="Departure city" required>
+                            </div>
+                        </label>
+
+                        <button type="button" class="swap-btn"
+                                id="swapCities" aria-label="Swap cities">
+                            <i class="fa-solid fa-right-left"></i>
+                        </button>
+
+                        <label class="field">
+                            <span>To</span>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" name="to"
+                                       placeholder="Arrival city" required>
+                            </div>
+                        </label>
+
+                        <label class="field">
+                            <span>Departure</span>
+                            <div class="input-wrap">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="date" name="departure" required>
+                            </div>
+                        </label>
+
+                        <label class="field">
+                            <span>Passengers</span>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-users"></i>
+                                <select name="passengers">
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                    <option value="5">5 Passengers</option>
+                                </select>
+                            </div>
+                        </label>
+
+                        <button type="submit" class="btn btn-blue search-btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Search Flights
+                        </button>
+
+                    </div>
+                </form>
+
+                <p class="form-message" id="formMessage" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="benefits container" id="about">
+            <div class="benefit reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-tags"></i></div>
+                <div>
+                    <h3>Best Value</h3>
+                    <p>Discover great travel options.</p>
+                </div>
+            </div>
+
+            <div class="benefit reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-globe"></i></div>
+                <div>
+                    <h3>Worldwide Travel</h3>
+                    <p>Find your next destination.</p>
+                </div>
+            </div>
+
+            <div class="benefit reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                    <h3>Travel Assistance</h3>
+                    <p>We're here to help.</p>
+                </div>
+            </div>
+
+            <div class="benefit reveal">
+                <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                    <h3>Secure Experience</h3>
+                    <p>Designed with your safety in mind.</p>
+                </div>
+            </div>
+        </section>
+
+
+<!-- PREMIUM TRAVEL SERVICES -->
+<section class="travel-services" id="services">
+
+    <div class="services-container">
+
+        <!-- SECTION HEADER -->
+        <div class="services-heading reveal">
+
+            <div class="services-eyebrow">
+                <span></span>
+                <i class="fa-solid fa-plane-departure"></i>
+                DISCOVER OUR SERVICES
+                <span></span>
+            </div>
+
+            <h2>
+                Every Journey Deserves
+                <span class="service-gold-text">Something Extraordinary.</span>
+            </h2>
+
+            <p>
+                From finding the perfect flight to planning your dream
+                vacation, we bring every part of your travel experience
+                together in one seamless journey.
+            </p>
+
+            <div class="services-heading-decoration">
+                <span></span>
+                <i class="fa-solid fa-star"></i>
+                <span></span>
+            </div>
+
+        </div>
+
+        <!-- SERVICES GRID -->
+        <div class="services-grid">
+
+            <!-- SERVICE 1: FLIGHT BOOKING -->
+            <article class="service-card reveal">
+
+                <div class="service-image">
+                    <img
+                        src="images/flight2.webp"
+                        alt="Passenger airplane flying through blue skies"
+                        loading="lazy"
+                    >
+
+                    <div class="service-image-overlay"></div>
+
+                    <span class="service-number">01</span>
+
+                    <div class="service-floating-icon">
+                        <i class="fa-solid fa-plane"></i>
+                    </div>
+
+                    <span class="service-image-label">
+                        <i class="fa-solid fa-circle-check"></i>
+                        FLIGHT BOOKING
+                    </span>
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        <i class="fa-solid fa-compass"></i>
+                        YOUR JOURNEY STARTS HERE
+                    </div>
+
+                    <h3>Seamless Flight Booking</h3>
+
+                    <p>
+                        Explore routes, compare available fares and
+                        discover flight options that suit your travel
+                        plans, schedule and budget.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Domestic & international routes
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Flexible travel date options
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Convenient booking experience
+                        </li>
+                    </ul>
+
+                    <a href="404.html" class="service-link">
+                        Explore Flights
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                </div>
+            </article>
+
+            <!-- SERVICE 2: HOTEL BOOKING -->
+            <article class="service-card reveal">
+
+                <div class="service-image">
+                    <img
+                        src="images/flight3.webp"
+                        alt="Luxury hotel overlooking a scenic destination"
+                        loading="lazy"
+                    >
+
+                    <div class="service-image-overlay"></div>
+
+                    <span class="service-number">02</span>
+
+                    <div class="service-floating-icon">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+
+                    <span class="service-image-label">
+                        <i class="fa-solid fa-bed"></i>
+                        STAY COMFORTABLY
+                    </span>
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        <i class="fa-solid fa-key"></i>
+                        YOUR HOME AWAY FROM HOME
+                    </div>
+
+                    <h3>Hotel Reservations</h3>
+
+                    <p>
+                        Find accommodation for business trips,
+                        family holidays or romantic getaways,
+                        from comfortable stays to luxury retreats.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Hotels for different budgets
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Destination-based stays
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Convenient stay planning
+                        </li>
+                    </ul>
+
+                    <a href="404.html" class="service-link">
+                        Discover Stays
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                </div>
+            </article>
+
+            <!-- SERVICE 3: HOLIDAY PACKAGES -->
+            <article class="service-card reveal">
+
+                <div class="service-image">
+                    <img
+                        src="images/flight4.webp"
+                        alt="Beautiful tropical island destination"
+                        loading="lazy"
+                    >
+
+                    <div class="service-image-overlay"></div>
+
+                    <span class="service-number">03</span>
+
+                    <div class="service-floating-icon">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+
+                    <span class="service-image-label">
+                        <i class="fa-solid fa-suitcase-rolling"></i>
+                        HOLIDAY EXPERIENCES
+                    </span>
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        MAKE MEMORIES
+                    </div>
+
+                    <h3>Curated Holiday Packages</h3>
+
+                    <p>
+                        Get inspired by beautiful destinations and
+                        plan memorable escapes with itineraries
+                        tailored to your interests.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Family holiday inspiration
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Honeymoon & romantic escapes
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Adventure & leisure trips
+                        </li>
+                    </ul>
+
+                    <a href="404.html" class="service-link">
+                        Explore Packages
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                </div>
+            </article>
+
+            <!-- SERVICE 4: AIRPORT TRANSFERS -->
+            <article class="service-card reveal">
+
+                <div class="service-image">
+                    <img
+                        src="images/flight5.webp"
+                        alt="Premium vehicle ready for airport transportation"
+                        loading="lazy"
+                    >
+
+                    <div class="service-image-overlay"></div>
+
+                    <span class="service-number">04</span>
+
+                    <div class="service-floating-icon">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+
+                    <span class="service-image-label">
+                        <i class="fa-solid fa-route"></i>
+                        GROUND TRANSPORT
+                    </span>
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-category">
+                        <i class="fa-solid fa-location-dot"></i>
+                        FROM AIRPORT TO DESTINATION
+                    </div>
+
+                    <h3>Airport Transfer Services</h3>
+
+                    <p>
+                        Plan your airport-to-hotel journey in advance
+                        and explore convenient transport options
+                        for a smoother travel experience.
+                    </p>
+
+                    <ul class="service-features">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Airport pickup planning
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Private transfer options
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Easier onward travel
+                        </li>
+                    </ul>
+
+                    <a href="404.html" class="service-link">
+                        Plan Your Transfer
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                </div>
+            </article>
+
+        </div>
+
+        <!-- BOTTOM CTA -->
+        <div class="services-cta reveal">
+
+            <div class="services-cta-icon">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+
+            <div class="services-cta-content">
+                <span>YOUR NEXT ADVENTURE AWAITS</span>
+                <h3>Ready to Make Your Next Journey Special?</h3>
+                <p>
+                    Start exploring your options and plan a journey
+                    that feels uniquely yours.
+                </p>
+            </div>
+
+            <a href="404.html" class="services-cta-button">
+                Start Exploring
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <div class="services-cta-decoration">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- FLIGHT BOOKING JOURNAL -->
+<section class="travel-journal" id="blogs">
+
+    <div class="journal-orb journal-orb-one"></div>
+    <div class="journal-orb journal-orb-two"></div>
+    <div class="journal-grid-pattern"></div>
+
+    <div class="journal-container">
+
+        <!-- Heading -->
+        <div class="journal-heading journal-reveal">
+
+            <div class="journal-kicker">
+                <span class="journal-kicker-line"></span>
+                <span>THE FLIGHT JOURNAL</span>
+                <span class="journal-kicker-line"></span>
+            </div>
+
+            <h2>
+                Your Journey
+                <span class="journal-gold-text">Starts Here.</span>
+            </h2>
+
+            <p>
+                Discover smarter ways to book flight tickets, find
+                better fares, prepare for take-off and make every
+                journey more comfortable.
+            </p>
+
+            <div class="journal-heading-decoration">
+                <span></span>
+                <i class="fa-solid fa-plane"></i>
+                <span></span>
+            </div>
+
+        </div>
+
+        <!-- Featured article -->
+        <article class="journal-featured journal-reveal">
+
+            <div class="journal-featured-image">
+
+                <img
+                    src="./images/flight1.webp"
+                    alt="Passenger airplane flying above the clouds"
+                    loading="lazy"
+                >
+
+                <div class="journal-image-shade"></div>
+
+                <span class="journal-featured-label">
+                    <i class="fa-solid fa-star"></i>
+                    FEATURED GUIDE
+                </span>
+
+                <div class="journal-featured-content">
+
+                    <span class="journal-category">
+                        FLIGHT BOOKING GUIDE
+                    </span>
+
+                    <h3>
+                        Your Next Adventure
+                        <span>Begins With One Ticket.</span>
+                    </h3>
+
+                    <p>
+                        From choosing your destination to completing
+                        your reservation, discover the essentials
+                        for planning a smoother flight experience.
+                    </p>
+
+                    <a href="404.html" class="journal-read-link">
+                        Explore Booking Tips
+                        <span class="journal-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="journal-featured-side">
+
+                <div class="journal-side-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </div>
+
+                <span>TRAVEL SMARTER</span>
+
+                <h4>
+                    Better planning.
+                    Smoother flying.
+                </h4>
+
+                <p>
+                    Prepare for your next flight with useful booking
+                    tips, travel checklists and airport essentials.
+                </p>
+
+                <div class="journal-side-stats">
+
+                    <div>
+                        <strong>01</strong>
+                        <span>Compare</span>
+                    </div>
+
+                    <div>
+                        <strong>02</strong>
+                        <span>Book</span>
+                    </div>
+
+                    <div>
+                        <strong>03</strong>
+                        <span>Fly</span>
+                    </div>
+
+                </div>
+
+                <div class="journal-side-plane">
+                    <i class="fa-solid fa-plane-departure"></i>
+                </div>
+
+            </div>
+
+        </article>
+
+        <!-- Article heading -->
+        <div class="journal-list-heading journal-reveal">
+
+            <div>
+                <span class="journal-small-kicker">
+                    YOUR GUIDE TO BETTER TRAVEL
+                </span>
+
+                <h3>Everything Before Take-Off</h3>
+            </div>
+
+            <a href="404.html" class="journal-view-all">
+                View All Articles
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+        <!-- Flight booking article cards -->
+        <div class="journal-cards">
+
+            <!-- Card 1 -->
+            <article class="journal-card journal-reveal">
+
+                <a href="404.html" class="journal-card-image">
+
+                    <img
+                        src="./images/flight2.webp"
+                        alt="Airplane preparing for a flight"
+                        loading="lazy"
+                    >
+
+                    <span class="journal-card-number">01</span>
+
+                    <span class="journal-image-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </a>
+
+                <div class="journal-card-body">
+
+                    <div class="journal-card-meta">
+                        <span>BOOKING TIPS</span>
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            5 MIN READ
+                        </span>
+                    </div>
+
+                    <h4>
+                        <a href="404.html">
+                            How To Find The Right Flight Ticket For Your Trip
+                        </a>
+                    </h4>
+
+                    <p>
+                        Learn how to compare flight schedules, baggage
+                        allowances, ticket conditions and total fares
+                        before making a reservation.
+                    </p>
+
+                    <a href="404.html" class="journal-card-link">
+                        Read Article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Card 2 -->
+            <article class="journal-card journal-reveal">
+
+                <a href="404.html" class="journal-card-image">
+
+                    <img
+                        src="images/service.webp"
+                        alt="Airplane wing above clouds during a journey"
+                        loading="lazy"
+                    >
+
+                    <span class="journal-card-number">02</span>
+
+                    <span class="journal-image-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </a>
+
+                <div class="journal-card-body">
+
+                    <div class="journal-card-meta">
+                        <span>SMART SAVINGS</span>
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            4 MIN READ
+                        </span>
+                    </div>
+
+                    <h4>
+                        <a href="404.html">
+                            Smart Ways To Plan Your Flight Booking Budget
+                        </a>
+                    </h4>
+
+                    <p>
+                        Understand how travel dates, extra baggage,
+                        seat selection and booking conditions can
+                        affect the overall cost of your trip.
+                    </p>
+
+                    <a href="404.html" class="journal-card-link">
+                        Read Article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Card 3 -->
+            <article class="journal-card journal-reveal">
+
+                <a href="404.html" class="journal-card-image">
+
+                    <img
+                        src="images/flight1.webp"
+                        alt="Passenger aircraft cruising through the sky"
+                        loading="lazy"
+                    >
+
+                    <span class="journal-card-number">03</span>
+
+                    <span class="journal-image-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </a>
+
+                <div class="journal-card-body">
+
+                    <div class="journal-card-meta">
+                        <span>TRAVEL CHECKLIST</span>
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            6 MIN READ
+                        </span>
+                    </div>
+
+                    <h4>
+                        <a href="404.html">
+                            Your Essential Checklist Before Boarding A Flight
+                        </a>
+                    </h4>
+
+                    <p>
+                        Get ready for departure with practical reminders
+                        for travel documents, check-in, baggage and
+                        reaching the airport on time.
+                    </p>
+
+                    <a href="404.html" class="journal-card-link">
+                        Read Article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <!-- Booking CTA -->
+        <div class="journal-bottom-cta journal-reveal">
+
+            <div class="journal-cta-icon">
+                <i class="fa-solid fa-plane-departure"></i>
+            </div>
+
+            <div class="journal-cta-copy">
+
+                <span>READY FOR YOUR NEXT DEPARTURE?</span>
+
+                <h3>Your Next Destination Awaits.</h3>
+
+                <p>
+                    Explore your travel options and start planning
+                    your next flight today.
+                </p>
+
+            </div>
+
+            <a href="404.html" class="journal-cta-button">
+                Book A Flight
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="destinations-section" id="destinations">
+    <div class="destinations-container">
+
+        <!-- SECTION HEADER -->
+        <div class="destinations-header reveal-destination">
+            <span class="section-kicker">
+                <i class="fa-solid fa-earth-americas"></i>
+                THE WORLD AWAITS
+            </span>
+
+            <h2>
+                Where Will You
+                <span>Fly Next?</span>
+            </h2>
+
+            <p>
+                Discover extraordinary destinations, compare flight fares,
+                and turn your next travel dream into a boarding pass.
+            </p>
+
+            <div class="destination-highlights">
+                <div>
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>Global Destinations</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure Booking</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-tag"></i>
+                    <span>Smart Flight Deals</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESTINATION FILTERS -->
+        <div class="destination-toolbar reveal-destination">
+            <div>
+                <span class="destination-small-label">EXPLORE YOUR NEXT JOURNEY</span>
+                <h3>Popular Destinations</h3>
+            </div>
+
+            <a href="404.html" class="destination-view-all">
+                Book Your Flight
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- DESTINATION CARDS -->
+        <div class="destination-grid">
+
+            <!-- PARIS -->
+            <article class="destination-card reveal-destination">
+                <div class="destination-image">
+                    <img
+                        src="images/paris.webp"
+                        alt="Eiffel Tower and Paris city view"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-badge">
+                        <i class="fa-solid fa-fire"></i>
+                        Trending
+                    </span>
+
+                    <button class="destination-favorite"
+                            type="button"
+                            aria-label="Favorite Paris"
+                            aria-pressed="false">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <div class="destination-image-overlay"></div>
+
+                    <div class="destination-location">
+                        <span>EUROPE</span>
+                        <h3>Paris</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> France</p>
+                    </div>
+                </div>
+
+                <div class="destination-details">
+                    <div class="destination-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.9</strong>
+                        <span>Iconic city escape</span>
+                    </div>
+
+                    <div class="destination-route">
+                        <span><i class="fa-solid fa-plane"></i> International</span>
+                        <span><i class="fa-regular fa-clock"></i> Check flight duration</span>
+                    </div>
+
+                    <div class="destination-card-footer">
+                        <div class="destination-price">
+                            <small>Flights from</small>
+                            <strong>Explore fares</strong>
+                        </div>
+
+                        <a href="404.html" class="destination-book"
+                           aria-label="Book a flight to Paris">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- DUBAI -->
+            <article class="destination-card reveal-destination">
+                <div class="destination-image">
+                    <img
+                        src="images/dubai.webp"
+                        alt="Dubai skyline and modern skyscrapers"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-badge destination-badge-gold">
+                        <i class="fa-solid fa-crown"></i>
+                        Premium Escape
+                    </span>
+
+                    <button class="destination-favorite"
+                            type="button"
+                            aria-label="Favorite Dubai"
+                            aria-pressed="false">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <div class="destination-image-overlay"></div>
+
+                    <div class="destination-location">
+                        <span>MIDDLE EAST</span>
+                        <h3>Dubai</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> United Arab Emirates</p>
+                    </div>
+                </div>
+
+                <div class="destination-details">
+                    <div class="destination-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.8</strong>
+                        <span>Luxury & adventure</span>
+                    </div>
+
+                    <div class="destination-route">
+                        <span><i class="fa-solid fa-plane"></i> International</span>
+                        <span><i class="fa-solid fa-sun"></i> City & desert</span>
+                    </div>
+
+                    <div class="destination-card-footer">
+                        <div class="destination-price">
+                            <small>Flights from</small>
+                            <strong>Explore fares</strong>
+                        </div>
+
+                        <a href="404.html" class="destination-book"
+                           aria-label="Book a flight to Dubai">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- MALDIVES -->
+            <article class="destination-card reveal-destination">
+                <div class="destination-image">
+                    <img
+                        src="images/maldives.webp"
+                        alt="Maldives turquoise ocean and tropical island"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-badge">
+                        <i class="fa-solid fa-umbrella-beach"></i>
+                        Island Retreat
+                    </span>
+
+                    <button class="destination-favorite"
+                            type="button"
+                            aria-label="Favorite Maldives"
+                            aria-pressed="false">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <div class="destination-image-overlay"></div>
+
+                    <div class="destination-location">
+                        <span>ASIA PACIFIC</span>
+                        <h3>Maldives</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Indian Ocean</p>
+                    </div>
+                </div>
+
+                <div class="destination-details">
+                    <div class="destination-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.9</strong>
+                        <span>Island paradise</span>
+                    </div>
+
+                    <div class="destination-route">
+                        <span><i class="fa-solid fa-plane"></i> International</span>
+                        <span><i class="fa-solid fa-water"></i> Beach getaway</span>
+                    </div>
+
+                    <div class="destination-card-footer">
+                        <div class="destination-price">
+                            <small>Flights from</small>
+                            <strong>Explore fares</strong>
+                        </div>
+
+                        <a href="404.html" class="destination-book"
+                           aria-label="Book a flight to Maldives">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TOKYO -->
+            <article class="destination-card reveal-destination">
+                <div class="destination-image">
+                    <img
+                        src="images/tokyo.webp"
+                        alt="Tokyo skyline with city lights"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-badge">
+                        <i class="fa-solid fa-city"></i>
+                        City Adventure
+                    </span>
+
+                    <button class="destination-favorite"
+                            type="button"
+                            aria-label="Favorite Tokyo"
+                            aria-pressed="false">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <div class="destination-image-overlay"></div>
+
+                    <div class="destination-location">
+                        <span>EAST ASIA</span>
+                        <h3>Tokyo</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Japan</p>
+                    </div>
+                </div>
+
+                <div class="destination-details">
+                    <div class="destination-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.8</strong>
+                        <span>Culture meets modernity</span>
+                    </div>
+
+                    <div class="destination-route">
+                        <span><i class="fa-solid fa-plane"></i> International</span>
+                        <span><i class="fa-solid fa-torii-gate"></i> Cultural escape</span>
+                    </div>
+
+                    <div class="destination-card-footer">
+                        <div class="destination-price">
+                            <small>Flights from</small>
+                            <strong>Explore fares</strong>
+                        </div>
+
+                        <a href="404.html" class="destination-book"
+                           aria-label="Book a flight to Tokyo">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LONDON -->
+            <article class="destination-card reveal-destination">
+                <div class="destination-image">
+                    <img
+                        src="images/london.webp"
+                        alt="London skyline and River Thames"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-badge destination-badge-gold">
+                        <i class="fa-solid fa-gem"></i>
+                        Classic Getaway
+                    </span>
+
+                    <button class="destination-favorite"
+                            type="button"
+                            aria-label="Favorite London"
+                            aria-pressed="false">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <div class="destination-image-overlay"></div>
+
+                    <div class="destination-location">
+                        <span>UNITED KINGDOM</span>
+                        <h3>London</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> England</p>
+                    </div>
+                </div>
+
+                <div class="destination-details">
+                    <div class="destination-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.8</strong>
+                        <span>History & city life</span>
+                    </div>
+
+                    <div class="destination-route">
+                        <span><i class="fa-solid fa-plane"></i> International</span>
+                        <span><i class="fa-solid fa-landmark"></i> City discovery</span>
+                    </div>
+
+                    <div class="destination-card-footer">
+                        <div class="destination-price">
+                            <small>Flights from</small>
+                            <strong>Explore fares</strong>
+                        </div>
+
+                        <a href="404.html" class="destination-book"
+                           aria-label="Book a flight to London">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SINGAPORE -->
+            <article class="destination-card reveal-destination">
+                <div class="destination-image">
+                    <img
+                        src="images/singapore.webp"
+                        alt="Singapore skyline and Marina Bay"
+                        loading="lazy"
+                    >
+
+                    <span class="destination-badge">
+                        <i class="fa-solid fa-plane-departure"></i>
+                        Quick Escape
+                    </span>
+
+                    <button class="destination-favorite"
+                            type="button"
+                            aria-label="Favorite Singapore"
+                            aria-pressed="false">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+
+                    <div class="destination-image-overlay"></div>
+
+                    <div class="destination-location">
+                        <span>SOUTHEAST ASIA</span>
+                        <h3>Singapore</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Singapore</p>
+                    </div>
+                </div>
+
+                <div class="destination-details">
+                    <div class="destination-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <strong>4.7</strong>
+                        <span>Modern city break</span>
+                    </div>
+
+                    <div class="destination-route">
+                        <span><i class="fa-solid fa-plane"></i> International</span>
+                        <span><i class="fa-solid fa-building"></i> Urban escape</span>
+                    </div>
+
+                    <div class="destination-card-footer">
+                        <div class="destination-price">
+                            <small>Flights from</small>
+                            <strong>Explore fares</strong>
+                        </div>
+
+                        <a href="404.html" class="destination-book"
+                           aria-label="Book a flight to Singapore">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- BOTTOM CALL TO ACTION -->
+        <div class="destination-cta reveal-destination">
+            <div class="destination-cta-icon">
+                <i class="fa-solid fa-ticket"></i>
+            </div>
+
+            <div class="destination-cta-copy">
+                <span>YOUR NEXT ADVENTURE STARTS HERE</span>
+                <h3>Your dream destination is just one flight away.</h3>
+                <p>Choose your route, compare options and get ready to take off.</p>
+            </div>
+
+            <a href="404.html" class="destination-cta-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Find Flights
+            </a>
+
+            <i class="fa-solid fa-plane destination-cta-plane"></i>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+
+        <!-- Section Heading -->
+        <div class="contact-heading reveal-contact">
+            <span class="contact-kicker">
+                <i class="fa-solid fa-paper-plane"></i>
+                WE'RE HERE TO HELP
+            </span>
+
+            <h2>
+                Let's Plan Your
+                <span>Next Journey</span>
+            </h2>
+
+            <p>
+                From your first flight to your next great adventure,
+                we're here to make every step of your travel experience
+                simple, comfortable, and memorable.
+            </p>
+        </div>
+
+        <!-- Main Contact Layout -->
+        <div class="contact-grid">
+
+            <!-- Left Content -->
+            <div class="contact-info reveal-contact">
+
+                <div class="contact-intro">
+                    <span class="contact-mini-label">
+                        YOUR JOURNEY, OUR PRIORITY
+                    </span>
+
+                    <h3>Travel with confidence.</h3>
+
+                    <p>
+                        Need help choosing a destination, understanding
+                        your booking, or planning a special trip?
+                        Our travel support team is ready to guide you.
+                    </p>
+                </div>
+
+                <!-- Contact Cards -->
+                <div class="contact-methods">
+
+                    <a href="404.html"
+                       class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+
+                        <div class="contact-method-text">
+                            <h4>Email Our Team</h4>
+                            <p>Send us your travel questions</p>
+                            <span>hello@example.com</span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+
+                    <a href="404.html"
+                       class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <div class="contact-method-text">
+                            <h4>Travel Assistance</h4>
+                            <p>Get help with your travel plans</p>
+                            <span>+91 12345 67890</span>
+                        </div>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+
+                        <div class="contact-method-text">
+                            <h4>We're Ready to Help</h4>
+                            <p>Send us a message anytime</p>
+                            <span>We'll respond as soon as possible</span>
+                        </div>
+
+                        <i class="fa-solid fa-heart contact-arrow"></i>
+                    </div>
+
+                </div>
+
+                <!-- Trust Note -->
+                <div class="contact-trust">
+                    <div class="trust-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <h4>Your journey matters to us</h4>
+                        <p>
+                            Personal guidance, clear communication,
+                            and support throughout your planning process.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Contact Panel -->
+            <div class="contact-panel reveal-contact">
+
+                <div class="contact-panel-glow"></div>
+
+                <div class="contact-panel-top">
+                    <div class="contact-panel-icon">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+
+                    <span class="contact-status">
+                        <span class="status-dot"></span>
+                        LET'S GET YOU GOING
+                    </span>
+                </div>
+
+                <h3>Every great trip starts with a conversation.</h3>
+
+                <p>
+                    Tell us what you're dreaming of. Whether it's a
+                    relaxing getaway, a family holiday, or your next
+                    business trip, let's make it happen.
+                </p>
+
+                <div class="contact-benefits">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Guidance for your travel plans</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Help with booking-related questions</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Support for your next adventure</span>
+                    </div>
+
+                </div>
+
+
+<div class="contact-cta">
+
+    <a href="mailto:hello@example.com?subject=Flight%20Booking%20Enquiry"
+       class="contact-cta-text">
+        Contact Our Team
+        <small>Let's talk about your next flight</small>
+    </a>
+
+    <a href="404.html"
+       class="contact-cta-arrow"
+       aria-label="Go to 404 page">
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+
+                <div class="contact-panel-footer">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Your next destination is waiting.</span>
+                    <i class="fa-solid fa-earth-americas contact-globe"></i>
+                </div>
+
+                <!-- Decorative plane -->
+                <i class="fa-solid fa-plane contact-floating-plane"></i>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Highlight Cards -->
+        <div class="contact-highlights">
+
+            <div class="contact-highlight reveal-contact">
+                <i class="fa-solid fa-route"></i>
+                <div>
+                    <h4>Your Trip, Your Way</h4>
+                    <p>Travel planning shaped around your needs.</p>
+                </div>
+            </div>
+
+            <div class="contact-highlight reveal-contact">
+                <i class="fa-solid fa-comments"></i>
+                <div>
+                    <h4>Clear Communication</h4>
+                    <p>Get answers to your travel questions.</p>
+                </div>
+            </div>
+
+            <div class="contact-highlight reveal-contact">
+                <i class="fa-solid fa-suitcase-rolling"></i>
+                <div>
+                    <h4>Ready for Takeoff</h4>
+                    <p>Let's make your next journey memorable.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+    </main>
+
+
+
+<footer class="footer" id="footer">
+    <div class="footer-container">
+
+        <!-- 1. Brand Column -->
+        <div class="footer-column footer-about">
+
+
+<a href="index.html" class="footer-brand">
+    <img src="images/stackly_logo.webp"
+         alt="SkyTrip Logo"
+         class="footer-logo">
+</a>
+
+
+            <p class="footer-description">
+                Discover the world with SkyTrip. From spontaneous
+                getaways to carefully planned adventures, we help
+                make every journey smoother, easier, and more memorable.
+                Your next destination is just one flight away.
+            </p>
+
+            <div class="footer-socials">
+                <a href="404.html"
+                   aria-label="Facebook" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="Instagram" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="LinkedIn" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="YouTube" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 2. Quick Links -->
+        <div class="footer-column">
+            <h3 class="footer-title">Quick Links</h3>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="blogs.html">Travel Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- 3. Explore -->
+        <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+
+            <ul class="footer-links">
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Popular Destinations
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-plane"></i>
+                        Find Flights
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Travel Journal
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Help Center
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Privacy &amp; Policies
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 4. Contact Information -->
+        <div class="footer-column footer-contact">
+            <h3 class="footer-title">Get in Touch</h3>
+
+            <p class="footer-contact-intro">
+                Have a question about your next trip?
+                We'd love to hear from you.
+            </p>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <span>hello@example.com</span>
+            </a>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 12345 67890</span>
+            </a>
+
+            <a href="404.html" class="footer-contact-item">
+                <i class="fa-solid fa-headset"></i>
+                <span>Travel Support</span>
+            </a>
+        </div>
+
+        <!-- 5. Stay Inspired -->
+        <div class="footer-column footer-newsletter">
+            <h3 class="footer-title">Stay Inspired</h3>
+
+            <p>
+                Get travel inspiration for your next adventure.
+                Discover new destinations and plan your next getaway.
+            </p>
+
+            <a href="404.html"
+               class="footer-newsletter-btn">
+                Stay Connected
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="year"></span> SkyTrip.
+            All rights reserved.
+        </p>
+
+        <p class="footer-bottom-tagline">
+            Made for journeys beyond boundaries
+            <i class="fa-solid fa-plane"></i>
+        </p>
+
+        <a href="#home" class="footer-back-top">
+            Back to Top
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+
+    </div>
+</footer>
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

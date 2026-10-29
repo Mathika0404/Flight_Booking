@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#061638"><title>SkyTrip | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+  <div class="preloader" id="preloader"><div class="loader-plane"><i class="fa-solid fa-plane"></i></div><div class="loader-brand">STACKLY<span>.</span></div><div class="loader-track"><span></span></div><small>Preparing your dashboard</small></div>
+  <div class="app-shell">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+      <a href="admin-dashboard.html" class="sidebar-brand" aria-label="SkyTrip Admin Dashboard">
+    <img
+        src="./images/stackly_logo.webp"
+        alt="SKYTRIP Flight Management"
+        class="sidebar-logo"
+    >
+</a>
+      <div class="sidebar-account"><div class="account-avatar" id="sideAvatar">A</div><div class="account-copy"><strong id="sideName">Admin</strong><span id="sideEmail">admin@skytrip.com</span></div><span class="online-dot"></span></div>
+      <p class="menu-caption">WORKSPACE</p>
+<nav class="side-nav" aria-label="Main navigation">
+    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="#bookings" class="nav-link" data-section="bookings">
+        <i class="fa-solid fa-ticket"></i>
+        <span>Bookings</span>
+        <b class="nav-count">12</b>
+    </a>
+
+    <a href="#flights" class="nav-link" data-section="flights">
+        <i class="fa-solid fa-plane"></i>
+        <span>Flights</span>
+    </a>
+
+    <a href="#passengers" class="nav-link" data-section="passengers">
+        <i class="fa-solid fa-users"></i>
+        <span>Passengers</span>
+    </a>
+
+    <a href="#reports" class="nav-link" data-section="reports">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Reports</span>
+    </a>
+</nav>
+      <p class="menu-caption secondary-caption">PREFERENCES</p>
+      <nav class="side-nav"><a href="404.html" class="nav-link" data-section="settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a></nav>
+      <div class="sidebar-bottom"><div class="support-card"><span class="support-icon"><i class="fa-solid fa-headset"></i></span><strong>Need a hand?</strong><p>Our support team is ready to help.</p><a href="404.html">Contact support <i class="fa-solid fa-arrow-right"></i></a></div><a href="login.html" class="nav-link logout-link" id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Log out</span></a></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-button hamburger" id="menuToggle" aria-label="Open sidebar"><i class="fa-solid fa-bars"></i></button><div class="breadcrumb"><span>Workspace</span><i class="fa-solid fa-chevron-right"></i><strong id="breadcrumbTitle">Dashboard</strong></div></div>
+        <a href="admin-dashboard.html" class="mobile-brand" aria-label="SkyTrip Dashboard">
+    <img
+        src="images/stackly_logo.webp"
+        alt="SkyTrip Logo"
+        class="mobile-brand-logo"
+    >
+</a>
+        <div class="topbar-right"><div class="today-pill"><i class="fa-regular fa-calendar"></i><span id="todayDate">Today</span></div><button class="icon-button notification-button" id="notificationBtn" aria-label="Notifications"><i class="fa-regular fa-bell"></i><span class="notification-dot"></span></button><div class="top-divider"></div><button class="profile-trigger" id="profileTrigger"><span class="profile-avatar" id="topAvatar">A</span><span class="profile-meta"><strong id="topName">Admin</strong><small><i class="admin-dot"></i> ADMIN</small></span><i class="fa-solid fa-chevron-down profile-chevron"></i></button></div>
+      </header>
+      <section class="page-content" id="dashboardSection">
+        <div class="welcome-row reveal"><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR FLIGHT OPERATIONS AT A GLANCE</div><h1>Good day, <span id="welcomeName">Admin</span> <span class="wave">✦</span></h1><p>Here’s what’s happening across your flight network today.</p></div><button class="primary-button" id="newBookingBtn" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Create booking</button></div>
+        <div class="hero-banner reveal"><div class="hero-copy"><span class="hero-chip"><i class="fa-solid fa-sparkles"></i> SKYTRIP CONTROL CENTER</span><h2>Every journey,<br><span>beautifully connected.</span></h2><p>Manage bookings, monitor flights, and keep every passenger moving.</p><button class="hero-button" data-section-jump="flights">Explore flight operations <i class="fa-solid fa-arrow-right"></i></button></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-globe"><i class="fa-solid fa-earth-americas"></i></div><div class="floating-plane"><i class="fa-solid fa-plane"></i></div><span class="route-label route-one">MAA <i class="fa-solid fa-arrow-right"></i> DXB</span><span class="route-label route-two">LHR <i class="fa-solid fa-arrow-right"></i> SIN</span><span class="hero-star star-one">✦</span><span class="hero-star star-two">✧</span></div><div class="banner-index">01 <span>/ 03</span></div></div>
+        <div class="section-heading reveal"><div><h2>Overview</h2><p>Key performance metrics for your travel business.</p></div><button class="subtle-button" id="exportBtn" onclick="window.location.href = '404.html'"><i class="fa-solid fa-arrow-down-to-line"></i> Export report</button></div>
+        <div class="stats-grid">
+          <article class="stat-card reveal" style="--delay:0ms"><div class="stat-top"><span class="stat-icon icon-blue"><i class="fa-solid fa-ticket"></i></span><span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> 12.8%</span></div><p>Total bookings</p><div class="stat-value"><span class="counter" data-count="2486">0</span></div><div class="stat-foot"><span>vs. last month</span><span class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div></article>
+          <article class="stat-card reveal" style="--delay:80ms"><div class="stat-top"><span class="stat-icon icon-gold"><i class="fa-solid fa-wallet"></i></span><span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> 8.4%</span></div><p>Total revenue</p><div class="stat-value"><span class="currency">₹</span><span class="counter" data-count="1846500" data-format="indian">0</span></div><div class="stat-foot"><span>vs. last month</span><span class="mini-bars gold-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div></article>
+          <article class="stat-card reveal" style="--delay:160ms"><div class="stat-top"><span class="stat-icon icon-purple"><i class="fa-solid fa-plane-departure"></i></span><span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> 4.2%</span></div><p>Flights today</p><div class="stat-value"><span class="counter" data-count="148">0</span></div><div class="stat-foot"><span>Across 26 destinations</span><span class="mini-bars purple-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div></article>
+          <article class="stat-card reveal" style="--delay:240ms"><div class="stat-top"><span class="stat-icon icon-green"><i class="fa-solid fa-user-group"></i></span><span class="trend positive"><i class="fa-solid fa-arrow-trend-up"></i> 6.1%</span></div><p>Registered passengers</p><div class="stat-value"><span class="counter" data-count="12640">0</span></div><div class="stat-foot"><span>Growing community</span><span class="mini-bars green-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div></article>
+        </div>
+        <div class="dashboard-grid"><article class="panel analytics-panel reveal"><div class="panel-heading"><div><h3>Booking performance</h3><p>Booking activity over the last 7 months</p></div><select id="chartRange" aria-label="Chart range"><option value="7">Last 7 months</option><option value="6">Last 6 months</option><option value="4">Last 4 months</option></select></div><div class="chart-summary"><strong>₹ 18.46L</strong><span class="trend positive"><i class="fa-solid fa-arrow-up"></i> 14.6%</span><small>Revenue generated</small></div><div class="chart-wrap"><div class="y-labels"><span>₹20L</span><span>₹15L</span><span>₹10L</span><span>₹5L</span><span>₹0</span></div><div class="chart-main"><div class="chart-grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg class="line-chart" viewBox="0 0 600 220" preserveAspectRatio="none" role="img" aria-label="Booking performance trend"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#d6a84f" stop-opacity=".28"/><stop offset="100%" stop-color="#d6a84f" stop-opacity="0"/></linearGradient></defs><path class="chart-area" d="M0 175 C40 160 55 145 100 152 S160 120 200 135 S270 80 300 100 S365 112 400 72 S465 95 500 54 S560 42 600 18 L600 220 L0 220 Z"/><path class="chart-line" d="M0 175 C40 160 55 145 100 152 S160 120 200 135 S270 80 300 100 S365 112 400 72 S465 95 500 54 S560 42 600 18"/><circle cx="500" cy="54" r="5" class="chart-point"/></svg><div class="x-labels"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div></div></div></article>
+          <article class="panel status-panel reveal"><div class="panel-heading"><div><h3>Booking status</h3><p>Current booking distribution</p></div><button class="more-button" aria-label="More booking status options" onclick="window.location.href = '404.html'"><i class="fa-solid fa-ellipsis"></i></button></div><div class="donut-area"><div class="donut-chart"><div class="donut-center"><strong>2,486</strong><span>Total bookings</span></div></div></div><div class="legend-list"><div><span class="legend-name"><i class="legend-dot dot-confirmed"></i>Confirmed</span><strong>1,624 <small>65.3%</small></strong></div><div><span class="legend-name"><i class="legend-dot dot-pending"></i>Pending</span><strong>584 <small>23.5%</small></strong></div><div><span class="legend-name"><i class="legend-dot dot-cancelled"></i>Cancelled</span><strong>278 <small>11.2%</small></strong></div></div></article></div>
+        <div class="section-heading table-section-heading reveal"><div><h2>Recent bookings</h2><p>Keep track of the latest passenger reservations.</p></div><button class="text-button" data-section-jump="bookings">View all bookings <i class="fa-solid fa-arrow-right"></i></button></div>
+        <article class="panel table-panel reveal"><div class="table-toolbar"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="bookingSearch" placeholder="Search passenger or booking ID..." aria-label="Search bookings"></div><button class="filter-button" id="filterBtn" onclick="window,location.href = '404.html'" ><i class="fa-solid fa-sliders"></i> Filter</button></div><div class="table-scroll"><table><thead><tr><th>BOOKING ID</th><th>PASSENGER</th><th>FLIGHT</th><th>DATE</th><th>AMOUNT</th><th>STATUS</th><th></th></tr></thead><tbody id="bookingRows">
+          <tr><td><span class="booking-id">#ST-84291</span></td><td><div class="passenger-cell"><span class="passenger-avatar avatar-a">AR</span><span><strong>Arjun Raj</strong><small>arjun.r@email.com</small></span></div></td><td><div class="flight-cell"><strong>AI 603</strong><small>MAA <i class="fa-solid fa-arrow-right"></i> BOM</small></div></td><td>29 Oct 2026</td><td class="amount">₹8,450</td><td><span class="status-badge confirmed">Confirmed</span></td><td><button class="row-more" aria-label="Booking actions"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+          <tr><td><span class="booking-id">#ST-84290</span></td><td><div class="passenger-cell"><span class="passenger-avatar avatar-b">PK</span><span><strong>Priya Kumar</strong><small>priya.k@email.com</small></span></div></td><td><div class="flight-cell"><strong>6E 214</strong><small>BLR <i class="fa-solid fa-arrow-right"></i> DEL</small></div></td><td>29 Oct 2026</td><td class="amount">₹12,200</td><td><span class="status-badge pending">Pending</span></td><td><button class="row-more" aria-label="Booking actions"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+          <tr><td><span class="booking-id">#ST-84289</span></td><td><div class="passenger-cell"><span class="passenger-avatar avatar-c">SM</span><span><strong>Sarah Mathew</strong><small>sarah.m@email.com</small></span></div></td><td><div class="flight-cell"><strong>UK 821</strong><small>HYD <i class="fa-solid fa-arrow-right"></i> MAA</small></div></td><td>30 Oct 2026</td><td class="amount">₹6,780</td><td><span class="status-badge confirmed">Confirmed</span></td><td><button class="row-more" aria-label="Booking actions"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+          <tr><td><span class="booking-id">#ST-84288</span></td><td><div class="passenger-cell"><span class="passenger-avatar avatar-d">VK</span><span><strong>Vikram Kumar</strong><small>vikram.k@email.com</small></span></div></td><td><div class="flight-cell"><strong>SG 105</strong><small>DXB <i class="fa-solid fa-arrow-right"></i> MAA</small></div></td><td>31 Oct 2026</td><td class="amount">₹18,950</td><td><span class="status-badge cancelled">Cancelled</span></td><td><button class="row-more" aria-label="Booking actions"><i class="fa-solid fa-ellipsis"></i></button></td></tr>
+        </tbody></table><div class="empty-state" id="emptyState" hidden><i class="fa-solid fa-magnifying-glass"></i><strong>No bookings found</strong><span>Try searching with another name or booking ID.</span></div></div><div class="table-footer"><span>Showing <strong id="showingCount">4</strong> of <strong>2,486</strong> bookings</span><div class="pagination"><button disabled aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></button><button class="page-current">1</button><button>2</button><button>3</button><span>...</span><button>12</button><button aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></button></div></div></article>
+        <div class="bottom-grid"><article class="panel departures-panel reveal"><div class="panel-heading"><div><h3>Upcoming departures</h3><p>Flights scheduled to depart soon</p></div><button class="text-button" data-section-jump="flights">View all</button></div><div class="departure-item"><div class="airline-logo air-indigo"><i class="fa-solid fa-plane"></i></div><div class="departure-info"><strong>Air India <span>AI 603</span></strong><div class="route-line"><b>MAA</b><span></span><i class="fa-solid fa-plane"></i><span></span><b>BOM</b></div><small>Chennai · Mumbai</small></div><div class="departure-time"><strong>09:45</strong><small>Today</small><span class="status-badge boarding">Boarding</span></div></div><div class="departure-item"><div class="airline-logo air-gold"><i class="fa-solid fa-plane"></i></div><div class="departure-info"><strong>IndiGo <span>6E 214</span></strong><div class="route-line"><b>BLR</b><span></span><i class="fa-solid fa-plane"></i><span></span><b>DEL</b></div><small>Bengaluru · New Delhi</small></div><div class="departure-time"><strong>10:20</strong><small>Today</small><span class="status-badge on-time">On time</span></div></div><div class="departure-item"><div class="airline-logo air-teal"><i class="fa-solid fa-plane"></i></div><div class="departure-info"><strong>Vistara <span>UK 821</span></strong><div class="route-line"><b>HYD</b><span></span><i class="fa-solid fa-plane"></i><span></span><b>MAA</b></div><small>Hyderabad · Chennai</small></div><div class="departure-time"><strong>11:05</strong><small>Today</small><span class="status-badge on-time">On time</span></div></div></article>
+          <article class="panel activity-panel reveal"><div class="panel-heading"><div><h3>Recent activity</h3><p>Latest updates from your workspace</p></div><button class="more-button" aria-label="More activity options" onclick="window.location.href = '404.html' "><i class="fa-solid fa-ellipsis"></i></button></div><div class="activity-list"><div class="activity-item"><span class="activity-icon activity-green"><i class="fa-solid fa-check"></i></span><div><p><strong>Booking confirmed</strong> for Arjun Raj</p><small>Booking #ST-84291 · 8 min ago</small></div></div><div class="activity-item"><span class="activity-icon activity-blue"><i class="fa-solid fa-user-plus"></i></span><div><p>New passenger <strong>Priya Kumar</strong> registered</p><small>Customer account · 24 min ago</small></div></div><div class="activity-item"><span class="activity-icon activity-gold"><i class="fa-solid fa-credit-card"></i></span><div><p>Payment of <strong>₹18,950</strong> received</p><small>Booking #ST-84287 · 1 hour ago</small></div></div><div class="activity-item"><span class="activity-icon activity-purple"><i class="fa-solid fa-plane"></i></span><div><p>Flight <strong>AI 603</strong> is boarding</p><small>Chennai to Mumbai · 1 hour ago</small></div></div></div></article></div>
+        <footer class="dashboard-footer"><span>© <span id="currentYear"></span> SkyTrip. All rights reserved.</span><span>Made for smoother journeys <i class="fa-solid fa-heart"></i></span></footer>
+      </section>
+      <!-- BOOKINGS MANAGEMENT -->
+<section class="page-content bookings-page" id="bookingsSection" hidden>
+
+    <div class="booking-heading booking-reveal">
+        <div>
+            <span class="booking-eyebrow">
+                <i class="fa-solid fa-plane-departure"></i>
+                SKYTRIP MANAGEMENT
+            </span>
+            <h1>Booking <span>Management</span></h1>
+            <p>Manage reservations, passengers, payments and flight schedules.</p>
+        </div>
+        <button class="booking-primary" onclick="go404()">
+            <i class="fa-solid fa-plus"></i> New Booking
+        </button>
+    </div>
+
+    <!-- STATISTICS -->
+    <div class="booking-stats">
+        <article class="booking-stat booking-reveal">
+            <div class="booking-stat-icon blue-stat">
+                <i class="fa-solid fa-ticket"></i>
+            </div>
+            <span>Total Bookings</span>
+            <h2 class="booking-counter" data-value="2486">0</h2>
+            <small><i class="fa-solid fa-arrow-trend-up"></i> +12.8% this month</small>
+        </article>
+
+        <article class="booking-stat booking-reveal">
+            <div class="booking-stat-icon green-stat">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <span>Confirmed</span>
+            <h2 class="booking-counter" data-value="1624">0</h2>
+            <small>65.3% of all bookings</small>
+        </article>
+
+        <article class="booking-stat booking-reveal">
+            <div class="booking-stat-icon gold-stat">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+            <span>Pending</span>
+            <h2 class="booking-counter" data-value="584">0</h2>
+            <small>Awaiting confirmation</small>
+        </article>
+
+        <article class="booking-stat booking-reveal">
+            <div class="booking-stat-icon red-stat">
+                <i class="fa-solid fa-ban"></i>
+            </div>
+            <span>Cancelled</span>
+            <h2 class="booking-counter" data-value="278">0</h2>
+            <small>11.2% of all bookings</small>
+        </article>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="booking-chart-grid">
+        <article class="booking-panel booking-reveal">
+            <div class="booking-panel-head">
+                <div>
+                    <h3><i class="fa-solid fa-chart-line"></i> Booking Trends</h3>
+                    <p>Monthly reservation performance</p>
+                </div>
+                <button class="booking-outline" onclick="go404()">View Report</button>
+            </div>
+
+            <div class="booking-chart">
+                <div class="booking-y-labels">
+                    <span>500</span><span>400</span><span>300</span>
+                    <span>200</span><span>100</span><span>0</span>
+                </div>
+                <div class="booking-chart-main">
+                    <div class="booking-chart-gridlines">
+                        <i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <svg viewBox="0 0 600 220" preserveAspectRatio="none"
+                         class="booking-line-chart" role="img"
+                         aria-label="Monthly booking trend">
+                        <defs>
+                            <linearGradient id="bookingFill" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#d6a84f" stop-opacity=".35"/>
+                                <stop offset="100%" stop-color="#d6a84f" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="booking-area"
+                              d="M0 175 C55 155 65 130 120 145 S190 95 240 120 S310 65 360 92 S430 48 480 70 S550 30 600 18 L600 220 L0 220 Z"/>
+                        <path class="booking-line"
+                              d="M0 175 C55 155 65 130 120 145 S190 95 240 120 S310 65 360 92 S430 48 480 70 S550 30 600 18"/>
+                        <circle cx="480" cy="70" r="5" fill="#d6a84f"/>
+                    </svg>
+                    <div class="booking-x-labels">
+                        <span>May</span><span>Jun</span><span>Jul</span>
+                        <span>Aug</span><span>Sep</span><span>Oct</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="booking-panel booking-reveal">
+            <div class="booking-panel-head">
+                <div>
+                    <h3><i class="fa-solid fa-chart-pie"></i> Booking Status</h3>
+                    <p>Reservation breakdown</p>
+                </div>
+            </div>
+
+            <div class="booking-donut">
+                <div class="booking-donut-center">
+                    <strong>2,486</strong>
+                    <span>Bookings</span>
+                </div>
+            </div>
+
+            <div class="booking-legend">
+                <div><span><i class="legend-confirmed"></i> Confirmed</span><strong>1,624 · 65.3%</strong></div>
+                <div><span><i class="legend-pending"></i> Pending</span><strong>584 · 23.5%</strong></div>
+                <div><span><i class="legend-cancelled"></i> Cancelled</span><strong>278 · 11.2%</strong></div>
+            </div>
+        </article>
+    </div>
+
+    <!-- BOOKING TABLE -->
+    <article class="booking-panel booking-table-panel booking-reveal">
+        <div class="booking-panel-head">
+            <div>
+                <h3><i class="fa-solid fa-list-check"></i> All Reservations</h3>
+                <p>Passenger and ticket information</p>
+            </div>
+            <button class="booking-outline" onclick="go404()">
+                <i class="fa-solid fa-download"></i> Export
+            </button>
+        </div>
+
+        <div class="booking-toolbar">
+            <label class="booking-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="bookingManagerSearch"
+                       placeholder="Search passenger, ID or flight...">
+            </label>
+
+            <select id="bookingStatusFilter" aria-label="Filter booking status">
+                <option value="all">All statuses</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+
+            <button class="booking-outline" onclick="go404()">
+                <i class="fa-solid fa-sliders"></i> Advanced Filter
+            </button>
+        </div>
+
+        <div class="booking-table-wrap">
+            <table class="booking-table">
+                <thead>
+                    <tr>
+                        <th>BOOKING ID</th>
+                        <th>PASSENGER</th>
+                        <th>FLIGHT / ROUTE</th>
+                        <th>TRAVEL DATE</th>
+                        <th>AMOUNT</th>
+                        <th>PAYMENT</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingManagerRows">
+                    <tr data-status="confirmed">
+                        <td><strong class="booking-id">ST-84291</strong></td>
+                        <td><div class="booking-passenger"><span>AR</span><div><strong>Arjun Raj</strong><small>arjun.r@email.com</small></div></div></td>
+                        <td><strong>AI 603</strong><small class="booking-route">MAA <i class="fa-solid fa-arrow-right"></i> BOM</small></td>
+                        <td>29 Oct 2026</td>
+                        <td class="booking-amount">₹8,450</td>
+                        <td><span class="payment-paid">Paid</span></td>
+                        <td><span class="booking-badge confirmed-badge">Confirmed</span></td>
+                        <td><button class="booking-action" onclick="go404()" aria-label="View booking"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+                    <tr data-status="pending">
+                        <td><strong class="booking-id">ST-84290</strong></td>
+                        <td><div class="booking-passenger"><span>PK</span><div><strong>Priya Kumar</strong><small>priya.k@email.com</small></div></div></td>
+                        <td><strong>6E 214</strong><small class="booking-route">BLR <i class="fa-solid fa-arrow-right"></i> DEL</small></td>
+                        <td>30 Oct 2026</td>
+                        <td class="booking-amount">₹12,200</td>
+                        <td><span class="payment-pending">Pending</span></td>
+                        <td><span class="booking-badge pending-badge">Pending</span></td>
+                        <td><button class="booking-action" onclick="go404()" aria-label="View booking"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+                    <tr data-status="confirmed">
+                        <td><strong class="booking-id">ST-84289</strong></td>
+                        <td><div class="booking-passenger"><span>SM</span><div><strong>Sarah Mathew</strong><small>sarah.m@email.com</small></div></div></td>
+                        <td><strong>UK 821</strong><small class="booking-route">HYD <i class="fa-solid fa-arrow-right"></i> MAA</small></td>
+                        <td>31 Oct 2026</td>
+                        <td class="booking-amount">₹6,780</td>
+                        <td><span class="payment-paid">Paid</span></td>
+                        <td><span class="booking-badge confirmed-badge">Confirmed</span></td>
+                        <td><button class="booking-action" onclick="go404()" aria-label="View booking"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+                    <tr data-status="cancelled">
+                        <td><strong class="booking-id">ST-84288</strong></td>
+                        <td><div class="booking-passenger"><span>VK</span><div><strong>Vikram Kumar</strong><small>vikram.k@email.com</small></div></div></td>
+                        <td><strong>SG 105</strong><small class="booking-route">DXB <i class="fa-solid fa-arrow-right"></i> MAA</small></td>
+                        <td>01 Nov 2026</td>
+                        <td class="booking-amount">₹18,950</td>
+                        <td><span class="payment-refunded">Refunded</span></td>
+                        <td><span class="booking-badge cancelled-badge">Cancelled</span></td>
+                        <td><button class="booking-action" onclick="go404()" aria-label="View booking"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="bookingNoResults" hidden>No matching bookings found.</p>
+        </div>
+
+        <div class="booking-table-footer">
+            <span>Showing demo reservations</span>
+            <button class="booking-outline" onclick="go404()">View All Bookings <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </article>
+
+    <div class="booking-bottom-grid">
+        <article class="booking-panel booking-reveal">
+            <div class="booking-panel-head">
+                <div><h3><i class="fa-solid fa-plane-departure"></i> Upcoming Flights</h3><p>Scheduled departures</p></div>
+                <button class="booking-action" onclick="go404()" aria-label="View flights"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="booking-flight">
+                <span class="flight-icon"><i class="fa-solid fa-plane"></i></span>
+                <div><strong>Air India · AI 603</strong><p>Chennai (MAA) → Mumbai (BOM)</p></div>
+                <small>09:45 AM</small>
+            </div>
+            <div class="booking-flight">
+                <span class="flight-icon"><i class="fa-solid fa-plane"></i></span>
+                <div><strong>IndiGo · 6E 214</strong><p>Bengaluru (BLR) → Delhi (DEL)</p></div>
+                <small>10:20 AM</small>
+            </div>
+            <div class="booking-flight">
+                <span class="flight-icon"><i class="fa-solid fa-plane"></i></span>
+                <div><strong>Vistara · UK 821</strong><p>Hyderabad (HYD) → Chennai (MAA)</p></div>
+                <small>11:05 AM</small>
+            </div>
+        </article>
+
+        <article class="booking-panel booking-reveal">
+            <div class="booking-panel-head">
+                <div><h3><i class="fa-solid fa-bolt"></i> Quick Actions</h3><p>Booking administration tools</p></div>
+            </div>
+            <button class="booking-quick-action" onclick="go404()"><i class="fa-solid fa-plus"></i><span><strong>Create reservation</strong><small>Add a new passenger booking</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="booking-quick-action" onclick="go404()"><i class="fa-solid fa-users"></i><span><strong>Passenger directory</strong><small>View passenger records</small></span><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="booking-quick-action" onclick="go404()"><i class="fa-solid fa-file-invoice-dollar"></i><span><strong>Payment reports</strong><small>Review payment transactions</small></span><i class="fa-solid fa-chevron-right"></i></button>
+        </article>
+    </div>
+</section>
+
+<!-- FLIGHT MANAGEMENT SECTION -->
+<section class="page-content flights-page" id="flightsSection" hidden>
+
+    <div class="flight-page-heading flight-reveal">
+        <div>
+            <span class="flight-eyebrow">
+                <i class="fa-solid fa-plane-departure"></i>
+                SKYTRIP OPERATIONS
+            </span>
+            <h1>Flight <span>Management</span></h1>
+            <p>Monitor airline schedules, routes, departures and flight availability.</p>
+        </div>
+        <button class="flight-primary" onclick="go404()">
+            <i class="fa-solid fa-plus"></i> Add New Flight
+        </button>
+    </div>
+
+    <!-- FLIGHT STATISTICS -->
+    <div class="flight-stats-grid">
+        <article class="flight-stat-card flight-reveal">
+            <div class="flight-stat-top">
+                <span class="flight-stat-icon flight-blue">
+                    <i class="fa-solid fa-plane"></i>
+                </span>
+                <span class="flight-trend">+8.2%</span>
+            </div>
+            <p>Total Flights</p>
+            <h2 class="flight-counter" data-value="148">0</h2>
+            <small>Scheduled for today</small>
+        </article>
+
+        <article class="flight-stat-card flight-reveal">
+            <div class="flight-stat-top">
+                <span class="flight-stat-icon flight-green">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <span class="flight-live"><i></i> Live</span>
+            </div>
+            <p>On-Time Flights</p>
+            <h2 class="flight-counter" data-value="126">0</h2>
+            <small>85.1% on-time performance</small>
+        </article>
+
+        <article class="flight-stat-card flight-reveal">
+            <div class="flight-stat-top">
+                <span class="flight-stat-icon flight-gold">
+                    <i class="fa-solid fa-plane-departure"></i>
+                </span>
+            </div>
+            <p>Departures</p>
+            <h2 class="flight-counter" data-value="84">0</h2>
+            <small>Across all airports</small>
+        </article>
+
+        <article class="flight-stat-card flight-reveal">
+            <div class="flight-stat-top">
+                <span class="flight-stat-icon flight-purple">
+                    <i class="fa-solid fa-plane-arrival"></i>
+                </span>
+            </div>
+            <p>Arrivals</p>
+            <h2 class="flight-counter" data-value="64">0</h2>
+            <small>Expected today</small>
+        </article>
+    </div>
+
+    <!-- FLIGHT PERFORMANCE CHART -->
+    <div class="flight-content-grid">
+        <article class="flight-panel flight-reveal">
+            <div class="flight-panel-heading">
+                <div>
+                    <h3><i class="fa-solid fa-chart-line"></i> Flight Performance</h3>
+                    <p>Weekly scheduled flight activity</p>
+                </div>
+                <button class="flight-outline" onclick="go404()">Full Report</button>
+            </div>
+
+            <div class="flight-chart-legend">
+                <span><i class="flight-legend-blue"></i> Scheduled</span>
+                <span><i class="flight-legend-gold"></i> Completed</span>
+            </div>
+
+            <div class="flight-chart-area">
+                <div class="flight-chart-y">
+                    <span>160</span><span>120</span><span>80</span>
+                    <span>40</span><span>0</span>
+                </div>
+                <div class="flight-chart-main">
+                    <div class="flight-chart-lines">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <svg viewBox="0 0 600 210" preserveAspectRatio="none"
+                         class="flight-line-chart"
+                         role="img" aria-label="Weekly flight performance">
+                        <path class="flight-chart-fill-blue"
+                            d="M0 125 C50 105 65 90 100 100 S160 55 200 75 S270 35 300 60 S370 80 400 40 S470 65 500 30 S560 45 600 15 L600 210 L0 210 Z"/>
+                        <path class="flight-chart-line-blue"
+                            d="M0 125 C50 105 65 90 100 100 S160 55 200 75 S270 35 300 60 S370 80 400 40 S470 65 500 30 S560 45 600 15"/>
+                        <path class="flight-chart-line-gold"
+                            d="M0 160 C50 145 65 120 100 140 S160 100 200 115 S270 75 300 105 S370 120 400 80 S470 100 500 65 S560 80 600 48"/>
+                    </svg>
+                    <div class="flight-chart-x">
+                        <span>Mon</span><span>Tue</span><span>Wed</span>
+                        <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- OPERATIONAL STATUS -->
+        <article class="flight-panel flight-reveal">
+            <div class="flight-panel-heading">
+                <div>
+                    <h3><i class="fa-solid fa-satellite-dish"></i> Flight Status</h3>
+                    <p>Current operational overview</p>
+                </div>
+            </div>
+
+            <div class="flight-status-summary">
+                <div class="flight-status-circle">
+                    <div>
+                        <strong>148</strong>
+                        <span>Total flights</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flight-status-list">
+                <div>
+                    <span><i class="flight-dot dot-flight-green"></i>On time</span>
+                    <strong>126 <small>85.1%</small></strong>
+                </div>
+                <div>
+                    <span><i class="flight-dot dot-flight-gold"></i>Delayed</span>
+                    <strong>14 <small>9.5%</small></strong>
+                </div>
+                <div>
+                    <span><i class="flight-dot dot-flight-red"></i>Cancelled</span>
+                    <strong>8 <small>5.4%</small></strong>
+                </div>
+            </div>
+
+            <button class="flight-full-button" onclick="go404()">
+                View Operational Report <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </article>
+    </div>
+
+    <!-- FLIGHT SCHEDULE TABLE -->
+    <article class="flight-panel flight-schedule-panel flight-reveal">
+        <div class="flight-panel-heading">
+            <div>
+                <h3><i class="fa-solid fa-calendar-days"></i> Flight Schedule</h3>
+                <p>Airline, route, departure and arrival information</p>
+            </div>
+            <button class="flight-outline" onclick="go404()">
+                <i class="fa-solid fa-download"></i> Export Schedule
+            </button>
+        </div>
+
+        <div class="flight-toolbar">
+            <label class="flight-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="flightSearch" type="search"
+                    placeholder="Search flight, airline or airport...">
+            </label>
+
+            <select id="flightStatusFilter" aria-label="Filter flights">
+                <option value="all">All statuses</option>
+                <option value="on-time">On time</option>
+                <option value="delayed">Delayed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+
+            <button class="flight-outline" onclick="go404()">
+                <i class="fa-solid fa-filter"></i> More Filters
+            </button>
+        </div>
+
+        <div class="flight-table-wrap">
+            <table class="flight-table">
+                <thead>
+                    <tr>
+                        <th>FLIGHT</th>
+                        <th>AIRLINE</th>
+                        <th>ROUTE</th>
+                        <th>DEPARTURE</th>
+                        <th>ARRIVAL</th>
+                        <th>CAPACITY</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="flightTableRows">
+
+                    <tr data-status="on-time">
+                        <td><strong class="flight-number">AI 603</strong></td>
+                        <td><span class="flight-airline-mark">AI</span> Air India</td>
+                        <td><div class="flight-route"><strong>MAA</strong><i class="fa-solid fa-arrow-right"></i><strong>BOM</strong></div><small class="flight-route-name">Chennai → Mumbai</small></td>
+                        <td><strong>09:45 AM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>11:50 AM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>142 / 180</strong><div class="flight-capacity"><span style="width:79%"></span></div></td>
+                        <td><span class="flight-status-badge status-on-time">On time</span></td>
+                        <td><button class="flight-action" onclick="go404()" aria-label="Flight details"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-status="delayed">
+                        <td><strong class="flight-number">6E 214</strong></td>
+                        <td><span class="flight-airline-mark indigo-mark">6E</span> IndiGo</td>
+                        <td><div class="flight-route"><strong>BLR</strong><i class="fa-solid fa-arrow-right"></i><strong>DEL</strong></div><small class="flight-route-name">Bengaluru → Delhi</small></td>
+                        <td><strong>10:20 AM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>01:10 PM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>165 / 180</strong><div class="flight-capacity"><span style="width:92%"></span></div></td>
+                        <td><span class="flight-status-badge status-delayed">Delayed</span></td>
+                        <td><button class="flight-action" onclick="go404()" aria-label="Flight details"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-status="on-time">
+                        <td><strong class="flight-number">UK 821</strong></td>
+                        <td><span class="flight-airline-mark purple-mark">UK</span> Vistara</td>
+                        <td><div class="flight-route"><strong>HYD</strong><i class="fa-solid fa-arrow-right"></i><strong>MAA</strong></div><small class="flight-route-name">Hyderabad → Chennai</small></td>
+                        <td><strong>11:05 AM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>12:25 PM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>98 / 150</strong><div class="flight-capacity"><span style="width:65%"></span></div></td>
+                        <td><span class="flight-status-badge status-on-time">On time</span></td>
+                        <td><button class="flight-action" onclick="go404()" aria-label="Flight details"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-status="cancelled">
+                        <td><strong class="flight-number">SG 105</strong></td>
+                        <td><span class="flight-airline-mark orange-mark">SG</span> SpiceJet</td>
+                        <td><div class="flight-route"><strong>DXB</strong><i class="fa-solid fa-arrow-right"></i><strong>MAA</strong></div><small class="flight-route-name">Dubai → Chennai</small></td>
+                        <td><strong>12:30 PM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>06:15 PM</strong><small class="flight-date">29 Oct 2026</small></td>
+                        <td><strong>0 / 180</strong><div class="flight-capacity"><span style="width:0%"></span></div></td>
+                        <td><span class="flight-status-badge status-cancelled">Cancelled</span></td>
+                        <td><button class="flight-action" onclick="go404()" aria-label="Flight details"><i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <p id="flightNoResults" hidden>No matching flights found.</p>
+        </div>
+
+        <div class="flight-table-footer">
+            <span>Showing sample flight records</span>
+            <button class="flight-outline" onclick="go404()">View All Flights <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </article>
+
+    <!-- AIRPORT OPERATIONS -->
+    <div class="flight-airport-grid">
+        <article class="flight-panel flight-reveal">
+            <div class="flight-panel-heading">
+                <div>
+                    <h3><i class="fa-solid fa-tower-broadcast"></i> Airport Operations</h3>
+                    <p>Departure and arrival hubs</p>
+                </div>
+            </div>
+
+            <div class="flight-airport-row">
+                <span class="airport-icon"><i class="fa-solid fa-plane-departure"></i></span>
+                <div><strong>Chennai International</strong><small>MAA · Chennai, India</small></div>
+                <span class="airport-count">32 flights</span>
+            </div>
+            <div class="flight-airport-row">
+                <span class="airport-icon"><i class="fa-solid fa-plane-arrival"></i></span>
+                <div><strong>Chhatrapati Shivaji Maharaj</strong><small>BOM · Mumbai, India</small></div>
+                <span class="airport-count">26 flights</span>
+            </div>
+            <div class="flight-airport-row">
+                <span class="airport-icon"><i class="fa-solid fa-plane"></i></span>
+                <div><strong>Indira Gandhi International</strong><small>DEL · New Delhi, India</small></div>
+                <span class="airport-count">24 flights</span>
+            </div>
+
+            <button class="flight-full-button" onclick="go404()">
+                Manage Airports <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </article>
+
+        <article class="flight-panel flight-reveal">
+            <div class="flight-panel-heading">
+                <div>
+                    <h3><i class="fa-solid fa-bolt"></i> Flight Actions</h3>
+                    <p>Quick access to operational tools</p>
+                </div>
+            </div>
+
+            <button class="flight-quick-action" onclick="go404()">
+                <i class="fa-solid fa-calendar-plus"></i>
+                <span><strong>Create Flight Schedule</strong><small>Add a flight and assign its route</small></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="flight-quick-action" onclick="go404()">
+                <i class="fa-solid fa-route"></i>
+                <span><strong>Manage Routes</strong><small>View flight routes and destinations</small></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="flight-quick-action" onclick="go404()">
+                <i class="fa-solid fa-clock"></i>
+                <span><strong>Delay & Cancellation Reports</strong><small>Review operational disruptions</small></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </article>
+    </div>
+
+</section>
+
+
+<!-- PASSENGERS MANAGEMENT -->
+<section class="page-content passengers-page" id="passengersSection" hidden>
+
+    <div class="passenger-heading">
+        <div>
+            <span class="passenger-eyebrow">CUSTOMER RELATIONSHIP MANAGEMENT</span>
+            <h1>Passenger Directory</h1>
+            <p>Manage traveller profiles, loyalty memberships and verification.</p>
+        </div>
+
+        <button class="passenger-primary-btn" onclick="go404()">
+            <i class="fa-solid fa-user-plus"></i>
+            Add Passenger
+        </button>
+    </div>
+
+    <!-- Passenger overview -->
+    <div class="passenger-overview">
+        <div class="passenger-overview-card">
+            <div class="passenger-overview-icon blue">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+                <span>Total Passengers</span>
+                <h2>12,840</h2>
+                <small>Registered travellers</small>
+            </div>
+        </div>
+
+        <div class="passenger-overview-card">
+            <div class="passenger-overview-icon gold">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <div>
+                <span>Frequent Flyers</span>
+                <h2>3,246</h2>
+                <small>Loyalty programme members</small>
+            </div>
+        </div>
+
+        <div class="passenger-overview-card">
+            <div class="passenger-overview-icon green">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <span>Verified Profiles</span>
+                <h2>11,592</h2>
+                <small>Identity verified</small>
+            </div>
+        </div>
+
+        <div class="passenger-overview-card">
+            <div class="passenger-overview-icon orange">
+                <i class="fa-solid fa-user-clock"></i>
+            </div>
+            <div>
+                <span>Pending Review</span>
+                <h2>248</h2>
+                <small>Requires attention</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Directory and filters -->
+    <div class="passenger-directory">
+
+        <div class="passenger-directory-header">
+            <div>
+                <h2>Traveller Profiles</h2>
+                <p>Passenger information and membership details</p>
+            </div>
+
+            <button class="passenger-export-btn" onclick="go404()">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                Export List
+            </button>
+        </div>
+
+        <div class="passenger-filters">
+            <div class="passenger-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="passengerSearch"
+                    placeholder="Search name, email or passenger ID...">
+            </div>
+
+            <select id="passengerTierFilter" aria-label="Filter by membership">
+                <option value="all">All Memberships</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Gold">Gold</option>
+                <option value="Silver">Silver</option>
+                <option value="Standard">Standard</option>
+            </select>
+
+            <select id="passengerStatusFilter" aria-label="Filter by verification">
+                <option value="all">All Verification</option>
+                <option value="Verified">Verified</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+
+        <div class="passenger-table-wrap">
+            <table class="passenger-table">
+                <thead>
+                    <tr>
+                        <th>PASSENGER</th>
+                        <th>PASSENGER ID</th>
+                        <th>MEMBERSHIP</th>
+                        <th>TRIPS</th>
+                        <th>VERIFICATION</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+
+                <tbody id="passengerTableRows">
+                    <tr data-tier="Platinum" data-status="Verified">
+                        <td>
+                            <div class="passenger-person">
+                                <div class="passenger-avatar avatar-one">AR</div>
+                                <div>
+                                    <strong>Arun Raj</strong>
+                                    <span>arun.raj@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="passenger-id">STP-10248</span></td>
+                        <td><span class="passenger-tier platinum">Platinum</span></td>
+                        <td><strong>42</strong> trips</td>
+                        <td><span class="passenger-status verified"><i class="fa-solid fa-check"></i> Verified</span></td>
+                        <td><button class="passenger-view-btn" onclick="go404()">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-tier="Gold" data-status="Verified">
+                        <td>
+                            <div class="passenger-person">
+                                <div class="passenger-avatar avatar-two">PS</div>
+                                <div>
+                                    <strong>Priya Sharma</strong>
+                                    <span>priya.sharma@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="passenger-id">STP-10249</span></td>
+                        <td><span class="passenger-tier gold-tier">Gold</span></td>
+                        <td><strong>26</strong> trips</td>
+                        <td><span class="passenger-status verified"><i class="fa-solid fa-check"></i> Verified</span></td>
+                        <td><button class="passenger-view-btn" onclick="go404()">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-tier="Silver" data-status="Pending">
+                        <td>
+                            <div class="passenger-person">
+                                <div class="passenger-avatar avatar-three">KM</div>
+                                <div>
+                                    <strong>Karthik Menon</strong>
+                                    <span>karthik.m@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="passenger-id">STP-10250</span></td>
+                        <td><span class="passenger-tier silver-tier">Silver</span></td>
+                        <td><strong>11</strong> trips</td>
+                        <td><span class="passenger-status pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                        <td><button class="passenger-view-btn" onclick="go404()">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-tier="Standard" data-status="Verified">
+                        <td>
+                            <div class="passenger-person">
+                                <div class="passenger-avatar avatar-four">DM</div>
+                                <div>
+                                    <strong>Divya Menon</strong>
+                                    <span>divya.m@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="passenger-id">STP-10251</span></td>
+                        <td><span class="passenger-tier standard-tier">Standard</span></td>
+                        <td><strong>4</strong> trips</td>
+                        <td><span class="passenger-status verified"><i class="fa-solid fa-check"></i> Verified</span></td>
+                        <td><button class="passenger-view-btn" onclick="go404()">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+
+                    <tr data-tier="Gold" data-status="Pending">
+                        <td>
+                            <div class="passenger-person">
+                                <div class="passenger-avatar avatar-five">VK</div>
+                                <div>
+                                    <strong>Vikram Kumar</strong>
+                                    <span>vikram.k@example.com</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><span class="passenger-id">STP-10252</span></td>
+                        <td><span class="passenger-tier gold-tier">Gold</span></td>
+                        <td><strong>19</strong> trips</td>
+                        <td><span class="passenger-status pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                        <td><button class="passenger-view-btn" onclick="go404()">View Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="passenger-empty" id="passengerEmpty" hidden>
+                <i class="fa-solid fa-user-slash"></i>
+                <h3>No passengers found</h3>
+                <p>Try changing your search or filter.</p>
+            </div>
+        </div>
+
+        <div class="passenger-table-footer">
+            <span id="passengerResultCount">Showing 5 sample passengers</span>
+            <span class="passenger-demo-note">Demo data</span>
+        </div>
+    </div>
+
+    <!-- Different bottom layout: loyalty spotlight + activity -->
+    <div class="passenger-bottom-grid">
+
+        <div class="passenger-loyalty-card">
+            <div class="passenger-loyalty-top">
+                <div>
+                    <span class="passenger-eyebrow">LOYALTY SPOTLIGHT</span>
+                    <h2>Premium Traveller Club</h2>
+                    <p>Reward frequent flyers with a better journey.</p>
+                </div>
+                <div class="passenger-crown">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+            </div>
+
+            <div class="passenger-loyalty-stats">
+                <div>
+                    <span>Platinum members</span>
+                    <strong>864</strong>
+                </div>
+                <div>
+                    <span>Points redeemed</span>
+                    <strong>28.6K</strong>
+                </div>
+            </div>
+
+            <div class="passenger-loyalty-progress">
+                <div>
+                    <span>Membership target</span>
+                    <strong>72%</strong>
+                </div>
+                <div class="passenger-progress-track">
+                    <span></span>
+                </div>
+            </div>
+
+            <button onclick="go404()" class="passenger-loyalty-btn">
+                Manage Loyalty Programme
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <div class="passenger-activity-card">
+            <div class="passenger-activity-heading">
+                <div>
+                    <h2>Recent Traveller Activity</h2>
+                    <p>Latest passenger updates</p>
+                </div>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+
+            <div class="passenger-activity-item">
+                <div class="activity-dot green-dot"></div>
+                <div>
+                    <strong>Identity verified</strong>
+                    <p>Arun Raj · STP-10248</p>
+                    <span>Today, 09:42 AM</span>
+                </div>
+                <i class="fa-solid fa-check-circle activity-check"></i>
+            </div>
+
+            <div class="passenger-activity-item">
+                <div class="activity-dot gold-dot"></div>
+                <div>
+                    <strong>Membership upgraded</strong>
+                    <p>Priya Sharma · Gold tier</p>
+                    <span>Today, 08:15 AM</span>
+                </div>
+                <i class="fa-solid fa-crown activity-crown"></i>
+            </div>
+
+            <div class="passenger-activity-item">
+                <div class="activity-dot orange-dot"></div>
+                <div>
+                    <strong>Verification required</strong>
+                    <p>Karthik Menon · STP-10250</p>
+                    <span>Yesterday, 04:30 PM</span>
+                </div>
+                <i class="fa-solid fa-clock activity-pending"></i>
+            </div>
+
+            <button class="passenger-activity-link" onclick="go404()">
+                View all activity <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+
+
+<!-- REPORTS & ANALYTICS -->
+<section class="page-content reports-page" id="reportsSection" hidden>
+
+    <div class="reports-heading">
+        <div>
+            <span class="reports-eyebrow">SKYTRIP INTELLIGENCE</span>
+            <h1>Reports & Analytics</h1>
+            <p>Understand revenue, flight performance and passenger trends.</p>
+        </div>
+
+        <button class="reports-generate-btn" onclick="go404()">
+            <i class="fa-solid fa-file-circle-plus"></i>
+            Generate Report
+        </button>
+    </div>
+
+    <!-- Date range -->
+    <div class="reports-toolbar">
+        <div class="reports-period">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Reporting period</span>
+            <strong>October 2026</strong>
+        </div>
+
+        <div class="reports-toolbar-actions">
+            <span class="reports-live-dot"></span>
+            Demo analytics
+            <button onclick="go404()" class="reports-export-top">
+                <i class="fa-solid fa-download"></i> Export
+            </button>
+        </div>
+    </div>
+
+    <!-- KPI cards -->
+    <div class="reports-kpi-grid">
+
+        <article class="reports-kpi-card">
+            <div class="reports-kpi-top">
+                <span>Total Revenue</span>
+                <div class="reports-kpi-icon revenue-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+            </div>
+            <h2>₹48.6L</h2>
+            <div class="reports-kpi-foot">
+                <span class="reports-trend positive">
+                    <i class="fa-solid fa-arrow-trend-up"></i> 12.8%
+                </span>
+                <span>vs previous month</span>
+            </div>
+            <div class="reports-mini-bars revenue-mini">
+                <i style="height:30%"></i><i style="height:48%"></i>
+                <i style="height:38%"></i><i style="height:65%"></i>
+                <i style="height:52%"></i><i style="height:78%"></i>
+                <i style="height:62%"></i><i style="height:92%"></i>
+            </div>
+        </article>
+
+        <article class="reports-kpi-card">
+            <div class="reports-kpi-top">
+                <span>Flights Completed</span>
+                <div class="reports-kpi-icon flights-icon">
+                    <i class="fa-solid fa-plane-circle-check"></i>
+                </div>
+            </div>
+            <h2>1,284</h2>
+            <div class="reports-kpi-foot">
+                <span class="reports-trend positive">
+                    <i class="fa-solid fa-arrow-trend-up"></i> 8.4%
+                </span>
+                <span>vs previous month</span>
+            </div>
+            <div class="reports-kpi-progress">
+                <div><span>Monthly target</span><strong>84%</strong></div>
+                <span class="reports-progress-track"><i style="width:84%"></i></span>
+            </div>
+        </article>
+
+        <article class="reports-kpi-card">
+            <div class="reports-kpi-top">
+                <span>Passenger Load</span>
+                <div class="reports-kpi-icon passenger-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+            </div>
+            <h2>86.4%</h2>
+            <div class="reports-kpi-foot">
+                <span class="reports-trend positive">
+                    <i class="fa-solid fa-arrow-trend-up"></i> 4.2%
+                </span>
+                <span>seat occupancy</span>
+            </div>
+            <div class="reports-kpi-progress">
+                <div><span>Capacity utilised</span><strong>86.4%</strong></div>
+                <span class="reports-progress-track"><i style="width:86.4%"></i></span>
+            </div>
+        </article>
+
+        <article class="reports-kpi-card">
+            <div class="reports-kpi-top">
+                <span>Cancellation Rate</span>
+                <div class="reports-kpi-icon cancel-icon">
+                    <i class="fa-solid fa-ban"></i>
+                </div>
+            </div>
+            <h2>2.4%</h2>
+            <div class="reports-kpi-foot">
+                <span class="reports-trend positive">
+                    <i class="fa-solid fa-arrow-down"></i> 0.8%
+                </span>
+                <span>lower than last month</span>
+            </div>
+            <div class="reports-kpi-progress">
+                <div><span>Cancellation level</span><strong>Low</strong></div>
+                <span class="reports-progress-track cancel-track">
+                    <i style="width:24%"></i>
+                </span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Revenue analytics -->
+    <div class="reports-main-grid">
+
+        <article class="reports-panel reports-revenue-panel">
+            <div class="reports-panel-heading">
+                <div>
+                    <span class="reports-section-label">FINANCIAL PERFORMANCE</span>
+                    <h2>Revenue Overview</h2>
+                    <p>Monthly revenue distribution · ₹ lakhs</p>
+                </div>
+                <button class="reports-icon-btn" aria-label="Export revenue report"
+                    onclick="go404()">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+            </div>
+
+            <div class="reports-revenue-summary">
+                <strong>₹48.6L</strong>
+                <span><i class="fa-solid fa-arrow-up"></i> 12.8% growth</span>
+            </div>
+
+            <div class="reports-bar-chart" role="img"
+                aria-label="Illustrative monthly revenue chart from May to October">
+                <div class="reports-y-labels">
+                    <span>60L</span><span>45L</span>
+                    <span>30L</span><span>15L</span><span>0</span>
+                </div>
+
+                <div class="reports-chart-plot">
+                    <div class="reports-chart-gridlines">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+
+                    <div class="reports-bars">
+                        <div class="reports-bar-column">
+                            <span class="reports-bar-value">31.2</span>
+                            <i style="height:52%"></i><span>May</span>
+                        </div>
+                        <div class="reports-bar-column">
+                            <span class="reports-bar-value">36.8</span>
+                            <i style="height:61%"></i><span>Jun</span>
+                        </div>
+                        <div class="reports-bar-column">
+                            <span class="reports-bar-value">33.5</span>
+                            <i style="height:56%"></i><span>Jul</span>
+                        </div>
+                        <div class="reports-bar-column">
+                            <span class="reports-bar-value">42.1</span>
+                            <i style="height:70%"></i><span>Aug</span>
+                        </div>
+                        <div class="reports-bar-column">
+                            <span class="reports-bar-value">40.4</span>
+                            <i style="height:67%"></i><span>Sep</span>
+                        </div>
+                        <div class="reports-bar-column current-month">
+                            <span class="reports-bar-value">48.6</span>
+                            <i style="height:81%"></i><span>Oct</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reports-chart-legend">
+                <span><i></i> Monthly revenue</span>
+                <small>Illustrative demo figures</small>
+            </div>
+        </article>
+
+        <!-- Route performance -->
+        <article class="reports-panel reports-route-panel">
+            <div class="reports-panel-heading">
+                <div>
+                    <span class="reports-section-label">NETWORK INTELLIGENCE</span>
+                    <h2>Top Performing Routes</h2>
+                    <p>Passenger bookings by route</p>
+                </div>
+                <i class="fa-solid fa-route reports-heading-symbol"></i>
+            </div>
+
+            <div class="reports-route-list">
+                <div class="reports-route-item">
+                    <div class="reports-route-number">01</div>
+                    <div class="reports-route-details">
+                        <strong>Chennai <i class="fa-solid fa-arrow-right"></i> Mumbai</strong>
+                        <span>MAA <b>→</b> BOM</span>
+                        <div class="reports-route-track"><i style="width:92%"></i></div>
+                    </div>
+                    <div class="reports-route-value">
+                        <strong>2,840</strong><span>passengers</span>
+                    </div>
+                </div>
+
+                <div class="reports-route-item">
+                    <div class="reports-route-number">02</div>
+                    <div class="reports-route-details">
+                        <strong>Delhi <i class="fa-solid fa-arrow-right"></i> Bengaluru</strong>
+                        <span>DEL <b>→</b> BLR</span>
+                        <div class="reports-route-track"><i style="width:78%"></i></div>
+                    </div>
+                    <div class="reports-route-value">
+                        <strong>2,210</strong><span>passengers</span>
+                    </div>
+                </div>
+
+                <div class="reports-route-item">
+                    <div class="reports-route-number">03</div>
+                    <div class="reports-route-details">
+                        <strong>Chennai <i class="fa-solid fa-arrow-right"></i> Delhi</strong>
+                        <span>MAA <b>→</b> DEL</span>
+                        <div class="reports-route-track"><i style="width:64%"></i></div>
+                    </div>
+                    <div class="reports-route-value">
+                        <strong>1,860</strong><span>passengers</span>
+                    </div>
+                </div>
+
+                <div class="reports-route-item">
+                    <div class="reports-route-number">04</div>
+                    <div class="reports-route-details">
+                        <strong>Mumbai <i class="fa-solid fa-arrow-right"></i> Hyderabad</strong>
+                        <span>BOM <b>→</b> HYD</span>
+                        <div class="reports-route-track"><i style="width:49%"></i></div>
+                    </div>
+                    <div class="reports-route-value">
+                        <strong>1,420</strong><span>passengers</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="reports-text-btn" onclick="go404()">
+                View route analytics <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </article>
+    </div>
+
+    <!-- Operations and reports list -->
+    <div class="reports-bottom-grid">
+
+        <article class="reports-panel reports-operations-panel">
+            <div class="reports-panel-heading">
+                <div>
+                    <span class="reports-section-label">FLIGHT OPERATIONS</span>
+                    <h2>Operational Health</h2>
+                    <p>Flight status distribution</p>
+                </div>
+                <i class="fa-solid fa-gauge-high reports-heading-symbol"></i>
+            </div>
+
+            <div class="reports-operations-content">
+                <div class="reports-donut-wrap">
+                    <div class="reports-donut">
+                        <div>
+                            <strong>1,284</strong>
+                            <span>Total flights</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reports-status-legend">
+                    <div><i class="status-on-time"></i><span>On time</span><strong>78%</strong></div>
+                    <div><i class="status-delayed"></i><span>Delayed</span><strong>16%</strong></div>
+                    <div><i class="status-cancelled"></i><span>Cancelled</span><strong>6%</strong></div>
+                </div>
+            </div>
+
+            <div class="reports-operations-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Illustrative figures for dashboard demonstration.</span>
+            </div>
+        </article>
+
+        <article class="reports-panel reports-recent-panel">
+            <div class="reports-panel-heading">
+                <div>
+                    <span class="reports-section-label">REPORT CENTRE</span>
+                    <h2>Recent Reports</h2>
+                    <p>Access your latest report files</p>
+                </div>
+                <button class="reports-icon-btn" aria-label="View all reports"
+                    onclick="go404()">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+            </div>
+
+            <div class="reports-file-list">
+                <div class="reports-file-item">
+                    <div class="reports-file-icon pdf-icon">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div class="reports-file-details">
+                        <strong>Monthly Revenue Summary</strong>
+                        <span>PDF report · 28 Oct 2026</span>
+                    </div>
+                    <span class="reports-file-status ready">Ready</span>
+                    <button onclick="go404()" aria-label="View revenue report">
+                        <i class="fa-solid fa-arrow-down-to-line"></i>
+                    </button>
+                </div>
+
+                <div class="reports-file-item">
+                    <div class="reports-file-icon csv-icon">
+                        <i class="fa-solid fa-file-csv"></i>
+                    </div>
+                    <div class="reports-file-details">
+                        <strong>Passenger Booking Data</strong>
+                        <span>CSV report · 26 Oct 2026</span>
+                    </div>
+                    <span class="reports-file-status ready">Ready</span>
+                    <button onclick="go404()" aria-label="View passenger report">
+                        <i class="fa-solid fa-arrow-down-to-line"></i>
+                    </button>
+                </div>
+
+                <div class="reports-file-item">
+                    <div class="reports-file-icon excel-icon">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <div class="reports-file-details">
+                        <strong>Flight Operations Audit</strong>
+                        <span>Excel report · 25 Oct 2026</span>
+                    </div>
+                    <span class="reports-file-status processing">Processing</span>
+                    <button onclick="go404()" aria-label="View operations report">
+                        <i class="fa-solid fa-arrow-down-to-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <button class="reports-text-btn" onclick="go404()">
+                Open report centre <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </article>
+
+    </div>
+
+    <!-- Bottom call-to-action -->
+    <div class="reports-custom-banner">
+        <div class="reports-custom-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div>
+            <h3>Need a custom report?</h3>
+            <p>Prepare a tailored report for routes, revenue, bookings or operations.</p>
+        </div>
+        <button onclick="go404()">
+            Create custom report <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+</section>
+
+
+
+      <section class="placeholder-page" id="otherSection" hidden><div class="placeholder-icon"><i class="fa-solid fa-plane-departure"></i></div><span class="eyebrow">SKYTRIP MANAGEMENT</span><h1 id="otherTitle">Bookings</h1><p id="otherDescription">Manage your flight booking operations from one place.</p><button class="primary-button" id="backDashboard"><i class="fa-solid fa-arrow-left"></i> Back to dashboard</button></section>
+    </main>
+  </div>
+  <div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastText">Done</span></div>
+  <script src="js/admin-dashboard.js"></script>
+</body></html>

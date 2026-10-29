@@ -1,0 +1,1164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b49">
+    <title>SkyTrip | Explore Beyond Boundaries</title>
+
+    <link rel="stylesheet" href="./css/blogs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="loader-orbit">
+            <div class="loader-globe">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <i class="fa-solid fa-plane loader-plane"></i>
+        </div>
+
+        <a class="loader-brand">
+            SKY<span>TRIP</span>
+        </a>
+        <p class="loader-tagline">FLY BEYOND BOUNDARIES</p>
+
+        <div class="loader-track">
+            <span id="loaderProgress"></span>
+        </div>
+
+        <div class="loader-bottom">
+            <span id="loaderText">Preparing your journey...</span>
+            <span id="loaderPercent">0%</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="header" id="header">
+        <nav class="navbar container">
+
+            <a href="index.html" class="brand" aria-label="SkyTrip home">
+                <img src="images/stackly_logo.webp" alt="SkyTrip Logo"
+                     onerror="this.style.display='none'">
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+<li><a class="nav-link" href="index.html">Home</a></li>
+<li><a class="nav-link" href="about.html">About Us</a></li>
+<li><a class="nav-link" href="service.html">Services</a></li>
+<li><a class="nav-link" href="blogs.html">Blogs</a></li>
+<li><a class="nav-link" href="contact.html">Contact</a></li>
+
+                <li class="mobile-login">
+                    <a class="login-btn" href="login.html">
+                        <i class="fa-solid fa-user"></i> Login
+                    </a>
+                </li>
+            </ul>
+
+            <a href="login.html" class="login-btn desktop-login">
+                <i class="fa-solid fa-user"></i>
+                <span>Login</span>
+            </a>
+
+        </nav>
+    </header>
+
+
+<!-- SKYTRIP BLOGS HERO -->
+<section class="sky-blogs-hero" id="blogs-home">
+
+    <!-- BACKGROUND IMAGE -->
+    <div class="sky-blogs-bg"></div>
+    <div class="sky-blogs-overlay"></div>
+    <div class="sky-blogs-grain"></div>
+
+    <!-- DECORATIVE ORBIT -->
+    <div class="sky-blogs-orbit orbit-one"></div>
+    <div class="sky-blogs-orbit orbit-two"></div>
+
+    <!-- FLOATING ICONS -->
+    <div class="sky-blog-float-icon float-plane">
+        <i class="fa-solid fa-plane"></i>
+    </div>
+
+    <div class="sky-blog-float-icon float-globe">
+        <i class="fa-solid fa-earth-americas"></i>
+    </div>
+
+    <div class="sky-blog-float-icon float-compass">
+        <i class="fa-solid fa-compass"></i>
+    </div>
+
+    <div class="sky-blog-float-icon float-camera">
+        <i class="fa-solid fa-camera"></i>
+    </div>
+
+    <!-- HERO CONTENT -->
+    <div class="sky-blogs-hero-container">
+
+        <div class="sky-blogs-hero-content">
+
+            <div class="sky-blogs-eyebrow">
+                <span class="sky-blogs-eyebrow-line"></span>
+                <i class="fa-solid fa-book-open"></i>
+                THE SKYTRIP TRAVEL JOURNAL
+                <span class="sky-blogs-eyebrow-line"></span>
+            </div>
+
+            <h1 class="sky-blogs-title">
+                Stories That
+                <span>Take You Places.</span>
+            </h1>
+
+            <p class="sky-blogs-description">
+                Discover inspiring destinations, travel tips, hidden
+                gems, and unforgettable experiences. Your next great
+                adventure might begin with a story.
+            </p>
+
+            <div class="sky-blogs-actions">
+                <a href="404.html" class="sky-blogs-primary-btn">
+                    Explore Our Stories
+                    <span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </span>
+                </a>
+
+                <a href="404.html" class="sky-blogs-secondary-btn">
+                    <span class="sky-blogs-play-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </span>
+                    Find Your Inspiration
+                </a>
+            </div>
+
+            <!-- HERO INFO -->
+            <div class="sky-blogs-meta">
+
+                <div class="sky-blogs-meta-item">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <span>Explore the World</span>
+                </div>
+
+                <span class="sky-blogs-meta-divider"></span>
+
+                <div class="sky-blogs-meta-item">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <span>Discover New Stories</span>
+                </div>
+
+                <span class="sky-blogs-meta-divider"></span>
+
+                <div class="sky-blogs-meta-item">
+                    <i class="fa-solid fa-route"></i>
+                    <span>Plan Your Journey</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT FLOATING FEATURE CARD -->
+        <div class="sky-blogs-feature">
+
+            <div class="sky-blogs-feature-image">
+                <img
+                    src="images/blog.webp"
+                    alt="Beautiful mountain travel destination"
+                    loading="eager"
+                >
+
+                <div class="sky-blogs-feature-image-overlay"></div>
+
+                <span class="sky-blogs-feature-tag">
+                    <i class="fa-solid fa-star"></i>
+                    TRAVEL INSPIRATION
+                </span>
+
+                <div class="sky-blogs-feature-caption">
+                    <span>YOUR NEXT CHAPTER</span>
+                    <h2>Find Beauty<br>Beyond the Ordinary.</h2>
+                </div>
+            </div>
+
+            <div class="sky-blogs-feature-footer">
+                <div class="sky-blogs-feature-icon">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                </div>
+
+                <div>
+                    <strong>Read. Dream. Discover.</strong>
+                    <p>Let every story lead somewhere new.</p>
+                </div>
+
+                <!-- <i class="fa-solid fa-arrow-up-right-from-square sky-blogs-feature-arrow"></i> -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SCROLL INDICATOR -->
+    <a href="#latest-blogs" class="sky-blogs-scroll">
+        <span>SCROLL TO DISCOVER</span>
+        <span class="sky-blogs-scroll-line"></span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+
+    <!-- BOTTOM GOLD ACCENT -->
+    <div class="sky-blogs-bottom-line"></div>
+
+</section>
+
+<!-- SKYTRIP — TRAVEL INSPIRATION -->
+<section class="sky-inspiration" id="travel-styles">
+
+    <div class="inspiration-orb inspiration-orb-one"></div>
+    <div class="inspiration-orb inspiration-orb-two"></div>
+
+    <div class="inspiration-container">
+
+        <!-- HEADER -->
+        <div class="inspiration-heading inspiration-reveal">
+            <div class="inspiration-eyebrow">
+                <span></span>
+                THE WORLD IS YOURS
+                <span></span>
+            </div>
+
+            <h2>
+                Find Your Kind<br>
+                Of <em>Adventure.</em>
+            </h2>
+
+            <p>
+                Every traveller has a different story.
+                Find inspiration for the journey that feels like you.
+            </p>
+        </div>
+
+        <!-- EDITORIAL CATEGORY LIST -->
+        <div class="inspiration-list">
+
+            <!-- 01 -->
+            <a href="404.html"
+               class="inspiration-item inspiration-reveal">
+
+                <span class="inspiration-index">01</span>
+
+                <span class="inspiration-item-icon">
+                    <i class="ri-compass-3-line"></i>
+                </span>
+
+                <span class="inspiration-item-content">
+                    <span class="inspiration-category">
+                        THE BOLD EXPLORER
+                    </span>
+                    <span class="inspiration-title">
+                        Beyond The Ordinary
+                    </span>
+                    <span class="inspiration-description">
+                        Mountain trails, hidden paths and unexpected discoveries.
+                    </span>
+                </span>
+
+                <span class="inspiration-item-action">
+                    <i class="ri-arrow-up-right-line"></i>
+                </span>
+
+                <span class="inspiration-item-line"></span>
+            </a>
+
+            <!-- 02 -->
+            <a href="404.html"
+               class="inspiration-item inspiration-reveal">
+
+                <span class="inspiration-index">02</span>
+
+                <span class="inspiration-item-icon">
+                    <i class="ri-vip-crown-line"></i>
+                </span>
+
+                <span class="inspiration-item-content">
+                    <span class="inspiration-category">
+                        THE LUXURY SEEKER
+                    </span>
+                    <span class="inspiration-title">
+                        A World Of Elegance
+                    </span>
+                    <span class="inspiration-description">
+                        Extraordinary stays, refined experiences and effortless escapes.
+                    </span>
+                </span>
+
+                <span class="inspiration-item-action">
+                    <i class="ri-arrow-up-right-line"></i>
+                </span>
+
+                <span class="inspiration-item-line"></span>
+            </a>
+
+            <!-- 03 -->
+            <a href="404.html"
+               class="inspiration-item inspiration-reveal">
+
+                <span class="inspiration-index">03</span>
+
+                <span class="inspiration-item-icon">
+                    <i class="ri-sun-line"></i>
+                </span>
+
+                <span class="inspiration-item-content">
+                    <span class="inspiration-category">
+                        THE SLOW TRAVELLER
+                    </span>
+                    <span class="inspiration-title">
+                        Somewhere By The Sea
+                    </span>
+                    <span class="inspiration-description">
+                        Quiet shores, golden sunsets and time to simply breathe.
+                    </span>
+                </span>
+
+                <span class="inspiration-item-action">
+                    <i class="ri-arrow-up-right-line"></i>
+                </span>
+
+                <span class="inspiration-item-line"></span>
+            </a>
+
+            <!-- 04 -->
+            <a href="404.html"
+               class="inspiration-item inspiration-reveal">
+
+                <span class="inspiration-index">04</span>
+
+                <span class="inspiration-item-icon">
+                    <i class="ri-earth-line"></i>
+                </span>
+
+                <span class="inspiration-item-content">
+                    <span class="inspiration-category">
+                        THE CULTURE COLLECTOR
+                    </span>
+                    <span class="inspiration-title">
+                        Stories Without Borders
+                    </span>
+                    <span class="inspiration-description">
+                        Local traditions, timeless architecture and new perspectives.
+                    </span>
+                </span>
+
+                <span class="inspiration-item-action">
+                    <i class="ri-arrow-up-right-line"></i>
+                </span>
+
+                <span class="inspiration-item-line"></span>
+            </a>
+
+        </div>
+
+        <!-- FOOTER DETAIL -->
+        <div class="inspiration-footer inspiration-reveal">
+            <div class="inspiration-footer-mark">
+                <i class="ri-flight-takeoff-line"></i>
+            </div>
+
+            <p>
+                DON'T JUST SEE THE WORLD.
+                <strong>FEEL EVERY PART OF IT.</strong>
+            </p>
+
+            <div class="inspiration-footer-decoration">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURED TRAVEL STORIES -->
+<section class="sky-featured-blogs" id="latest-blogs">
+
+    <div class="sky-featured-container">
+
+        <!-- SECTION HEADER -->
+        <div class="sky-featured-header blog-reveal">
+
+            <div class="sky-featured-heading">
+                <span class="sky-featured-eyebrow">
+                    <i class="fa-solid fa-feather-pointed"></i>
+                    THE LATEST FROM SKYTRIP
+                </span>
+
+                <h2>
+                    Stories Worth
+                    <span>Travelling For.</span>
+                </h2>
+
+                <p>
+                    Find inspiration for your next escape through destination
+                    guides, travel tips, and stories from around the world.
+                </p>
+            </div>
+
+            <a href="404.html" class="sky-featured-view-all">
+                View All Stories
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- FEATURED BLOG GRID -->
+        <div class="sky-featured-grid">
+
+            <!-- BLOG 1 -->
+            <article class="sky-blog-card blog-reveal"
+                     onclick="window.location.href='404.html'"
+                     tabindex="0"
+                     role="link"
+                     aria-label="Read the guide to hidden destinations">
+
+                <div class="sky-blog-card-image">
+                    <img
+                        src="images/singapore.webp"
+                        alt="Peaceful lake surrounded by mountains"
+                        loading="lazy"
+                    >
+
+                    <span class="sky-blog-category">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        DESTINATION GUIDE
+                    </span>
+
+                    <span class="sky-blog-image-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+                </div>
+
+                <div class="sky-blog-card-content">
+
+                    <div class="sky-blog-meta">
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            TRAVEL INSPIRATION
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            5 MIN READ
+                        </span>
+                    </div>
+
+                    <h3>
+                        Beyond the Ordinary: Discover Places That Take Your Breath Away
+                    </h3>
+
+                    <p>
+                        Explore beautiful landscapes, peaceful escapes,
+                        and unforgettable places waiting to be discovered.
+                    </p>
+
+                    <div class="sky-blog-card-footer">
+                        <span>EXPLORE THE STORY</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- BLOG 2 -->
+            <article class="sky-blog-card blog-reveal"
+                     onclick="window.location.href='404.html'"
+                     tabindex="0"
+                     role="link"
+                     aria-label="Read travel planning tips">
+
+                <div class="sky-blog-card-image">
+                    <img
+                        src="images/dubai.webp"
+                        alt="Travel essentials and journey planning"
+                        loading="lazy"
+                    >
+
+                    <span class="sky-blog-category">
+                        <i class="fa-solid fa-map"></i>
+                        TRAVEL TIPS
+                    </span>
+
+                    <span class="sky-blog-image-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+                </div>
+
+                <div class="sky-blog-card-content">
+
+                    <div class="sky-blog-meta">
+                        <span>
+                            <i class="fa-solid fa-suitcase"></i>
+                            SMART TRAVEL
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            4 MIN READ
+                        </span>
+                    </div>
+
+                    <h3>
+                        Travel Smarter: Simple Ways to Plan a Smoother Journey
+                    </h3>
+
+                    <p>
+                        Discover practical ideas to organize your plans,
+                        pack thoughtfully, and enjoy more of every trip.
+                    </p>
+
+                    <div class="sky-blog-card-footer">
+                        <span>EXPLORE THE STORY</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- BLOG 3 -->
+            <article class="sky-blog-card blog-reveal"
+                     onclick="window.location.href='404.html'"
+                     tabindex="0"
+                     role="link"
+                     aria-label="Read about memorable travel experiences">
+
+                <div class="sky-blog-card-image">
+                    <img
+                        src="images/london.webp"
+                        alt="Scenic mountain destination at sunset"
+                        loading="lazy"
+                    >
+
+                    <span class="sky-blog-category">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        INSPIRATION
+                    </span>
+
+                    <span class="sky-blog-image-arrow">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+                </div>
+
+                <div class="sky-blog-card-content">
+
+                    <div class="sky-blog-meta">
+                        <span>
+                            <i class="fa-solid fa-compass"></i>
+                            NEW HORIZONS
+                        </span>
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            6 MIN READ
+                        </span>
+                    </div>
+
+                    <h3>
+                        The Joy of Getting Lost: Make Every Journey a Memory
+                    </h3>
+
+                    <p>
+                        Find inspiration to try something new, embrace
+                        unexpected moments, and see the world differently.
+                    </p>
+
+                    <div class="sky-blog-card-footer">
+                        <span>EXPLORE THE STORY</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <!-- BOTTOM STRIP -->
+        <div class="sky-featured-bottom blog-reveal">
+
+            <div class="sky-featured-bottom-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div class="sky-featured-bottom-text">
+                <h3>Every destination has a story.</h3>
+                <p>Find the one that inspires your next adventure.</p>
+            </div>
+
+            <a href="404.html" class="sky-featured-bottom-link">
+                Keep Exploring
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKYTRIP — TRAVEL JOURNAL -->
+<section class="sky-journal" id="travel-journal">
+
+    <div class="journal-container">
+
+        <!-- SECTION HEADER -->
+        <header class="journal-header journal-reveal">
+            <span class="journal-kicker">
+                <i class="ri-flight-takeoff-line"></i>
+                THE TRAVEL JOURNAL
+            </span>
+
+            <h2>
+                More Than Places.
+                <span>Moments That Stay.</span>
+            </h2>
+
+            <p>
+                A collection of ideas, insights and little discoveries
+                to make every journey more meaningful.
+            </p>
+
+            <div class="journal-heading-line">
+                <span></span>
+            </div>
+        </header>
+
+        <!-- JOURNAL CONTENT -->
+        <div class="journal-timeline">
+
+            <!-- STORY 01 -->
+            <article class="journal-entry journal-reveal">
+
+                <div class="journal-entry-number">
+                    <span>01</span>
+                    <i class="ri-compass-3-line"></i>
+                </div>
+
+                <div class="journal-entry-content">
+                    <span class="journal-category">
+                        TRAVEL SMARTER
+                    </span>
+
+                    <h3>Plan Less. Experience More.</h3>
+
+                    <p>
+                        Discover practical ways to organise your next
+                        getaway without losing the excitement of discovery.
+                    </p>
+
+                    <div class="journal-tags">
+                        <span>Planning</span>
+                        <span>Travel Tips</span>
+                        <span>Essentials</span>
+                    </div>
+
+                    <a href="404.html" class="journal-read-link">
+                        DISCOVER MORE
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="journal-entry-aside">
+                    <span class="journal-aside-label">THE ART OF</span>
+                    <strong>PREPARING</strong>
+                    <i class="ri-route-line"></i>
+                </div>
+
+                <span class="journal-entry-progress"></span>
+            </article>
+
+            <!-- STORY 02 -->
+            <article class="journal-entry journal-reveal">
+
+                <div class="journal-entry-number">
+                    <span>02</span>
+                    <i class="ri-earth-line"></i>
+                </div>
+
+                <div class="journal-entry-content">
+                    <span class="journal-category">
+                        CULTURE & DISCOVERY
+                    </span>
+
+                    <h3>See The World Differently.</h3>
+
+                    <p>
+                        Go beyond the usual destinations and find inspiration
+                        in local culture, unexpected places and new perspectives.
+                    </p>
+
+                    <div class="journal-tags">
+                        <span>Culture</span>
+                        <span>Discovery</span>
+                        <span>Inspiration</span>
+                    </div>
+
+                    <a href="404.html" class="journal-read-link">
+                        DISCOVER MORE
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="journal-entry-aside">
+                    <span class="journal-aside-label">THE ART OF</span>
+                    <strong>DISCOVERING</strong>
+                    <i class="ri-earth-line"></i>
+                </div>
+
+                <span class="journal-entry-progress"></span>
+            </article>
+
+            <!-- STORY 03 -->
+            <article class="journal-entry journal-reveal">
+
+                <div class="journal-entry-number">
+                    <span>03</span>
+                    <i class="ri-sun-line"></i>
+                </div>
+
+                <div class="journal-entry-content">
+                    <span class="journal-category">
+                        JOURNEYS & WELLBEING
+                    </span>
+
+                    <h3>Take The Scenic Route.</h3>
+
+                    <p>
+                        Slow down, embrace the unexpected and discover
+                        why some of the best memories are never planned.
+                    </p>
+
+                    <div class="journal-tags">
+                        <span>Slow Travel</span>
+                        <span>Wellbeing</span>
+                        <span>Experiences</span>
+                    </div>
+
+                    <a href="404.html" class="journal-read-link">
+                        DISCOVER MORE
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="journal-entry-aside">
+                    <span class="journal-aside-label">THE ART OF</span>
+                    <strong>WANDERING</strong>
+                    <i class="ri-footprint-line"></i>
+                </div>
+
+                <span class="journal-entry-progress"></span>
+            </article>
+
+        </div>
+
+        <!-- BOTTOM MESSAGE -->
+        <div class="journal-footer journal-reveal">
+            <span class="journal-footer-icon">
+                <i class="ri-book-open-line"></i>
+            </span>
+
+            <p>
+                EVERY DESTINATION HAS A STORY.
+                <strong>WHAT WILL YOURS BE?</strong>
+            </p>
+
+            <a href="404.html" class="journal-explore-link">
+                EXPLORE JOURNAL
+                <i class="ri-arrow-up-right-line"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKYTRIP — DESTINATIONS THAT INSPIRE -->
+<section class="sky-destination-section" id="destination-stories">
+
+    <div class="destination-container">
+
+        <!-- HEADER -->
+        <div class="destination-header destination-reveal">
+
+            <span class="destination-eyebrow">
+                <i class="ri-earth-line"></i>
+                YOUR NEXT CHAPTER STARTS HERE
+            </span>
+
+            <h2>
+                Destinations That
+                <span>Inspire You.</span>
+            </h2>
+
+            <p>
+                From breathtaking coastlines to timeless cities,
+                discover places that make every journey unforgettable.
+            </p>
+
+        </div>
+
+        <!-- DESTINATION CARDS -->
+        <div class="destination-grid">
+
+            <!-- CARD 1 -->
+            <article class="destination-card destination-reveal">
+
+                <a href="404.html"
+                   class="destination-image-link"
+                   aria-label="Explore the Swiss Alps">
+
+                    <img
+                        src="images/europe.webp"
+                        alt="Snow-covered Swiss Alps beneath a colourful sky"
+                        loading="lazy">
+
+                    <span class="destination-image-overlay"></span>
+
+                    <span class="destination-image-label">
+                        <i class="ri-map-pin-line"></i>
+                        EUROPE
+                    </span>
+
+                    <span class="destination-image-arrow">
+                        <i class="ri-arrow-up-right-line"></i>
+                    </span>
+
+                </a>
+
+                <div class="destination-card-content">
+
+                    <span class="destination-card-category">
+                        MOUNTAINS & NATURE
+                    </span>
+
+                    <h3>Discover the Swiss Alps</h3>
+
+                    <p>
+                        Alpine scenery, peaceful escapes and unforgettable
+                        views at every turn.
+                    </p>
+
+                    <a href="404.html" class="destination-read-link">
+                        EXPLORE DESTINATION
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+                <span class="destination-card-number">01</span>
+
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="destination-card destination-reveal">
+
+                <a href="404.html"
+                   class="destination-image-link"
+                   aria-label="Explore the Maldives">
+
+                    <img
+                        src="images/maldives.webp"
+                        alt="Tropical island surrounded by turquoise ocean"
+                        loading="lazy">
+
+                    <span class="destination-image-overlay"></span>
+
+                    <span class="destination-image-label">
+                        <i class="ri-map-pin-line"></i>
+                        ASIA
+                    </span>
+
+                    <span class="destination-image-arrow">
+                        <i class="ri-arrow-up-right-line"></i>
+                    </span>
+
+                </a>
+
+                <div class="destination-card-content">
+
+                    <span class="destination-card-category">
+                        ISLANDS & BEACHES
+                    </span>
+
+                    <h3>Escape to the Maldives</h3>
+
+                    <p>
+                        Crystal-clear waters, tropical tranquillity
+                        and moments worth remembering.
+                    </p>
+
+                    <a href="404.html" class="destination-read-link">
+                        EXPLORE DESTINATION
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+                <span class="destination-card-number">02</span>
+
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="destination-card destination-reveal">
+
+                <a href="404.html"
+                   class="destination-image-link"
+                   aria-label="Explore Kyoto, Japan">
+
+                    <img
+                        src="images/kyoto.webp"
+                        alt="Traditional Kyoto street with historic Japanese architecture"
+                        loading="lazy">
+
+                    <span class="destination-image-overlay"></span>
+
+                    <span class="destination-image-label">
+                        <i class="ri-map-pin-line"></i>
+                        JAPAN
+                    </span>
+
+                    <span class="destination-image-arrow">
+                        <i class="ri-arrow-up-right-line"></i>
+                    </span>
+
+                </a>
+
+                <div class="destination-card-content">
+
+                    <span class="destination-card-category">
+                        CULTURE & HERITAGE
+                    </span>
+
+                    <h3>Fall in Love with Kyoto</h3>
+
+                    <p>
+                        Traditional streets, rich heritage and
+                        beautiful moments around every corner.
+                    </p>
+
+                    <a href="404.html" class="destination-read-link">
+                        EXPLORE DESTINATION
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                </div>
+
+                <span class="destination-card-number">03</span>
+
+            </article>
+
+        </div>
+
+        <!-- BOTTOM CTA -->
+        <div class="destination-bottom destination-reveal">
+
+            <div class="destination-bottom-text">
+                <span>THE WORLD IS WAITING</span>
+                <h3>Your next great story is out there.</h3>
+            </div>
+
+            <a href="404.html" class="destination-view-all">
+                EXPLORE MORE
+                <i class="ri-arrow-up-right-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer" id="footer">
+    <div class="footer-container">
+
+        <!-- 1. Brand Column -->
+        <div class="footer-column footer-about">
+
+<a href="index.html" class="footer-brand">
+    <img src="images/stackly_logo.webp"
+         alt="SkyTrip Logo"
+         class="footer-logo">
+</a>
+            <p class="footer-description">
+                Discover the world with SkyTrip. From spontaneous
+                getaways to carefully planned adventures, we help
+                make every journey smoother, easier, and more memorable.
+                Your next destination is just one flight away.
+            </p>
+
+            <div class="footer-socials">
+                <a href="404.html"
+                   aria-label="Facebook" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="Instagram" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="LinkedIn" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="404.html"
+                   aria-label="YouTube" target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 2. Quick Links -->
+        <div class="footer-column">
+            <h3 class="footer-title">Quick Links</h3>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="blogs.html">Travel Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- 3. Explore -->
+        <div class="footer-column">
+            <h3 class="footer-title">Explore</h3>
+
+            <ul class="footer-links">
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Popular Destinations
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-plane"></i>
+                        Find Flights
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-regular fa-newspaper"></i>
+                        Travel Journal
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Help Center
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Privacy &amp; Policies
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 4. Contact Information -->
+        <div class="footer-column footer-contact">
+            <h3 class="footer-title">Get in Touch</h3>
+
+            <p class="footer-contact-intro">
+                Have a question about your next trip?
+                We'd love to hear from you.
+            </p>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-regular fa-envelope"></i>
+                <span>hello@example.com</span>
+            </a>
+
+            <a href="404.html"
+               class="footer-contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 12345 67890</span>
+            </a>
+
+            <a href="404.html" class="footer-contact-item">
+                <i class="fa-solid fa-headset"></i>
+                <span>Travel Support</span>
+            </a>
+        </div>
+
+        <!-- 5. Stay Inspired -->
+        <div class="footer-column footer-newsletter">
+            <h3 class="footer-title">Stay Inspired</h3>
+
+            <p>
+                Get travel inspiration for your next adventure.
+                Discover new destinations and plan your next getaway.
+            </p>
+
+            <a href="404.html"
+               class="footer-newsletter-btn">
+                Stay Connected
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="year"></span> SkyTrip.
+            All rights reserved.
+        </p>
+
+        <p class="footer-bottom-tagline">
+            Made for journeys beyond boundaries
+            <i class="fa-solid fa-plane"></i>
+        </p>
+
+        <a href="#home" class="footer-back-top">
+            Back to Top
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+
+    </div>
+</footer>
+
+    <script src="./js/blogs.js"></script>
+</body>
+</html>

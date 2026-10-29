@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#061638">
+
+  <title>SkyTrip | User Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <!-- Reuse your existing Admin Dashboard theme -->
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+
+  <!-- User Dashboard custom styles -->
+  <link rel="stylesheet" href="css/user-dashboard.css">
+</head>
+
+<body class="user-dashboard">
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="loader-plane">
+      <i class="fa-solid fa-plane"></i>
+    </div>
+    <div class="loader-brand">SKYTRIP<span>.</span></div>
+    <div class="loader-track"><span></span></div>
+    <small>Preparing your journey</small>
+  </div>
+
+  <div class="app-shell">
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <a href="user-dashboard.html" class="sidebar-brand">
+        <img src="images/stackly_logo.webp"
+             alt="SkyTrip Logo"
+             class="sidebar-logo">
+      </a>
+
+      <div class="sidebar-account">
+        <div class="account-avatar" id="sideAvatar">U</div>
+
+        <div class="account-copy">
+          <strong id="sideName">Traveller</strong>
+          <span id="sideEmail">traveller@example.com</span>
+        </div>
+
+        <span class="online-dot"></span>
+      </div>
+
+      <p class="menu-caption">MY JOURNEY</p>
+
+      <nav class="side-nav" aria-label="User navigation">
+
+        <a href="#dashboard"
+           class="nav-link active"
+           data-section="dashboard">
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="#book-flight"
+           class="nav-link"
+           data-section="bookFlight">
+          <i class="fa-solid fa-plane-departure"></i>
+          <span>Book a Flight</span>
+        </a>
+
+        <a href="#my-trips"
+           class="nav-link"
+           data-section="myTrips">
+          <i class="fa-solid fa-ticket"></i>
+          <span>My Trips</span>
+          <b class="nav-count" id="tripCount">2</b>
+        </a>
+
+        <a href="#check-in"
+           class="nav-link"
+           data-section="checkin">
+          <i class="fa-solid fa-id-card"></i>
+          <span>Web Check-in</span>
+        </a>
+
+        <a href="#profile"
+           class="nav-link"
+           data-section="profile">
+          <i class="fa-solid fa-user"></i>
+          <span>My Profile</span>
+        </a>
+
+      </nav>
+
+      <p class="menu-caption secondary-caption">ASSISTANCE</p>
+
+      <nav class="side-nav">
+        <a href="#support"
+           class="nav-link"
+           data-section="support">
+          <i class="fa-solid fa-headset"></i>
+          <span>Help & Support</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="support-card">
+          <span class="support-icon">
+            <i class="fa-solid fa-earth-americas"></i>
+          </span>
+
+          <strong>Your next adventure awaits</strong>
+
+          <p>Discover new destinations and make every journey memorable.</p>
+
+          <a href="#book-flight" data-section-jump="bookFlight">
+            Explore flights
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <a href="login.html" class="nav-link logout-link" id="logoutBtn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Log Out</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-area">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <div class="topbar-left">
+          <button class="icon-button hamburger"
+                  id="menuToggle"
+                  aria-label="Open sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="breadcrumb">
+            <span>My Journey</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <strong id="breadcrumbTitle">Dashboard</strong>
+          </div>
+        </div>
+
+        <a href="user-dashboard.html" class="mobile-brand">
+          <img src="images/stackly_logo.webp"
+               alt="SkyTrip"
+               class="mobile-brand-logo">
+        </a>
+
+        <div class="topbar-right">
+
+          <div class="today-pill">
+            <i class="fa-regular fa-calendar"></i>
+            <span id="todayDate">Today</span>
+          </div>
+
+          <button class="icon-button notification-button"
+                  id="notificationBtn"
+                  aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+
+          <div class="top-divider"></div>
+
+          <button class="profile-trigger" id="profileTrigger">
+            <span class="profile-avatar" id="topAvatar">U</span>
+
+            <span class="profile-meta">
+              <strong id="topName">Traveller</strong>
+              <small>
+                <i class="admin-dot"></i>
+                TRAVELLER
+              </small>
+            </span>
+
+            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+          </button>
+
+        </div>
+      </header>
+
+      <!-- ================= DASHBOARD ================= -->
+      <section class="page-content" id="dashboardSection">
+
+        <div class="welcome-row reveal">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow-line"></span>
+              YOUR NEXT JOURNEY STARTS HERE
+            </div>
+
+            <h1>
+              Welcome back,
+              <span id="welcomeName">Traveller</span>
+              <span class="wave">✦</span>
+            </h1>
+
+            <p>Your journeys, bookings and travel plans — all in one place.</p>
+          </div>
+
+          <button class="primary-button"
+                  data-section-jump="bookFlight">
+            <i class="fa-solid fa-plus"></i>
+            Book a flight
+          </button>
+        </div>
+
+        <!-- HERO -->
+        <div class="hero-banner reveal user-hero">
+          <div class="hero-copy">
+            <span class="hero-chip">
+              <i class="fa-solid fa-sparkles"></i>
+              YOUR WORLD. YOUR JOURNEY.
+            </span>
+
+            <h2>
+              The world is waiting.<br>
+              <span>Where will you go next?</span>
+            </h2>
+
+            <p>Find your next destination and turn your travel plans into memories.</p>
+
+            <button class="hero-button" data-section-jump="bookFlight">
+              Discover flights
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="hero-globe">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+
+            <div class="floating-plane">
+              <i class="fa-solid fa-plane"></i>
+            </div>
+
+            <span class="route-label route-one">
+              MAA <i class="fa-solid fa-arrow-right"></i> DXB
+            </span>
+
+            <span class="route-label route-two">
+              MAA <i class="fa-solid fa-arrow-right"></i> SIN
+            </span>
+          </div>
+        </div>
+
+        <!-- TRAVEL STATS -->
+        <div class="section-heading reveal">
+          <div>
+            <h2>Your travel overview</h2>
+            <p>A quick look at your travel activity.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+
+          <article class="stat-card reveal">
+            <div class="stat-top">
+              <span class="stat-icon icon-blue">
+                <i class="fa-solid fa-ticket"></i>
+              </span>
+            </div>
+
+            <p>Total bookings</p>
+            <div class="stat-value">
+              <span class="counter" data-count="8">0</span>
+            </div>
+
+            <div class="stat-foot">
+              <span>All your reservations</span>
+            </div>
+          </article>
+
+          <article class="stat-card reveal">
+            <div class="stat-top">
+              <span class="stat-icon icon-gold">
+                <i class="fa-solid fa-plane-departure"></i>
+              </span>
+            </div>
+
+            <p>Upcoming trips</p>
+            <div class="stat-value">
+              <span class="counter" data-count="2">0</span>
+            </div>
+
+            <div class="stat-foot">
+              <span>Your next adventures</span>
+            </div>
+          </article>
+
+          <article class="stat-card reveal">
+            <div class="stat-top">
+              <span class="stat-icon icon-purple">
+                <i class="fa-solid fa-earth-americas"></i>
+              </span>
+            </div>
+
+            <p>Destinations visited</p>
+            <div class="stat-value">
+              <span class="counter" data-count="6">0</span>
+            </div>
+
+            <div class="stat-foot">
+              <span>Memories around the world</span>
+            </div>
+          </article>
+
+          <article class="stat-card reveal">
+            <div class="stat-top">
+              <span class="stat-icon icon-green">
+                <i class="fa-solid fa-wallet"></i>
+              </span>
+            </div>
+
+            <p>Travel savings</p>
+            <div class="stat-value">
+              <span>₹</span>
+              <span class="counter" data-count="4500">0</span>
+            </div>
+
+            <div class="stat-foot">
+              <span>Illustrative demo amount</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- NEXT TRIP -->
+        <div class="section-heading reveal">
+          <div>
+            <h2>Your next trip</h2>
+            <p>Everything you need for your upcoming journey.</p>
+          </div>
+
+          <button class="text-button" data-section-jump="myTrips">
+            View all trips
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <article class="panel next-trip-panel reveal">
+          <div class="next-trip-top">
+            <div class="next-trip-icon">
+              <i class="fa-solid fa-plane"></i>
+            </div>
+
+            <div>
+              <span class="trip-status">CONFIRMED</span>
+              <h3>Chennai <i class="fa-solid fa-arrow-right"></i> Dubai</h3>
+              <p>Air India · AI 905 · Economy</p>
+            </div>
+
+            <span class="status-badge confirmed">Confirmed</span>
+          </div>
+
+          <div class="trip-route">
+            <div>
+              <strong>MAA</strong>
+              <span>Chennai</span>
+              <small>10:15 AM</small>
+            </div>
+
+            <div class="trip-route-middle">
+              <span>4h 05m</span>
+              <div class="trip-route-line">
+                <i class="fa-solid fa-plane"></i>
+              </div>
+              <small>Non-stop flight</small>
+            </div>
+
+            <div>
+              <strong>DXB</strong>
+              <span>Dubai</span>
+              <small>12:50 PM</small>
+            </div>
+          </div>
+
+          <div class="next-trip-footer">
+            <div>
+              <small>BOOKING REFERENCE</small>
+              <strong>ST-DEMO842</strong>
+            </div>
+
+            <div>
+              <small>TRAVEL DATE</small>
+              <strong>Demo: 15 Nov 2026</strong>
+            </div>
+
+            <button class="primary-button" data-section-jump="checkin">
+              <i class="fa-solid fa-arrow-right"></i>
+              Manage trip
+            </button>
+          </div>
+        </article>
+
+        <!-- QUICK ACTIONS -->
+        <div class="section-heading reveal">
+          <div>
+            <h2>Quick actions</h2>
+            <p>Manage your travel plans with ease.</p>
+          </div>
+        </div>
+
+        <div class="quick-actions-grid">
+
+          <button class="quick-action-card reveal" data-section-jump="bookFlight">
+            <span class="quick-action-icon icon-blue">
+              <i class="fa-solid fa-plane"></i>
+            </span>
+            <strong>Book flights</strong>
+            <small>Find your next destination</small>
+            <i class="fa-solid fa-arrow-right action-arrow"></i>
+          </button>
+
+          <button class="quick-action-card reveal" data-section-jump="myTrips">
+            <span class="quick-action-icon icon-gold">
+              <i class="fa-solid fa-suitcase-rolling"></i>
+            </span>
+            <strong>Manage trips</strong>
+            <small>Review your reservations</small>
+            <i class="fa-solid fa-arrow-right action-arrow"></i>
+          </button>
+
+          <button class="quick-action-card reveal" data-section-jump="checkin">
+            <span class="quick-action-icon icon-purple">
+              <i class="fa-solid fa-id-card"></i>
+            </span>
+            <strong>Web check-in</strong>
+            <small>Start check-in for eligible flights</small>
+            <i class="fa-solid fa-arrow-right action-arrow"></i>
+          </button>
+
+          <button class="quick-action-card reveal" data-section-jump="profile">
+            <span class="quick-action-icon icon-green">
+              <i class="fa-solid fa-user-gear"></i>
+            </span>
+            <strong>Traveller profile</strong>
+            <small>Update your details</small>
+            <i class="fa-solid fa-arrow-right action-arrow"></i>
+          </button>
+
+        </div>
+
+        <footer class="dashboard-footer">
+          <span>© <span id="currentYear"></span> SkyTrip. All rights reserved.</span>
+          <span>Made for smoother journeys <i class="fa-solid fa-heart"></i></span>
+        </footer>
+
+      </section>
+
+      <!-- ================= BOOK A FLIGHT ================= -->
+      <section class="page-content" id="bookFlightSection" hidden>
+
+        <div class="section-heading page-title-heading reveal">
+          <div>
+            <div class="eyebrow">YOUR NEXT ADVENTURE</div>
+            <h2>Book a flight</h2>
+            <p>Enter your travel details to start planning your journey.</p>
+          </div>
+        </div>
+
+        <article class="panel booking-search-panel reveal">
+
+          <div class="booking-panel-heading">
+            <span class="booking-panel-icon">
+              <i class="fa-solid fa-plane-departure"></i>
+            </span>
+            <div>
+              <h3>Where would you like to go?</h3>
+              <p>Choose your route, dates and passengers.</p>
+            </div>
+          </div>
+
+          <form id="flightSearchForm" class="flight-search-form">
+
+            <div class="trip-type-options">
+              <label>
+                <input type="radio" name="tripType" value="roundtrip" checked>
+                <span>Round trip</span>
+              </label>
+
+              <label>
+                <input type="radio" name="tripType" value="oneway">
+                <span>One way</span>
+              </label>
+            </div>
+
+            <div class="flight-form-grid">
+
+              <label class="form-field">
+                <span>From</span>
+                <span class="form-input-wrap">
+                  <i class="fa-solid fa-plane-departure"></i>
+                  <input type="text" id="fromCity"
+                         placeholder="City or airport" required>
+                </span>
+              </label>
+
+              <label class="form-field">
+                <span>To</span>
+                <span class="form-input-wrap">
+                  <i class="fa-solid fa-plane-arrival"></i>
+                  <input type="text" id="toCity"
+                         placeholder="Destination" required>
+                </span>
+              </label>
+
+              <label class="form-field">
+                <span>Departure</span>
+                <input type="date" id="departureDate" required>
+              </label>
+
+              <label class="form-field" id="returnDateField">
+                <span>Return</span>
+                <input type="date" id="returnDate">
+              </label>
+
+              <label class="form-field">
+                <span>Travellers</span>
+                <select id="travellerCount">
+                  <option value="1">1 Traveller</option>
+                  <option value="2">2 Travellers</option>
+                  <option value="3">3 Travellers</option>
+                  <option value="4">4 Travellers</option>
+                  <option value="5">5 Travellers</option>
+                  <option value="6">6 Travellers</option>
+                </select>
+              </label>
+
+              <label class="form-field">
+                <span>Cabin class</span>
+                <select id="cabinClass">
+                  <option>Economy</option>
+                  <option>Premium Economy</option>
+                  <option>Business</option>
+                  <option>First Class</option>
+                </select>
+              </label>
+
+            </div>
+
+            <div class="flight-form-footer">
+              <p><i class="fa-solid fa-shield-halved"></i> Your travel details stay in this demo form.</p>
+              <button type="submit" class="primary-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search flights
+              </button>
+            </div>
+
+          </form>
+
+          <div id="flightSearchResult" class="inline-result" hidden></div>
+        </article>
+
+        <article class="panel travel-tip-panel reveal">
+          <span class="quick-action-icon icon-gold">
+            <i class="fa-solid fa-lightbulb"></i>
+          </span>
+          <div>
+            <h3>Travel tip</h3>
+            <p>Double-check passenger names and travel dates before confirming a booking.</p>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ================= MY TRIPS ================= -->
+      <section class="page-content" id="myTripsSection" hidden>
+
+        <div class="section-heading page-title-heading reveal">
+          <div>
+            <div class="eyebrow">YOUR TRAVEL HISTORY</div>
+            <h2>My trips</h2>
+            <p>Review upcoming journeys and previous reservations.</p>
+          </div>
+
+          <button class="primary-button" data-section-jump="bookFlight">
+            <i class="fa-solid fa-plus"></i>
+            New booking
+          </button>
+        </div>
+
+        <div class="trip-filter-bar reveal">
+          <button class="trip-filter active" data-trip-filter="all">All trips</button>
+          <button class="trip-filter" data-trip-filter="upcoming">Upcoming</button>
+          <button class="trip-filter" data-trip-filter="completed">Completed</button>
+        </div>
+
+        <div class="my-trips-list">
+
+          <article class="panel trip-card reveal" data-trip-status="upcoming">
+            <div class="trip-card-top">
+              <span class="trip-card-label">
+                <i class="fa-solid fa-plane"></i> UPCOMING TRIP
+              </span>
+              <span class="status-badge confirmed">Confirmed</span>
+            </div>
+
+            <div class="trip-card-route">
+              <div>
+                <strong>MAA</strong>
+                <span>Chennai</span>
+              </div>
+
+              <div class="trip-card-flight-line">
+                <i class="fa-solid fa-plane"></i>
+                <span>Air India · AI 905</span>
+              </div>
+
+              <div>
+                <strong>DXB</strong>
+                <span>Dubai</span>
+              </div>
+            </div>
+
+            <div class="trip-card-details">
+              <span><i class="fa-regular fa-calendar"></i> 15 Nov 2026 · Demo date</span>
+              <span><i class="fa-solid fa-ticket"></i> ST-DEMO842</span>
+              <span><i class="fa-solid fa-chair"></i> Economy</span>
+            </div>
+
+            <div class="trip-card-actions">
+              <button class="text-button" data-section-jump="checkin">Check-in details</button>
+              <button class="subtle-button" data-demo-action="This demo booking has no live ticket download.">
+                <i class="fa-solid fa-download"></i> Ticket
+              </button>
+            </div>
+          </article>
+
+          <article class="panel trip-card reveal" data-trip-status="upcoming">
+            <div class="trip-card-top">
+              <span class="trip-card-label">
+                <i class="fa-solid fa-plane"></i> UPCOMING TRIP
+              </span>
+              <span class="status-badge pending">Pending</span>
+            </div>
+
+            <div class="trip-card-route">
+              <div>
+                <strong>MAA</strong>
+                <span>Chennai</span>
+              </div>
+
+              <div class="trip-card-flight-line">
+                <i class="fa-solid fa-plane"></i>
+                <span>IndiGo · 6E 218</span>
+              </div>
+
+              <div>
+                <strong>BLR</strong>
+                <span>Bengaluru</span>
+              </div>
+            </div>
+
+            <div class="trip-card-details">
+              <span><i class="fa-regular fa-calendar"></i> 22 Dec 2026 · Demo date</span>
+              <span><i class="fa-solid fa-ticket"></i> ST-DEMO731</span>
+              <span><i class="fa-solid fa-chair"></i> Economy</span>
+            </div>
+
+            <div class="trip-card-actions">
+              <button class="text-button" data-demo-action="Your demo booking details are displayed above.">
+                View details
+              </button>
+              <button class="subtle-button" data-demo-action="Payment processing is not connected in this demo.">
+                <i class="fa-solid fa-credit-card"></i> Payment
+              </button>
+            </div>
+          </article>
+
+          <article class="panel trip-card reveal" data-trip-status="completed">
+            <div class="trip-card-top">
+              <span class="trip-card-label">
+                <i class="fa-solid fa-check-circle"></i> COMPLETED TRIP
+              </span>
+              <span class="status-badge confirmed">Completed</span>
+            </div>
+
+            <div class="trip-card-route">
+              <div>
+                <strong>BLR</strong>
+                <span>Bengaluru</span>
+              </div>
+
+              <div class="trip-card-flight-line">
+                <i class="fa-solid fa-plane"></i>
+                <span>Air India · AI 589</span>
+              </div>
+
+              <div>
+                <strong>MAA</strong>
+                <span>Chennai</span>
+              </div>
+            </div>
+
+            <div class="trip-card-details">
+              <span><i class="fa-regular fa-calendar"></i> Previous demo trip</span>
+              <span><i class="fa-solid fa-ticket"></i> ST-DEMO620</span>
+              <span><i class="fa-solid fa-check"></i> Travel completed</span>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="demo-note">
+          <i class="fa-solid fa-circle-info"></i>
+          Sample trip details are for demonstration only. No live bookings are connected.
+        </p>
+
+      </section>
+
+      <!-- ================= CHECK-IN ================= -->
+      <section class="page-content" id="checkinSection" hidden>
+
+        <div class="section-heading page-title-heading reveal">
+          <div>
+            <div class="eyebrow">GET READY TO FLY</div>
+            <h2>Web check-in</h2>
+            <p>Enter your booking reference and passenger surname to continue.</p>
+          </div>
+        </div>
+
+        <article class="panel checkin-panel reveal">
+          <div class="checkin-illustration">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+
+          <h3>Ready for take-off?</h3>
+          <p>Use the booking details supplied by your airline to check eligibility.</p>
+
+          <form id="checkinForm" class="checkin-form">
+
+            <label class="form-field">
+              <span>Booking reference / PNR</span>
+              <input type="text" id="checkinReference"
+                     placeholder="Enter booking reference"
+                     maxlength="12" required>
+            </label>
+
+            <label class="form-field">
+              <span>Passenger surname</span>
+              <input type="text" id="checkinSurname"
+                     placeholder="Enter surname"
+                     required>
+            </label>
+
+            <button type="submit" class="primary-button">
+              Continue
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </form>
+
+          <div id="checkinResult" class="inline-result" hidden></div>
+
+          <p class="demo-note">
+            <i class="fa-solid fa-circle-info"></i>
+            This is a demo interface; actual airline check-in is not connected.
+          </p>
+        </article>
+
+      </section>
+
+      <!-- ================= PROFILE ================= -->
+      <section class="page-content" id="profileSection" hidden>
+
+        <div class="section-heading page-title-heading reveal">
+          <div>
+            <div class="eyebrow">YOUR TRAVELLER DETAILS</div>
+            <h2>My profile</h2>
+            <p>View and update the details shown in this demo dashboard.</p>
+          </div>
+        </div>
+
+        <article class="panel profile-panel reveal">
+
+          <div class="profile-panel-header">
+            <div class="profile-large-avatar" id="profileLargeAvatar">U</div>
+            <div>
+              <h3 id="profileHeadingName">Traveller</h3>
+              <p id="profileHeadingEmail">Your SkyTrip account</p>
+              <span class="profile-member-tag">
+                <i class="fa-solid fa-circle-check"></i> SkyTrip Traveller
+              </span>
+            </div>
+          </div>
+
+          <form id="profileForm" class="profile-form">
+
+            <label class="form-field">
+              <span>Full name</span>
+              <input type="text" id="profileName" placeholder="Your full name" required>
+            </label>
+
+            <label class="form-field">
+              <span>Email address</span>
+              <input type="email" id="profileEmail" placeholder="Your email address" required>
+            </label>
+
+            <label class="form-field">
+              <span>Phone number</span>
+              <input type="tel" id="profilePhone" placeholder="Your phone number">
+            </label>
+
+            <label class="form-field">
+              <span>Preferred cabin</span>
+              <select id="profileCabin">
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First Class</option>
+              </select>
+            </label>
+
+            <div class="profile-form-footer">
+              <button type="submit" class="primary-button">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save profile
+              </button>
+            </div>
+
+          </form>
+
+          <p class="demo-note">
+            Profile changes are saved in this browser for demo purposes only.
+          </p>
+        </article>
+
+      </section>
+
+      <!-- ================= SUPPORT ================= -->
+      <section class="page-content" id="supportSection" hidden>
+
+        <div class="section-heading page-title-heading reveal">
+          <div>
+            <div class="eyebrow">WE'RE HERE TO HELP</div>
+            <h2>Help & support</h2>
+            <p>Find assistance with your travel plans.</p>
+          </div>
+        </div>
+
+        <div class="support-grid">
+
+          <article class="panel support-option reveal">
+            <span class="quick-action-icon icon-blue">
+              <i class="fa-solid fa-ticket"></i>
+            </span>
+            <h3>Booking assistance</h3>
+            <p>Get help understanding your reservation and booking reference.</p>
+            <button class="text-button" data-demo-action="Booking support is not connected in this demo.">
+              Get help <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="panel support-option reveal">
+            <span class="quick-action-icon icon-gold">
+              <i class="fa-solid fa-plane-circle-exclamation"></i>
+            </span>
+            <h3>Flight information</h3>
+            <p>Review your sample itinerary and travel details.</p>
+            <button class="text-button" data-section-jump="myTrips">
+              View my trips <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+          <article class="panel support-option reveal">
+            <span class="quick-action-icon icon-purple">
+              <i class="fa-solid fa-user-shield"></i>
+            </span>
+            <h3>Account assistance</h3>
+            <p>Review your traveller profile and saved details.</p>
+            <button class="text-button" data-section-jump="profile">
+              My profile <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </article>
+
+        </div>
+
+        <article class="panel support-contact-panel reveal">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <h3>Need more assistance?</h3>
+            <p>This demo has no live support connection. Use your configured support channel for real enquiries.</p>
+          </div>
+          <button class="subtle-button" onclick="window.location.href='404.html'">
+            Contact support
+          </button>
+        </article>
+
+      </section>
+
+    </main>
+  </div>
+
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastText">Done</span>
+  </div>
+
+  <script src="js/user-dashboard.js"></script>
+</body>
+</html>

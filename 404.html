@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#061638">
+
+    <title>404 | Page Not Found — SkyTrip</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #061638;
+            --blue: #0b2d70;
+            --royal: #1758c9;
+            --gold: #d8ad54;
+            --white: #ffffff;
+            --muted: #b8c5dc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100svh;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            color: var(--white);
+            background:
+                radial-gradient(ellipse at 78% 35%,
+                    rgba(23, 88, 201, 0.24), transparent 42%),
+                radial-gradient(ellipse at 12% 85%,
+                    rgba(216, 173, 84, 0.08), transparent 35%),
+                var(--navy);
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .error-page {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 35px 7%;
+            overflow: hidden;
+        }
+
+        /* Background decoration */
+        .error-page::before,
+        .error-page::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .error-page::before {
+            width: 650px;
+            height: 650px;
+            top: -300px;
+            right: -140px;
+            animation: orbit 22s linear infinite;
+        }
+
+        .error-page::after {
+            width: 450px;
+            height: 450px;
+            bottom: -290px;
+            left: -120px;
+            animation: orbit 28s linear infinite reverse;
+        }
+
+        .error-stars {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1.5px),
+                radial-gradient(circle, rgba(216,173,84,.65) 1px, transparent 1.5px);
+            background-size: 95px 95px, 145px 145px;
+            background-position: 10px 20px, 50px 60px;
+            opacity: .22;
+            animation: starsMove 35s linear infinite;
+        }
+
+        /* Home logo */
+        .error-brand {
+            position: absolute;
+            top: 35px;
+            left: 7%;
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--white);
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            z-index: 5;
+        }
+
+        .error-brand-icon {
+            display: grid;
+            place-items: center;
+            width: 43px;
+            height: 43px;
+            color: var(--navy);
+            background: var(--gold);
+            border-radius: 13px;
+            font-size: 23px;
+            transform: rotate(-7deg);
+        }
+
+        .error-brand span span {
+            color: var(--gold);
+        }
+
+        .error-content {
+            width: 100%;
+            max-width: 1120px;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 45px;
+            padding-top: 45px;
+        }
+
+        .error-text {
+            animation: contentReveal .9s ease both;
+        }
+
+        .error-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 15px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(216,173,84,.4);
+            border-radius: 50px;
+            color: var(--gold);
+            background: rgba(216,173,84,.07);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .error-label i {
+            font-size: 16px;
+        }
+
+        .error-code {
+            font-size: clamp(105px, 16vw, 190px);
+            line-height: .83;
+            font-weight: 900;
+            letter-spacing: -12px;
+            color: var(--white);
+            text-shadow: 0 15px 55px rgba(23,88,201,.2);
+        }
+
+        .error-code span {
+            display: inline-block;
+            color: var(--gold);
+            animation: numberFloat 3.5s ease-in-out infinite;
+        }
+
+        .error-title {
+            margin-top: 30px;
+            font-size: clamp(28px, 4vw, 45px);
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+        }
+
+        .error-description {
+            max-width: 450px;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .error-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .error-btn {
+            min-height: 53px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 23px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            transition:
+                transform .3s ease,
+                background .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+        }
+
+        .error-btn i {
+            font-size: 19px;
+            transition: transform .3s ease;
+        }
+
+        .error-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .error-btn:hover i {
+            transform: translateX(-3px);
+        }
+
+        .error-btn-home:hover i {
+            transform: translateX(3px);
+        }
+
+        .error-btn-back {
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,.2);
+            background: rgba(255,255,255,.055);
+        }
+
+        .error-btn-back:hover {
+            border-color: var(--gold);
+            background: rgba(255,255,255,.1);
+        }
+
+        .error-btn-home {
+            color: var(--navy);
+            border: 1px solid var(--gold);
+            background: var(--gold);
+            box-shadow: 0 10px 30px rgba(216,173,84,.14);
+        }
+
+        .error-btn-home:hover {
+            background: #edca7b;
+            box-shadow: 0 15px 35px rgba(216,173,84,.24);
+        }
+
+        .error-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            color: #8495b2;
+            font-size: 11px;
+        }
+
+        .error-note i {
+            color: var(--gold);
+            font-size: 15px;
+        }
+
+        /* Flight illustration */
+        .error-visual {
+            position: relative;
+            display: grid;
+            place-items: center;
+            min-width: 0;
+            animation: visualReveal 1.1s .15s ease both;
+        }
+
+        .visual-ring {
+            position: absolute;
+            width: min(100%, 440px);
+            aspect-ratio: 1;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 50%;
+            animation: orbit 32s linear infinite;
+        }
+
+        .visual-ring::before,
+        .visual-ring::after {
+            content: "";
+            position: absolute;
+            border: 1px dashed rgba(216,173,84,.22);
+            border-radius: 50%;
+        }
+
+        .visual-ring::before {
+            inset: 30px;
+        }
+
+        .visual-ring::after {
+            inset: 65px;
+        }
+
+        .visual-plane {
+            position: relative;
+            width: 100%;
+            max-width: 410px;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+        }
+
+        .plane-glow {
+            position: absolute;
+            width: 70%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: rgba(23,88,201,.24);
+            filter: blur(55px);
+            animation: glowPulse 4s ease-in-out infinite;
+        }
+
+        .plane-circle {
+            position: relative;
+            width: 74%;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.12);
+            background: linear-gradient(145deg,
+                rgba(23,88,201,.18),
+                rgba(6,22,56,.15));
+            box-shadow:
+                inset 0 0 50px rgba(23,88,201,.12),
+                0 30px 90px rgba(0,0,0,.15);
+        }
+
+        .plane-circle i {
+            color: var(--gold);
+            font-size: clamp(90px, 12vw, 145px);
+            transform: rotate(-12deg);
+            filter: drop-shadow(0 15px 25px rgba(216,173,84,.2));
+            animation: planeFloat 4s ease-in-out infinite;
+        }
+
+        .floating-tag {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 15px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 12px;
+            background: rgba(9,29,68,.88);
+            box-shadow: 0 15px 40px rgba(0,0,0,.18);
+            backdrop-filter: blur(12px);
+            animation: tagFloat 4s ease-in-out infinite;
+        }
+
+        .floating-tag i {
+            display: grid;
+            place-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 9px;
+            color: var(--gold);
+            background: rgba(216,173,84,.12);
+            font-size: 19px;
+        }
+
+        .floating-tag strong {
+            display: block;
+            color: var(--white);
+            font-size: 11px;
+        }
+
+        .floating-tag small {
+            display: block;
+            margin-top: 4px;
+            color: #93a5c3;
+            font-size: 9px;
+        }
+
+        .tag-top {
+            top: 15%;
+            right: -2%;
+        }
+
+        .tag-bottom {
+            bottom: 14%;
+            left: -3%;
+            animation-delay: -2s;
+        }
+
+        .flight-path {
+            position: absolute;
+            top: 23%;
+            left: 10%;
+            width: 80%;
+            height: 55%;
+            border: 1px dashed rgba(216,173,84,.42);
+            border-color: rgba(216,173,84,.42) transparent transparent;
+            border-radius: 50%;
+            transform: rotate(-25deg);
+        }
+
+        .flight-path i {
+            position: absolute;
+            top: -9px;
+            right: 15%;
+            color: var(--white);
+            font-size: 20px;
+            transform: rotate(20deg);
+        }
+
+        .error-footer {
+            position: absolute;
+            bottom: 24px;
+            left: 7%;
+            right: 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            color: #7385a4;
+            font-size: 10px;
+        }
+
+        .error-footer span:last-child {
+            color: #91a1bc;
+        }
+
+        .error-brand {
+    position: absolute;
+    top: 35px;
+    left: 7%;
+    display: inline-flex;
+    align-items: center;
+    z-index: 5;
+}
+
+.error-brand img {
+    display: block;
+    width: 150px;
+    max-width: 100%;
+    height: 48px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+        /* Animations */
+        @keyframes contentReveal {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes visualReveal {
+            from { opacity: 0; transform: translateX(30px) scale(.96); }
+            to { opacity: 1; transform: translateX(0) scale(1); }
+        }
+
+        @keyframes planeFloat {
+            0%, 100% { transform: translateY(0) rotate(-12deg); }
+            50% { transform: translateY(-12px) rotate(-7deg); }
+        }
+
+        @keyframes numberFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes tagFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: .65; transform: scale(.92); }
+            50% { opacity: 1; transform: scale(1.08); }
+        }
+
+        @keyframes orbit {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes starsMove {
+            to { background-position: 200px 300px, -150px 220px; }
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .error-page {
+                padding: 110px 6% 80px;
+            }
+
+            .error-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .error-text {
+                order: 1;
+            }
+
+            .error-visual {
+                order: 0;
+                max-height: 310px;
+            }
+
+            .visual-plane {
+                max-width: 290px;
+            }
+
+            .visual-ring {
+                width: 290px;
+            }
+
+            .plane-circle i {
+                font-size: 100px;
+            }
+
+            .tag-top {
+                right: 5%;
+            }
+
+            .tag-bottom {
+                left: 5%;
+            }
+
+            .error-code {
+                font-size: clamp(100px, 17vw, 150px);
+                letter-spacing: -7px;
+            }
+
+            .error-title {
+                margin-top: 22px;
+            }
+
+            .error-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .error-buttons {
+                justify-content: center;
+            }
+
+            .error-note {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .error-page {
+                padding: 95px 20px 75px;
+            }
+
+            .error-brand {
+                top: 20px;
+                left: 20px;
+                font-size: 19px;
+            }
+
+            .error-brand {
+    top: 20px;
+    left: 20px;
+}
+
+.error-brand img {
+    width: 125px;
+    height: 40px;
+}
+
+            .error-brand-icon {
+                width: 37px;
+                height: 37px;
+                font-size: 20px;
+                border-radius: 11px;
+            }
+
+            .error-content {
+                gap: 5px;
+            }
+
+            .error-visual {
+                max-height: 235px;
+            }
+
+            .visual-plane {
+                max-width: 230px;
+            }
+
+            .visual-ring {
+                width: 225px;
+            }
+
+            .plane-circle i {
+                font-size: 78px;
+            }
+
+            .floating-tag {
+                gap: 7px;
+                padding: 8px 10px;
+            }
+
+            .floating-tag i {
+                width: 29px;
+                height: 29px;
+                font-size: 16px;
+            }
+
+            .floating-tag strong {
+                font-size: 9px;
+            }
+
+            .floating-tag small {
+                font-size: 8px;
+            }
+
+            .tag-top {
+                top: 7%;
+                right: -2%;
+            }
+
+            .tag-bottom {
+                bottom: 5%;
+                left: -2%;
+            }
+
+            .error-label {
+                margin-bottom: 19px;
+                font-size: 9px;
+                letter-spacing: 1.5px;
+            }
+
+            .error-code {
+                font-size: clamp(90px, 28vw, 125px);
+                letter-spacing: -6px;
+            }
+
+            .error-title {
+                margin-top: 20px;
+                font-size: 29px;
+                letter-spacing: -.8px;
+            }
+
+            .error-description {
+                margin-top: 13px;
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .error-buttons {
+                flex-direction: column;
+                gap: 11px;
+                margin-top: 24px;
+            }
+
+            .error-btn {
+                width: 100%;
+                min-height: 50px;
+            }
+
+            .error-note {
+                font-size: 10px;
+                line-height: 1.6;
+            }
+
+            .error-footer {
+                bottom: 16px;
+                left: 20px;
+                right: 20px;
+                font-size: 9px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="error-page">
+        <div class="error-stars"></div>
+
+<a href="index.html" class="error-brand" aria-label="SkyTrip Home">
+    <img src="images/stackly_logo.webp" alt="SkyTrip Logo">
+</a>
+
+        <div class="error-content">
+
+            <section class="error-text">
+                <div class="error-label">
+                    <i class="ri-compass-3-line"></i>
+                    LOST IN TRANSIT
+                </div>
+
+                <h1 class="error-code">4<span>0</span>4</h1>
+
+                <h2 class="error-title">
+                    Looks like you've<br>
+                    missed your destination.
+                </h2>
+
+                <p class="error-description">
+                    The page you're looking for may have taken another
+                    route or no longer exists. Don't worry — let's get
+                    you back on track.
+                </p>
+
+                <div class="error-buttons">
+                    <button type="button"
+                            class="error-btn error-btn-back"
+                            id="goBackBtn">
+                        <i class="ri-arrow-left-line"></i>
+                        Go Back
+                    </button>
+
+                    <a href="index.html"
+                       class="error-btn error-btn-home">
+                        Go Home
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="error-note">
+                    <i class="ri-shield-check-line"></i>
+                    Your journey with SkyTrip is just one click away.
+                </div>
+            </section>
+
+            <section class="error-visual" aria-hidden="true">
+                <div class="visual-ring"></div>
+
+                <div class="visual-plane">
+                    <div class="plane-glow"></div>
+                    <div class="flight-path">
+                        <i class="ri-flight-takeoff-line"></i>
+                    </div>
+
+                    <div class="plane-circle">
+                        <i class="ri-flight-takeoff-fill"></i>
+                    </div>
+
+                    <div class="floating-tag tag-top">
+                        <i class="ri-map-pin-line"></i>
+                        <div>
+                            <strong>Destination Unknown</strong>
+                            <small>Route not found</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-tag tag-bottom">
+                        <i class="ri-compass-3-line"></i>
+                        <div>
+                            <strong>Find Your Way</strong>
+                            <small>Your journey continues</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="error-footer">
+            <span>© 2026 SkyTrip. All rights reserved.</span>
+            <span>FLY BEYOND EXPECTATIONS</span>
+        </footer>
+    </main>
+
+    <script>
+        const goBackBtn = document.getElementById("goBackBtn");
+
+        goBackBtn.addEventListener("click", function () {
+            if (window.history.length > 1 && document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

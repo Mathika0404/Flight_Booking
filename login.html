@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#102b60">
+    <meta name="description" content="Sign in or create your SkyTrip account to manage your travel experience.">
+
+    <title>Login | SkyTrip</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ANIMATED BACKGROUND
+    ========================== -->
+    <div class="login-background" aria-hidden="true">
+
+        <div class="bg-orb orb-one"></div>
+        <div class="bg-orb orb-two"></div>
+        <div class="bg-orb orb-three"></div>
+
+        <div class="flight-path flight-path-one"></div>
+        <div class="flight-path flight-path-two"></div>
+
+        <i class="fa-solid fa-plane bg-plane plane-one"></i>
+        <i class="fa-solid fa-plane bg-plane plane-two"></i>
+
+        <div class="bg-star star-one"></div>
+        <div class="bg-star star-two"></div>
+        <div class="bg-star star-three"></div>
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="login-header">
+
+        <a href="index.html"
+           class="login-logo"
+           aria-label="SkyTrip Home">
+
+            <img src="./images/stackly_logo.webp"
+                 alt="SkyTrip Logo">
+
+        </a>
+
+        <a href="index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            <span>Back to Home</span>
+
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="login-main">
+
+
+        <!-- =========================
+             LEFT WELCOME PANEL
+        ========================== -->
+        <section class="welcome-panel">
+
+            <div class="welcome-badge">
+
+                <span class="live-dot"></span>
+
+                YOUR JOURNEY STARTS HERE
+
+            </div>
+
+
+            <h1>
+                The world is waiting.
+                <span>Let's take off.</span>
+            </h1>
+
+
+            <p class="welcome-description">
+                Welcome to SkyTrip. Sign in to continue your journey,
+                manage your travel experience, and explore new
+                destinations with confidence.
+            </p>
+
+
+            <div class="welcome-features">
+
+                <!-- Feature 1 -->
+                <div class="welcome-feature">
+
+                    <span class="feature-icon">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </span>
+
+                    <div>
+                        <h3>Travel Management</h3>
+
+                        <p>
+                            Keep your travel experience organized.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Feature 2 -->
+                <div class="welcome-feature">
+
+                    <span class="feature-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <div>
+                        <h3>Your Account, Your Access</h3>
+
+                        <p>
+                            Choose the account type to continue.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="welcome-bottom">
+
+                <div class="welcome-line"></div>
+
+                <span>DISCOVER MORE. TRAVEL FURTHER.</span>
+
+            </div>
+
+
+            <div class="welcome-watermark" aria-hidden="true">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             LOGIN / REGISTER CARD
+        ========================== -->
+        <section class="login-card" id="loginCard">
+
+
+            <!-- Card Header -->
+            <div class="login-card-top">
+
+                <div class="login-card-icon">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+
+                <span class="secure-label">
+                    <i class="fa-solid fa-lock"></i>
+                    SECURE ACCOUNT ACCESS
+                </span>
+
+            </div>
+
+
+
+            <!-- Dynamic Heading -->
+            <div class="login-heading">
+
+                <span class="small-kicker" id="formKicker">
+                    WELCOME ABOARD
+                </span>
+
+                <h2 id="formTitle">
+                    Sign in to <span>SkyTrip</span>
+                </h2>
+
+                <p id="formSubtitle">
+                    Choose your account type to get started.
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 ACCOUNT ROLE SELECTION
+            ========================== -->
+            <div class="role-selection" id="roleSelection">
+
+                <div class="role-label" id="roleLabel">
+                    I WANT TO SIGN IN AS
+                </div>
+
+
+                <div class="role-options">
+
+                    <!-- Admin -->
+                    <button type="button"
+                            class="role-option active"
+                            data-role="admin"
+                            aria-pressed="true">
+
+                        <span class="role-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </span>
+
+                        <span class="role-text">
+                            <strong>Admin</strong>
+
+                            <small>Administrator access</small>
+                        </span>
+
+                        <i class="fa-solid fa-circle-check role-check"></i>
+
+                    </button>
+
+
+                    <!-- User -->
+                    <button type="button"
+                            class="role-option"
+                            data-role="user"
+                            aria-pressed="false">
+
+                        <span class="role-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        <span class="role-text">
+                            <strong>User</strong>
+
+                            <small>Personal account</small>
+                        </span>
+
+                        <i class="fa-solid fa-circle-check role-check"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 LOGIN FORM
+            ========================== -->
+            <form id="loginForm" novalidate>
+
+                <input type="hidden"
+                       id="selectedRole"
+                       name="selectedRole"
+                       value="admin">
+
+
+                <!-- Email -->
+                <div class="form-field">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="Enter your email address"
+                               autocomplete="username"
+                               required>
+
+                    </div>
+
+                    <small class="field-error"
+                           id="emailError"></small>
+
+                </div>
+
+
+
+                <!-- Password -->
+                <div class="form-field">
+
+                    <div class="password-label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a href="404.html" class="forgot-link">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="input-wrap">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Enter your password"
+                               autocomplete="current-password"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                id="togglePassword"
+                                aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                    <small class="field-error"
+                           id="passwordError"></small>
+
+                </div>
+
+
+
+                <!-- Remember Me -->
+                <div class="form-options">
+
+                    <label class="remember-option">
+
+                        <input type="checkbox" id="rememberMe">
+
+                        <span class="custom-checkbox"></span>
+
+                        Remember me
+
+                    </label>
+
+
+                    <span class="role-indicator" id="roleIndicator">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        Admin Login
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- Login Button -->
+                <button type="submit"
+                        class="login-submit"
+                        id="loginButton">
+
+                    <span class="button-text">
+                        Sign In as Admin
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <span class="button-shine"></span>
+
+                </button>
+
+
+                <p class="login-message"
+                   id="loginMessage"
+                   aria-live="polite"></p>
+
+            </form>
+
+
+
+            <!-- =========================
+                 REGISTER FORM
+            ========================== -->
+            <!-- Hidden until Create Account is clicked -->
+            <form id="registerForm"
+                  class="register-form"
+                  novalidate>
+
+
+                <!-- Full Name -->
+                <div class="form-field">
+
+                    <label for="registerName">
+                        Full Name
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-regular fa-user input-icon"></i>
+
+                        <input type="text"
+                               id="registerName"
+                               name="registerName"
+                               placeholder="Enter your full name"
+                               autocomplete="name"
+                               required>
+
+                    </div>
+
+                    <small class="field-error"
+                           id="registerNameError"></small>
+
+                </div>
+
+
+
+                <!-- Register Email -->
+                <div class="form-field">
+
+                    <label for="registerEmail">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-regular fa-envelope input-icon"></i>
+
+                        <input type="email"
+                               id="registerEmail"
+                               name="registerEmail"
+                               placeholder="Enter your email address"
+                               autocomplete="email"
+                               required>
+
+                    </div>
+
+                    <small class="field-error"
+                           id="registerEmailError"></small>
+
+                </div>
+
+
+
+                <!-- Create Password -->
+                <div class="form-field">
+
+                    <label for="registerPassword">
+                        Create Password
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-solid fa-lock input-icon"></i>
+
+                        <input type="password"
+                               id="registerPassword"
+                               name="registerPassword"
+                               placeholder="Create a password"
+                               autocomplete="new-password"
+                               minlength="8"
+                               required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                id="toggleRegisterPassword"
+                                aria-label="Show password">
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                    <small class="field-error"
+                           id="registerPasswordError"></small>
+
+                </div>
+
+
+
+                <!-- Confirm Password -->
+                <div class="form-field">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="input-wrap">
+
+                        <i class="fa-solid fa-shield-halved input-icon"></i>
+
+                        <input type="password"
+                               id="confirmPassword"
+                               name="confirmPassword"
+                               placeholder="Re-enter your password"
+                               autocomplete="new-password"
+                               required>
+
+                    </div>
+
+                    <small class="field-error"
+                           id="confirmPasswordError"></small>
+
+                </div>
+
+
+
+                <!-- Terms -->
+                <label class="remember-option register-terms">
+
+                    <input type="checkbox"
+                           id="acceptTerms"
+                           name="acceptTerms"
+                           required>
+
+                    <span class="custom-checkbox"></span>
+
+                    <span>
+                        I agree to the terms and privacy policy.
+                    </span>
+
+                </label>
+
+                <small class="field-error"
+                       id="termsError"></small>
+
+
+
+                <!-- Create Account Button -->
+                <button type="submit"
+                        class="login-submit"
+                        id="registerButton">
+
+                    <span class="button-text">
+                        Create Account
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                    <span class="button-shine"></span>
+
+                </button>
+
+
+                <p class="login-message"
+                   id="registerMessage"
+                   aria-live="polite"></p>
+
+            </form>
+
+
+
+            <!-- =========================
+                 SWITCH LOGIN / REGISTER
+            ========================== -->
+            <div class="login-divider">
+
+                <span></span>
+
+                <p id="switchDividerText">
+                    NEW TO SKYTRIP?
+                </p>
+
+                <span></span>
+
+            </div>
+
+
+
+            <div class="account-switch">
+
+                <span id="switchPrompt">
+                    Don't have an account?
+                </span>
+
+                <button type="button"
+                        id="switchFormButton"
+                        class="switch-form-button">
+
+                    Create an Account
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Card Footer -->
+            <div class="login-card-footer">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>SkyTrip Account Access</span>
+
+                <span class="footer-gold-dot"></span>
+
+                <span>Travel with confidence</span>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="login-footer">
+
+        <p>
+            © <span id="year"></span> SkyTrip.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- Main JavaScript -->
+    <script src="js/login.js"></script>
+
+</body>
+</html>
