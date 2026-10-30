@@ -727,124 +727,850 @@
 
       </section>
 
-      <!-- ================= CHECK-IN ================= -->
-      <section class="page-content" id="checkinSection" hidden>
 
-        <div class="section-heading page-title-heading reveal">
-          <div>
+<!-- ================= CHECK-IN ================= -->
+<section class="page-content" id="checkinSection" hidden>
+
+    <div class="section-heading page-title-heading reveal">
+        <div>
             <div class="eyebrow">GET READY TO FLY</div>
-            <h2>Web check-in</h2>
-            <p>Enter your booking reference and passenger surname to continue.</p>
-          </div>
+            <h2>Web Check-in</h2>
+            <p>Complete your check-in details and get ready for a smooth journey.</p>
+        </div>
+    </div>
+
+    <!-- CHECK-IN STATUS -->
+    <div class="checkin-status-banner reveal">
+        <div class="checkin-status-icon">
+            <i class="fa-solid fa-plane-circle-check"></i>
         </div>
 
+        <div>
+            <h3>Your journey starts here!</h3>
+            <p>Check your booking details before heading to the airport.</p>
+        </div>
+
+        <span class="checkin-status-badge">ONLINE CHECK-IN</span>
+    </div>
+
+    <div class="checkin-layout">
+
+        <!-- LEFT: CHECK-IN FORM -->
         <article class="panel checkin-panel reveal">
-          <div class="checkin-illustration">
-            <i class="fa-solid fa-id-card"></i>
-          </div>
 
-          <h3>Ready for take-off?</h3>
-          <p>Use the booking details supplied by your airline to check eligibility.</p>
+            <div class="checkin-panel-heading">
+                <div class="checkin-illustration">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
 
-          <form id="checkinForm" class="checkin-form">
+                <div>
+                    <h3>Passenger Check-in</h3>
+                    <p>Enter your booking and passenger information.</p>
+                </div>
+            </div>
 
-            <label class="form-field">
-              <span>Booking reference / PNR</span>
-              <input type="text" id="checkinReference"
-                     placeholder="Enter booking reference"
-                     maxlength="12" required>
-            </label>
+            <form id="checkinForm" class="checkin-form">
 
-            <label class="form-field">
-              <span>Passenger surname</span>
-              <input type="text" id="checkinSurname"
-                     placeholder="Enter surname"
-                     required>
-            </label>
+                <div class="checkin-form-section">
+                    <h4>
+                        <i class="fa-solid fa-ticket"></i>
+                        Booking Information
+                    </h4>
 
-            <button type="submit" class="primary-button">
-              Continue
-              <i class="fa-solid fa-arrow-right"></i>
-            </button>
+                    <div class="checkin-fields-grid">
 
-          </form>
+                        <label class="form-field">
+                            <span>Booking Reference / PNR *</span>
+                            <input type="text"
+                                   id="checkinReference"
+                                   placeholder="e.g. SKY12345"
+                                   maxlength="12"
+                                   required>
+                        </label>
 
-          <div id="checkinResult" class="inline-result" hidden></div>
+                        <label class="form-field">
+                            <span>Flight Number *</span>
+                            <input type="text"
+                                   id="checkinFlight"
+                                   placeholder="e.g. SG 456"
+                                   required>
+                        </label>
 
-          <p class="demo-note">
-            <i class="fa-solid fa-circle-info"></i>
-            This is a demo interface; actual airline check-in is not connected.
-          </p>
+                        <label class="form-field">
+                            <span>Departure Airport *</span>
+                            <input type="text"
+                                   id="checkinDeparture"
+                                   placeholder="e.g. Chennai (MAA)"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Arrival Airport *</span>
+                            <input type="text"
+                                   id="checkinArrival"
+                                   placeholder="e.g. Delhi (DEL)"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Departure Date *</span>
+                            <input type="date"
+                                   id="checkinDate"
+                                   required>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="checkin-form-section">
+
+                    <h4>
+                        <i class="fa-solid fa-user"></i>
+                        Passenger Information
+                    </h4>
+
+                    <div class="checkin-fields-grid">
+
+                        <label class="form-field">
+                            <span>Passenger First Name *</span>
+                            <input type="text"
+                                   id="checkinFirstName"
+                                   placeholder="Enter first name"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Passenger Surname *</span>
+                            <input type="text"
+                                   id="checkinSurname"
+                                   placeholder="Enter surname"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Email Address *</span>
+                            <input type="email"
+                                   id="checkinEmail"
+                                   placeholder="Enter email address"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Mobile Number</span>
+                            <input type="tel"
+                                   id="checkinPhone"
+                                   placeholder="+91 98765 43210"
+                                   pattern="[0-9+() -]{7,18}">
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="checkin-form-section">
+
+                    <h4>
+                        <i class="fa-solid fa-passport"></i>
+                        Travel Document Details
+                    </h4>
+
+                    <div class="checkin-fields-grid">
+
+                        <label class="form-field">
+                            <span>Document Type *</span>
+                            <select id="checkinDocument" required>
+                                <option value="">Select document</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Aadhaar Card">Aadhaar Card</option>
+                                <option value="Driving License">Driving License</option>
+                                <option value="Voter ID">Voter ID</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Document Number *</span>
+                            <input type="text"
+                                   id="checkinDocumentNumber"
+                                   placeholder="Enter document number"
+                                   required>
+                        </label>
+
+                    </div>
+
+                    <p class="checkin-document-note">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Use a valid travel document accepted by your airline
+                        and destination country.
+                    </p>
+                </div>
+
+                <!-- TERMS -->
+                <label class="checkin-terms">
+                    <input type="checkbox" id="checkinTerms" required>
+                    <span>
+                        I confirm that the passenger and booking details
+                        entered above are accurate.
+                    </span>
+                </label>
+
+                <div class="checkin-form-actions">
+
+                    <button type="reset" class="secondary-button">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Clear Details
+                    </button>
+
+                    <button type="submit" class="primary-button">
+                        Continue Check-in
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div id="checkinResult" class="inline-result" hidden></div>
+
         </article>
 
-      </section>
+        <!-- RIGHT: INFORMATION -->
+        <div class="checkin-sidebar">
 
-      <!-- ================= PROFILE ================= -->
-      <section class="page-content" id="profileSection" hidden>
+            <!-- CHECK-IN GUIDE -->
+            <article class="panel checkin-guide-card reveal">
 
-        <div class="section-heading page-title-heading reveal">
-          <div>
-            <div class="eyebrow">YOUR TRAVELLER DETAILS</div>
-            <h2>My profile</h2>
-            <p>View and update the details shown in this demo dashboard.</p>
-          </div>
+                <div class="checkin-side-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h3>Check-in Guidelines</h3>
+
+                <p>Keep these important timings in mind before your flight.</p>
+
+                <div class="checkin-timing-item">
+                    <div>
+                        <strong>24–48 Hours</strong>
+                        <span>Typical online check-in window</span>
+                    </div>
+                    <i class="fa-solid fa-hourglass-start"></i>
+                </div>
+
+                <div class="checkin-timing-item">
+                    <div>
+                        <strong>2–3 Hours</strong>
+                        <span>Suggested airport arrival for many flights</span>
+                    </div>
+                    <i class="fa-solid fa-plane-departure"></i>
+                </div>
+
+                <div class="checkin-timing-item">
+                    <div>
+                        <strong>Valid ID</strong>
+                        <span>Carry your accepted travel documents</span>
+                    </div>
+                    <i class="fa-solid fa-passport"></i>
+                </div>
+
+            </article>
+
+            <!-- BAGGAGE INFORMATION -->
+            <article class="panel checkin-baggage-card reveal">
+
+                <div class="checkin-side-icon icon-gold">
+                    <i class="fa-solid fa-suitcase-rolling"></i>
+                </div>
+
+                <h3>Baggage Information</h3>
+
+                <p>Prepare your luggage according to your airline's baggage policy.</p>
+
+                <ul class="checkin-baggage-list">
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Check cabin baggage allowance.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Verify checked baggage weight.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Keep essential documents accessible.
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Follow restricted items guidelines.
+                    </li>
+                </ul>
+
+            </article>
+
+            <!-- TRAVEL REMINDER -->
+            <article class="panel checkin-reminder-card reveal">
+
+                <div class="checkin-reminder-heading">
+                    <i class="fa-solid fa-bell"></i>
+                    <h3>Travel Reminder</h3>
+                </div>
+
+                <p>
+                    Make sure your name matches your travel document
+                    and booking confirmation. Check your terminal
+                    and boarding gate before departure.
+                </p>
+
+                <a href="dashboard-404.html" class="checkin-help-link">
+                    Need Help?
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
         </div>
+
+    </div>
+
+    <!-- BOTTOM INFORMATION -->
+    <article class="panel checkin-bottom-info reveal">
+
+        <div class="checkin-bottom-icon">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+        <div>
+            <h3>Important Information</h3>
+            <p>
+                This is a demonstration check-in interface. Actual airline
+                verification, seat selection, boarding pass generation and
+                check-in confirmation are not connected. Document details
+                entered here are not transmitted to an airline.
+            </p>
+        </div>
+
+    </article>
+
+</section>
+
+
+
+<!-- ================= MY PROFILE ================= -->
+<section class="page-content" id="profileSection" hidden>
+
+    <div class="section-heading page-title-heading reveal">
+        <div>
+            <div class="eyebrow">YOUR TRAVELLER DETAILS</div>
+            <h2>My Profile</h2>
+            <p>Manage your personal information, travel preferences and account settings.</p>
+        </div>
+    </div>
+
+    <!-- PROFILE OVERVIEW -->
+    <article class="panel profile-overview-card reveal">
+
+        <div class="profile-overview-main">
+
+            <div class="profile-large-avatar" id="profileLargeAvatar">
+                U
+            </div>
+
+            <div class="profile-overview-details">
+                <span class="profile-welcome-tag">
+                    <i class="fa-solid fa-circle-check"></i>
+                    VERIFIED TRAVELLER
+                </span>
+
+                <h3 id="profileHeadingName">Traveller</h3>
+
+                <p id="profileHeadingEmail">Your SkyTrip account</p>
+
+                <span class="profile-member-tag">
+                    <i class="fa-solid fa-crown"></i>
+                    SkyTrip Traveller
+                </span>
+            </div>
+
+        </div>
+
+        <div class="profile-overview-side">
+            <span>MEMBER SINCE</span>
+            <strong>January 2026</strong>
+            <small>Thank you for flying with SkyTrip</small>
+        </div>
+
+    </article>
+
+    <!-- PROFILE STATISTICS -->
+    <div class="profile-stats-grid reveal">
+
+        <div class="panel profile-stat-card">
+            <div class="profile-stat-icon">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+            <div>
+                <span>Total Trips</span>
+                <h3>12</h3>
+                <small>Journeys completed</small>
+            </div>
+        </div>
+
+        <div class="panel profile-stat-card">
+            <div class="profile-stat-icon gold">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <div>
+                <span>Destinations</span>
+                <h3>08</h3>
+                <small>Places explored</small>
+            </div>
+        </div>
+
+        <div class="panel profile-stat-card">
+            <div class="profile-stat-icon">
+                <i class="fa-solid fa-ticket"></i>
+            </div>
+            <div>
+                <span>Bookings</span>
+                <h3>15</h3>
+                <small>Total reservations</small>
+            </div>
+        </div>
+
+        <div class="panel profile-stat-card">
+            <div class="profile-stat-icon gold">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+                <span>Membership</span>
+                <h3>Silver</h3>
+                <small>Traveller level</small>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PROFILE CONTENT -->
+    <div class="profile-content-grid">
 
         <article class="panel profile-panel reveal">
 
-          <div class="profile-panel-header">
-            <div class="profile-large-avatar" id="profileLargeAvatar">U</div>
-            <div>
-              <h3 id="profileHeadingName">Traveller</h3>
-              <p id="profileHeadingEmail">Your SkyTrip account</p>
-              <span class="profile-member-tag">
-                <i class="fa-solid fa-circle-check"></i> SkyTrip Traveller
-              </span>
-            </div>
-          </div>
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-section-eyebrow">ACCOUNT DETAILS</span>
+                    <h3>Personal Information</h3>
+                    <p>Update your basic traveller information.</p>
+                </div>
 
-          <form id="profileForm" class="profile-form">
-
-            <label class="form-field">
-              <span>Full name</span>
-              <input type="text" id="profileName" placeholder="Your full name" required>
-            </label>
-
-            <label class="form-field">
-              <span>Email address</span>
-              <input type="email" id="profileEmail" placeholder="Your email address" required>
-            </label>
-
-            <label class="form-field">
-              <span>Phone number</span>
-              <input type="tel" id="profilePhone" placeholder="Your phone number">
-            </label>
-
-            <label class="form-field">
-              <span>Preferred cabin</span>
-              <select id="profileCabin">
-                <option>Economy</option>
-                <option>Premium Economy</option>
-                <option>Business</option>
-                <option>First Class</option>
-              </select>
-            </label>
-
-            <div class="profile-form-footer">
-              <button type="submit" class="primary-button">
-                <i class="fa-solid fa-floppy-disk"></i>
-                Save profile
-              </button>
+                <span class="profile-heading-icon">
+                    <i class="fa-solid fa-user-pen"></i>
+                </span>
             </div>
 
-          </form>
+            <form id="profileForm" class="profile-form">
 
-          <p class="demo-note">
-            Profile changes are saved in this browser for demo purposes only.
-          </p>
+                <!-- PERSONAL DETAILS -->
+                <div class="profile-form-section">
+                    <h4>
+                        <i class="fa-solid fa-user"></i>
+                        Basic Information
+                    </h4>
+
+                    <div class="profile-fields-grid">
+
+                        <label class="form-field">
+                            <span>Full Name *</span>
+                            <input type="text"
+                                   id="profileName"
+                                   placeholder="Enter your full name"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Email Address *</span>
+                            <input type="email"
+                                   id="profileEmail"
+                                   placeholder="Enter your email"
+                                   required>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Phone Number</span>
+                            <input type="tel"
+                                   id="profilePhone"
+                                   placeholder="+91 98765 43210">
+                        </label>
+
+                        <label class="form-field">
+                            <span>Date of Birth</span>
+                            <input type="date" id="profileDOB">
+                        </label>
+
+                        <label class="form-field">
+                            <span>Gender</span>
+                            <select id="profileGender">
+                                <option value="">Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                                <option>Prefer not to say</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Nationality</span>
+                            <input type="text"
+                                   id="profileNationality"
+                                   placeholder="Enter nationality">
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- ADDRESS -->
+                <div class="profile-form-section">
+
+                    <h4>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Address Information
+                    </h4>
+
+                    <div class="profile-fields-grid">
+
+                        <label class="form-field profile-full-field">
+                            <span>Street Address</span>
+                            <input type="text"
+                                   id="profileAddress"
+                                   placeholder="House number, street name">
+                        </label>
+
+                        <label class="form-field">
+                            <span>City</span>
+                            <input type="text"
+                                   id="profileCity"
+                                   placeholder="Enter city">
+                        </label>
+
+                        <label class="form-field">
+                            <span>State / Province</span>
+                            <input type="text"
+                                   id="profileState"
+                                   placeholder="Enter state">
+                        </label>
+
+                        <label class="form-field">
+                            <span>Postal Code</span>
+                            <input type="text"
+                                   id="profilePostal"
+                                   placeholder="Enter postal code">
+                        </label>
+
+                        <label class="form-field">
+                            <span>Country</span>
+                            <input type="text"
+                                   id="profileCountry"
+                                   placeholder="Enter country">
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- TRAVEL PREFERENCES -->
+                <div class="profile-form-section">
+
+                    <h4>
+                        <i class="fa-solid fa-plane"></i>
+                        Travel Preferences
+                    </h4>
+
+                    <div class="profile-fields-grid">
+
+                        <label class="form-field">
+                            <span>Preferred Cabin</span>
+                            <select id="profileCabin">
+                                <option>Economy</option>
+                                <option>Premium Economy</option>
+                                <option>Business</option>
+                                <option>First Class</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Preferred Seat</span>
+                            <select id="profileSeat">
+                                <option value="">Select preference</option>
+                                <option>Window Seat</option>
+                                <option>Aisle Seat</option>
+                                <option>Middle Seat</option>
+                                <option>Extra Legroom</option>
+                                <option>No Preference</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Meal Preference</span>
+                            <select id="profileMeal">
+                                <option value="">Select meal</option>
+                                <option>Standard Meal</option>
+                                <option>Vegetarian</option>
+                                <option>Vegan</option>
+                                <option>Non-Vegetarian</option>
+                                <option>Gluten-Free</option>
+                                <option>Special Meal</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field">
+                            <span>Preferred Currency</span>
+                            <select id="profileCurrency">
+                                <option>INR - Indian Rupee</option>
+                                <option>USD - US Dollar</option>
+                                <option>EUR - Euro</option>
+                                <option>GBP - British Pound</option>
+                            </select>
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- EMERGENCY CONTACT -->
+                <div class="profile-form-section">
+
+                    <h4>
+                        <i class="fa-solid fa-phone-volume"></i>
+                        Emergency Contact
+                    </h4>
+
+                    <div class="profile-fields-grid">
+
+                        <label class="form-field">
+                            <span>Contact Person</span>
+                            <input type="text"
+                                   id="profileEmergencyName"
+                                   placeholder="Emergency contact name">
+                        </label>
+
+                        <label class="form-field">
+                            <span>Relationship</span>
+                            <select id="profileRelationship">
+                                <option value="">Select relationship</option>
+                                <option>Parent</option>
+                                <option>Spouse</option>
+                                <option>Sibling</option>
+                                <option>Friend</option>
+                                <option>Other</option>
+                            </select>
+                        </label>
+
+                        <label class="form-field profile-full-field">
+                            <span>Emergency Phone Number</span>
+                            <input type="tel"
+                                   id="profileEmergencyPhone"
+                                   placeholder="Enter emergency phone number">
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTIFICATION SETTINGS -->
+                <div class="profile-form-section">
+
+                    <h4>
+                        <i class="fa-solid fa-bell"></i>
+                        Communication Preferences
+                    </h4>
+
+                    <div class="profile-preference-list">
+
+                        <label class="profile-toggle-row">
+                            <span>
+                                <strong>Booking Updates</strong>
+                                <small>Receive flight booking and confirmation updates.</small>
+                            </span>
+                            <input type="checkbox"
+                                   id="profileBookingNotify"
+                                   checked>
+                        </label>
+
+                        <label class="profile-toggle-row">
+                            <span>
+                                <strong>Flight Notifications</strong>
+                                <small>Receive departure, delay and gate notifications.</small>
+                            </span>
+                            <input type="checkbox"
+                                   id="profileFlightNotify"
+                                   checked>
+                        </label>
+
+                        <label class="profile-toggle-row">
+                            <span>
+                                <strong>Travel Offers</strong>
+                                <small>Receive special deals and travel promotions.</small>
+                            </span>
+                            <input type="checkbox"
+                                   id="profileOffersNotify">
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- FORM ACTIONS -->
+                <div class="profile-form-footer">
+
+                    <button type="reset" class="secondary-button">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset Changes
+                    </button>
+
+                    <button type="submit" class="primary-button">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Profile
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div id="profileResult" class="inline-result" hidden></div>
+
+            <p class="demo-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                Profile changes are saved in this browser for demo purposes only.
+            </p>
+
         </article>
 
-      </section>
+        <!-- RIGHT SIDEBAR -->
+        <div class="profile-sidebar">
+
+            <!-- ACCOUNT STATUS -->
+            <article class="panel profile-sidebar-card reveal">
+
+                <div class="profile-sidebar-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3>Account Overview</h3>
+                <p>Your SkyTrip account information.</p>
+
+                <div class="profile-account-row">
+                    <span>Account Status</span>
+                    <strong class="profile-active-status">
+                        <i class="fa-solid fa-circle"></i>
+                        Active
+                    </strong>
+                </div>
+
+                <div class="profile-account-row">
+                    <span>Account Type</span>
+                    <strong>Traveller</strong>
+                </div>
+
+                <div class="profile-account-row">
+                    <span>Membership</span>
+                    <strong>Silver</strong>
+                </div>
+
+                <div class="profile-account-row">
+                    <span>Profile Status</span>
+                    <strong>Demo Account</strong>
+                </div>
+
+            </article>
+
+            <!-- SECURITY -->
+            <article class="panel profile-sidebar-card reveal">
+
+                <div class="profile-sidebar-icon gold">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <h3>Account Security</h3>
+                <p>Keep your account information protected.</p>
+
+                <div class="profile-security-item">
+                    <div>
+                        <strong>Password</strong>
+                        <small>Manage your login credentials</small>
+                    </div>
+                    <a href="dashboard-404.html" aria-label="Manage password">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+
+                <div class="profile-security-item">
+                    <div>
+                        <strong>Two-Factor Authentication</strong>
+                        <small>Additional account protection</small>
+                    </div>
+                    <span class="profile-security-off">OFF</span>
+                </div>
+
+                <a href="dashboard-404.html" class="profile-security-link">
+                    Security Settings
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+            <!-- TRAVEL CHECKLIST -->
+            <article class="panel profile-sidebar-card reveal">
+
+                <div class="profile-sidebar-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <h3>Travel Checklist</h3>
+                <p>Things to prepare before your next journey.</p>
+
+                <ul class="profile-checklist">
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        Verify passenger information
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        Check travel documents
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        Review baggage allowance
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-check-circle"></i>
+                        Confirm flight schedule
+                    </li>
+                </ul>
+
+            </article>
+
+        </div>
+
+    </div>
+
+    <!-- BOTTOM INFO -->
+    <article class="panel profile-bottom-banner reveal">
+
+        <div class="profile-bottom-icon">
+            <i class="fa-solid fa-plane-departure"></i>
+        </div>
+
+        <div>
+            <h3>Every journey begins with a great profile.</h3>
+            <p>
+                Keep your traveller information updated to make
+                your future booking experience smoother.
+            </p>
+        </div>
+
+    </article>
+
+</section>
+
 
       <!-- ================= SUPPORT ================= -->
       <section class="page-content" id="supportSection" hidden>
@@ -900,7 +1626,7 @@
             <h3>Need more assistance?</h3>
             <p>This demo has no live support connection. Use your configured support channel for real enquiries.</p>
           </div>
-          <button class="subtle-button" onclick="window.location.href='404.html'">
+          <button class="subtle-button" onclick="window.location.href='dashboard-404.html'">
             Contact support
           </button>
         </article>

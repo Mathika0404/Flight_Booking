@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* All booking buttons navigate to 404 */
 function go404() {
-  window.location.href = "404.html";
+  window.location.href = "dashboard-404.html";
 }
 
 
@@ -819,13 +819,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================================= */
 
     window.go404 = function () {
-        window.location.href = "404.html";
+        window.location.href = "dashboard-404.html";
     };
 
     $$("[data-go-404]").forEach(button => {
         button.addEventListener("click", event => {
             event.preventDefault();
-            window.location.href = "404.html";
+            window.location.href = "dashboard-404.html";
         });
     });
 

@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const userName = savedProfileName || nameFromEmail(email);
+
   const userInitials = userName
     .split(/\s+/)
     .filter(Boolean)
@@ -163,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function navigateToSection(sectionName) {
     const targetId = sectionMap[sectionName];
+
     const targetSection = targetId
       ? document.getElementById(targetId)
       : null;
@@ -201,7 +204,8 @@ document.addEventListener("DOMContentLoaded", () => {
     $$(".reveal", targetSection).forEach((element, index) => {
       element.style.animation = "none";
       void element.offsetWidth;
-      element.style.animation = `userFadeUp .55s ease ${Math.min(index * 45, 250)}ms both`;
+      element.style.animation =
+        `userFadeUp .55s ease ${Math.min(index * 45, 250)}ms both`;
     });
   }
 
@@ -225,6 +229,49 @@ document.addEventListener("DOMContentLoaded", () => {
   window.navigateToSection = navigateToSection;
 
   /* =========================================
+     DASHBOARD-SPECIFIC 404 NAVIGATION
+  ========================================= */
+
+  function openDashboard404() {
+    const activeSection = $(
+      ".main-area > .page-content:not([hidden])"
+    );
+
+    // Save current dashboard URL.
+    sessionStorage.setItem(
+      "skytripDashboardReturnUrl",
+      window.location.href
+    );
+
+    // Save currently visible section ID.
+    sessionStorage.setItem(
+      "skytripDashboardReturnSection",
+      activeSection?.id || "dashboardSection"
+    );
+
+    window.location.href = "dashboard-404.html";
+  }
+
+  // Make function available for inline onclick buttons.
+  window.openDashboard404 = openDashboard404;
+
+  // Intercept dashboard links pointing to 404 pages.
+  document.addEventListener("click", event => {
+
+    const errorLink = event.target.closest('a[href*="404.html"]');
+
+    if (!errorLink) return;
+
+    // Do not intercept links opening in a new tab.
+    if (errorLink.target === "_blank") return;
+
+    event.preventDefault();
+
+    openDashboard404();
+
+  }, true);
+
+  /* =========================================
      DEMO BUTTONS / NOTIFICATIONS
   ========================================= */
 
@@ -238,7 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $$("[data-demo-action]").forEach(button => {
     button.addEventListener("click", () => {
-      showToast(button.dataset.demoAction || "This demo action is not connected.");
+      showToast(
+        button.dataset.demoAction ||
+        "This demo action is not connected."
+      );
     });
   });
 
@@ -272,12 +322,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if ("IntersectionObserver" in window) {
     const revealObserver = new IntersectionObserver(entries => {
+
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
           revealObserver.unobserve(entry.target);
         }
+
       });
+
     }, { threshold: 0.12 });
 
     $$("#dashboardSection .reveal").forEach(element => {
@@ -294,7 +348,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 4);
 
-      counter.textContent = Math.round(target * eased).toLocaleString("en-IN");
+      counter.textContent = Math.round(
+        target * eased
+      ).toLocaleString("en-IN");
 
       if (progress < 1) {
         requestAnimationFrame(update);
@@ -305,20 +361,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if ("IntersectionObserver" in window) {
+
     const counterObserver = new IntersectionObserver(entries => {
+
       entries.forEach(entry => {
+
         if (!entry.isIntersecting) return;
 
         animateCounter(entry.target);
         counterObserver.unobserve(entry.target);
+
       });
+
     }, { threshold: 0.35 });
 
     $$("#dashboardSection .counter").forEach(counter => {
       counterObserver.observe(counter);
     });
+
   } else {
+
     $$("#dashboardSection .counter").forEach(animateCounter);
+
   }
 
   /* =========================================
@@ -343,7 +407,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (returnDate) returnDate.min = today;
 
   $$("input[name='tripType']").forEach(radio => {
+
     radio.addEventListener("change", () => {
+
       const isRoundTrip =
         $("input[name='tripType']:checked")?.value === "roundtrip";
 
@@ -358,10 +424,13 @@ document.addEventListener("DOMContentLoaded", () => {
           returnDate.value = "";
         }
       }
+
     });
+
   });
 
   departureDate?.addEventListener("change", () => {
+
     if (!returnDate || !departureDate.value) return;
 
     returnDate.min = departureDate.value;
@@ -369,15 +438,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (returnDate.value && returnDate.value < departureDate.value) {
       returnDate.value = "";
     }
+
   });
 
   $("#flightSearchForm")?.addEventListener("submit", event => {
+
     event.preventDefault();
 
     const from = $("#fromCity")?.value.trim();
     const to = $("#toCity")?.value.trim();
     const departure = departureDate?.value;
-    const tripType = $("input[name='tripType']:checked")?.value || "roundtrip";
+
+    const tripType =
+      $("input[name='tripType']:checked")?.value || "roundtrip";
+
     const returning = returnDate?.value;
     const travellers = $("#travellerCount")?.value;
     const cabin = $("#cabinClass")?.value;
@@ -397,19 +471,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const result = $("#flightSearchResult");
+    // Open dashboard-specific 404 page.
+    openDashboard404();
 
-    if (result) {
-      result.hidden = false;
-      result.textContent =
-        `Demo search prepared: ${from} to ${to}, departing ${departure}` +
-        (tripType === "roundtrip" && returning ? `, returning ${returning}` : "") +
-        `. Travellers: ${travellers}. Cabin: ${cabin}. Live flight search is not connected.`;
-
-      result.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
-
-    showToast("Your demo flight search is ready.");
   });
 
   /* =========================================
@@ -417,7 +481,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   $$("[data-trip-filter]").forEach(button => {
+
     button.addEventListener("click", () => {
+
       const filter = button.dataset.tripFilter;
 
       $$("[data-trip-filter]").forEach(item => {
@@ -427,18 +493,23 @@ document.addEventListener("DOMContentLoaded", () => {
       let visibleCount = 0;
 
       $$(".trip-card[data-trip-status]").forEach(card => {
+
         const matches =
-          filter === "all" || card.dataset.tripStatus === filter;
+          filter === "all" ||
+          card.dataset.tripStatus === filter;
 
         card.hidden = !matches;
 
         if (matches) visibleCount++;
+
       });
 
       if (visibleCount === 0) {
         showToast("There are no trips in this category.");
       }
+
     });
+
   });
 
   /* =========================================
@@ -446,24 +517,20 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================= */
 
   $("#checkinForm")?.addEventListener("submit", event => {
+
     event.preventDefault();
 
     const reference = $("#checkinReference")?.value.trim();
     const surname = $("#checkinSurname")?.value.trim();
-    const result = $("#checkinResult");
 
     if (!reference || !surname) {
       showToast("Enter your booking reference and surname.");
       return;
     }
 
-    if (result) {
-      result.hidden = false;
-      result.textContent =
-        "Demo only: your details have been entered. Live airline check-in and boarding pass generation are not connected. Please use your airline's official website to check in.";
-    }
+    // Open dashboard-specific 404 page.
+    openDashboard404();
 
-    showToast("Demo check-in form submitted.");
   });
 
   /* =========================================
@@ -476,22 +543,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileCabinInput = $("#profileCabin");
 
   if (profileNameInput) {
-    profileNameInput.value = localStorage.getItem("skytripProfileName") || userName;
+    profileNameInput.value =
+      localStorage.getItem("skytripProfileName") || userName;
   }
 
   if (profileEmailInput) {
-    profileEmailInput.value = localStorage.getItem("skytripProfileEmail") || email;
+    profileEmailInput.value =
+      localStorage.getItem("skytripProfileEmail") || email;
   }
 
   if (profilePhoneInput) {
-    profilePhoneInput.value = localStorage.getItem("skytripProfilePhone") || "";
+    profilePhoneInput.value =
+      localStorage.getItem("skytripProfilePhone") || "";
   }
 
   if (profileCabinInput) {
-    profileCabinInput.value = localStorage.getItem("skytripProfileCabin") || "Economy";
+    profileCabinInput.value =
+      localStorage.getItem("skytripProfileCabin") || "Economy";
   }
 
   $("#profileForm")?.addEventListener("submit", event => {
+
     event.preventDefault();
 
     const newName = profileNameInput?.value.trim();
@@ -502,11 +574,71 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // SAVE EXISTING PROFILE DETAILS
     localStorage.setItem("skytripProfileName", newName);
     localStorage.setItem("skytripProfileEmail", newEmail);
-    localStorage.setItem("skytripProfilePhone", profilePhoneInput?.value.trim() || "");
-    localStorage.setItem("skytripProfileCabin", profileCabinInput?.value || "Economy");
+    localStorage.setItem(
+      "skytripProfilePhone",
+      profilePhoneInput?.value.trim() || ""
+    );
 
+    localStorage.setItem(
+      "skytripProfileCabin",
+      profileCabinInput?.value || "Economy"
+    );
+
+    // SAVE ADDITIONAL PROFILE DETAILS
+    const additionalProfileFields = [
+      "profileDOB",
+      "profileGender",
+      "profileNationality",
+      "profileAddress",
+      "profileCity",
+      "profileState",
+      "profilePostal",
+      "profileCountry",
+      "profileSeat",
+      "profileMeal",
+      "profileCurrency",
+      "profileEmergencyName",
+      "profileRelationship",
+      "profileEmergencyPhone"
+    ];
+
+    additionalProfileFields.forEach(id => {
+
+      const field = $("#" + id);
+
+      if (field) {
+        localStorage.setItem(
+          "skytrip_" + id,
+          field.value
+        );
+      }
+
+    });
+
+    // SAVE NOTIFICATION PREFERENCES
+    const notificationFields = [
+      "profileBookingNotify",
+      "profileFlightNotify",
+      "profileOffersNotify"
+    ];
+
+    notificationFields.forEach(id => {
+
+      const field = $("#" + id);
+
+      if (field) {
+        localStorage.setItem(
+          "skytrip_" + id,
+          field.checked
+        );
+      }
+
+    });
+
+    // GENERATE AVATAR INITIALS
     const initials = newName
       .split(/\s+/)
       .filter(Boolean)
@@ -515,24 +647,105 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("")
       .toUpperCase();
 
+    // UPDATE DASHBOARD DETAILS
     if ($("#sideName")) $("#sideName").textContent = newName;
     if ($("#topName")) $("#topName").textContent = newName;
-    if ($("#welcomeName")) $("#welcomeName").textContent = newName.split(" ")[0];
-    if ($("#sideEmail")) $("#sideEmail").textContent = newEmail;
-    if ($("#topAvatar")) $("#topAvatar").textContent = initials || "U";
-    if ($("#sideAvatar")) $("#sideAvatar").textContent = initials || "U";
-    if ($("#profileLargeAvatar")) $("#profileLargeAvatar").textContent = initials || "U";
-    if ($("#profileHeadingName")) $("#profileHeadingName").textContent = newName;
-    if ($("#profileHeadingEmail")) $("#profileHeadingEmail").textContent = newEmail;
 
-    showToast("Profile updated in this browser.");
+    if ($("#welcomeName")) {
+      $("#welcomeName").textContent = newName.split(" ")[0];
+    }
+
+    if ($("#sideEmail")) {
+      $("#sideEmail").textContent = newEmail;
+    }
+
+    if ($("#topAvatar")) {
+      $("#topAvatar").textContent = initials || "U";
+    }
+
+    if ($("#sideAvatar")) {
+      $("#sideAvatar").textContent = initials || "U";
+    }
+
+    if ($("#profileLargeAvatar")) {
+      $("#profileLargeAvatar").textContent = initials || "U";
+    }
+
+    if ($("#profileHeadingName")) {
+      $("#profileHeadingName").textContent = newName;
+    }
+
+    if ($("#profileHeadingEmail")) {
+      $("#profileHeadingEmail").textContent = newEmail;
+    }
+
+    showToast("Profile updated successfully.");
+
   });
+
+  /* =========================================
+     LOAD ADDITIONAL PROFILE DETAILS
+  ========================================= */
+
+  function loadAdditionalProfileDetails() {
+
+    const additionalProfileFields = [
+      "profileDOB",
+      "profileGender",
+      "profileNationality",
+      "profileAddress",
+      "profileCity",
+      "profileState",
+      "profilePostal",
+      "profileCountry",
+      "profileSeat",
+      "profileMeal",
+      "profileCurrency",
+      "profileEmergencyName",
+      "profileRelationship",
+      "profileEmergencyPhone"
+    ];
+
+    additionalProfileFields.forEach(id => {
+
+      const field = $("#" + id);
+      const savedValue = localStorage.getItem("skytrip_" + id);
+
+      if (field && savedValue !== null) {
+        field.value = savedValue;
+      }
+
+    });
+
+    // LOAD NOTIFICATION PREFERENCES
+    const notificationFields = [
+      "profileBookingNotify",
+      "profileFlightNotify",
+      "profileOffersNotify"
+    ];
+
+    notificationFields.forEach(id => {
+
+      const field = $("#" + id);
+      const savedValue = localStorage.getItem("skytrip_" + id);
+
+      if (field && savedValue !== null) {
+        field.checked = savedValue === "true";
+      }
+
+    });
+
+  }
+
+  // INITIAL LOAD
+  loadAdditionalProfileDetails();
 
   /* =========================================
      LOG OUT
   ========================================= */
 
   $("#logoutBtn")?.addEventListener("click", event => {
+
     event.preventDefault();
 
     const confirmed = window.confirm("Are you sure you want to log out?");
@@ -540,11 +753,42 @@ document.addEventListener("DOMContentLoaded", () => {
     if (confirmed) {
       window.location.href = "login.html";
     }
+
   });
 
   /* =========================================
-     INITIAL DASHBOARD
+     INITIAL DASHBOARD / RESTORE LAST SECTION
   ========================================= */
 
-  navigateToSection("dashboard");
+  const shouldRestoreDashboard =
+    sessionStorage.getItem("skytripDashboardRestore") === "true";
+
+  const savedDashboardSection = sessionStorage.getItem(
+    "skytripDashboardReturnSection"
+  );
+
+  if (shouldRestoreDashboard && savedDashboardSection) {
+
+    const savedSectionName = Object.keys(sectionMap).find(
+      key => sectionMap[key] === savedDashboardSection
+    );
+
+    if (savedSectionName) {
+      navigateToSection(savedSectionName);
+    } else {
+      navigateToSection("dashboard");
+    }
+
+    // Clear saved return information after restoring.
+    sessionStorage.removeItem("skytripDashboardRestore");
+    sessionStorage.removeItem("skytripDashboardReturnSection");
+    sessionStorage.removeItem("skytripDashboardReturnUrl");
+
+  } else {
+
+    // Normal dashboard opening.
+    navigateToSection("dashboard");
+
+  }
+
 });

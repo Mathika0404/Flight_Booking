@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#061638">
+    <title>Page Not Found | SkyTrip</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            overflow: hidden;
+            font-family: "Inter", sans-serif;
+            color: #fff;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(34, 100, 210, .28), transparent 35%),
+                radial-gradient(circle at 85% 85%, rgba(201, 144, 55, .13), transparent 30%),
+                #061638;
+        }
+
+        .error-wrapper {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-card {
+            padding: 65px 35px;
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 28px;
+            background: rgba(255,255,255,.055);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 25px 80px rgba(0,0,0,.25);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 35px;
+            color: #fff;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            color: #061638;
+            background: #d8ad54;
+            font-size: 21px;
+        }
+
+        .error-code {
+            font-size: clamp(100px, 22vw, 190px);
+            line-height: .9;
+            font-weight: 900;
+            letter-spacing: -12px;
+            color: #fff;
+            text-shadow: 0 12px 35px rgba(0,0,0,.2);
+        }
+
+        .error-code span {
+            color: #d8ad54;
+        }
+
+        .error-title {
+            margin-top: 28px;
+            font-size: clamp(23px, 4vw, 34px);
+            font-weight: 800;
+        }
+
+        .error-description {
+            max-width: 510px;
+            margin: 15px auto 30px;
+            color: #b9c7df;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .error-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .error-btn {
+            min-width: 155px;
+            padding: 14px 23px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .back-btn {
+            color: #061638;
+            background: #d8ad54;
+        }
+
+        .back-btn:hover {
+            background: #f0ca78;
+            transform: translateY(-3px);
+        }
+
+        .home-btn {
+            color: #fff;
+            border-color: rgba(255,255,255,.25);
+            background: transparent;
+        }
+
+        .home-btn:hover {
+            color: #061638;
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .error-footer {
+            margin-top: 28px;
+            color: #8395b3;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .decor-circle {
+            position: fixed;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .circle-one {
+            top: -130px;
+            left: -100px;
+        }
+
+        .circle-two {
+            right: -130px;
+            bottom: -150px;
+            width: 380px;
+            height: 380px;
+        }
+
+        @media (max-width: 600px) {
+            .error-card {
+                padding: 48px 20px;
+                border-radius: 20px;
+            }
+
+            .error-code {
+                letter-spacing: -7px;
+            }
+
+            .error-title {
+                margin-top: 22px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+
+            .error-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="decor-circle circle-one"></div>
+    <div class="decor-circle circle-two"></div>
+
+    <main class="error-wrapper">
+        <div class="error-card">
+
+            <div class="brand">
+                <span class="brand-mark">✈</span>
+                <span>SKYTRIP</span>
+            </div>
+
+            <div class="error-code">4<span>0</span>4</div>
+
+            <h1 class="error-title">Oops! Page Not Found</h1>
+
+            <p class="error-description">
+                The page you're looking for may have been moved,
+                removed, or is temporarily unavailable.
+                Let's get you back on track.
+            </p>
+
+            <div class="error-actions">
+                <button type="button" class="error-btn back-btn" id="goBackBtn">
+                    ← Go Back
+                </button>
+
+                <button type="button" class="error-btn home-btn" id="goHomeBtn">
+                    Go to Dashboard
+                </button>
+            </div>
+
+            <p class="error-footer">
+                © 2026 SKYTRIP. ALL RIGHTS RESERVED.
+            </p>
+
+        </div>
+    </main>
+
+<script>
+    const goBackBtn = document.getElementById("goBackBtn");
+    const goHomeBtn = document.getElementById("goHomeBtn");
+
+    /* GO BACK TO PREVIOUS DASHBOARD SECTION */
+    goBackBtn?.addEventListener("click", function () {
+
+        const savedUrl = sessionStorage.getItem(
+            "skytripDashboardReturnUrl"
+        );
+
+        const savedSection = sessionStorage.getItem(
+            "skytripDashboardReturnSection"
+        );
+
+        if (savedUrl) {
+
+            if (savedSection) {
+                sessionStorage.setItem(
+                    "skytripDashboardReturnSection",
+                    savedSection
+                );
+            }
+
+            sessionStorage.setItem(
+                "skytripDashboardRestore",
+                "true"
+            );
+
+            window.location.replace(savedUrl);
+
+        } else {
+
+            window.history.back();
+
+        }
+
+    });
+
+
+    /* GO TO USER DASHBOARD */
+    goHomeBtn?.addEventListener("click", function () {
+
+        sessionStorage.removeItem("skytripDashboardRestore");
+        sessionStorage.removeItem("skytripDashboardReturnUrl");
+        sessionStorage.removeItem("skytripDashboardReturnSection");
+
+        window.location.href = "user-dashboard.html";
+
+    });
+
+</script>
+
+</body>
+</html>
