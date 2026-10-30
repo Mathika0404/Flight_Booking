@@ -679,7 +679,9 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#profileHeadingEmail").textContent = newEmail;
     }
 
-    showToast("Profile updated successfully.");
+setTimeout(() => {
+    openDashboard404();
+}, 500);
 
   });
 
